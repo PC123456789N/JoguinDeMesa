@@ -8,19 +8,27 @@ function getEvent() {
 function executeRandomEvent(event) {
     console.log("Evento \"" + event["name"] + "\": " +event["effect_text"]);
     
-    for (let affected in event["effects"]) {
+    // get choice from player
+    alert("Evento \"" + event["name"] + "\": " +event["effect_text"])
+    const choice = getChoice(event["accept"]["text"], event["deny"]["text"])
+
+    // proccess input here
+    
+
+    for (let affected in event[choice]["effects"]) {
+
         switch (affected) {
             case "finance":
-                finance = finance + event["effects"][affected];
+                finance = finance + event[choice]["effects"][affected];
                 break;
             case "military":
-                military = military + event["effects"][affected];
+                military = military + event[choice]["effects"][affected];
                 break;
             case "population":
-                population = population + event["effects"][affected];
+                population = population + event[choice]["effects"][affected];
                 break;
-            case "approval":
-                popularity = popularity + event["effects"][affected];
+            case "popularity":
+                popularity = popularity + event[choice]["effects"][affected];
                 break;
             default:
                 break;
@@ -30,7 +38,7 @@ function executeRandomEvent(event) {
 }
 
 function checkGameOver() {
-    // finance, military, population, approval
+    // finance, military, population, popularity
     // 1 is over and -1 is under
     let gameOverList = [0, 0, 0, 0]
 

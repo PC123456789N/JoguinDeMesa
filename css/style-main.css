@@ -1,3 +1,7 @@
+.container-fluid{
+    background-color: darkgrey;
+}
+
 #header{
     background-color: black;
     color: azure;
@@ -14,9 +18,33 @@
     height: 45%;
 }
 
+#textbox{
+    background-color: black;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+#textL{
+    background-color: black;
+    color: azure;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    font-family: 'Times New Roman', Times, serif;
+    border-left: 3px;
+}
+
+#textR{
+    background-color: black;
+    color: azure;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    font-family: 'Times New Roman', Times, serif;
+    border-right: 3px;
+}
+
 @media (min-width: 767px) {
   img#imagem {
-    width: 90%;
-    height: 40%;
+    width: 70%;
+    height: 30%;
   }
 }
