@@ -20,7 +20,7 @@ function executeRandomEvent(event) {
                 population = population + event["effects"][affected];
                 break;
             case "approval":
-                approval = approval + event["effects"][affected];
+                popularity = popularity + event["effects"][affected];
                 break;
             default:
                 break;
@@ -38,7 +38,7 @@ function checkGameOver() {
         console.log("Game over: bankrupted country");
         gameOverList[0] = -1
     } else if (finance >= 100) {
-        console.log("Game over: too rich?");
+        console.log("Game over: the money got to your head");
         gameOverList[0] = 1
     }
 
@@ -58,19 +58,19 @@ function checkGameOver() {
         gameOverList[2] = 1
     }
 
-    if (approval <= 0) {
+    if (popularity <= 0) {
         console.log("Game over: they don't like you anymore");
         gameOverList[3] = -1
-    } else if (approval >= 100) {
-        console.log("Game over: too popular??");
+    } else if (popularity >= 100) {
+        console.log("Game over: assassinated ");
         gameOverList[3] = 1
     }
 
     return gameOverList
 }
 
-let finance = 50;
-let military = 50;
-let population = 50;
-let approval = 50;
+let finance = 30;
+let military = 30;
+let population = 30;
+let popularity = 30;
 

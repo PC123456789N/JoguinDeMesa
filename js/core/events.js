@@ -40,7 +40,7 @@ const event_random = [
     },
     {
         "name": "Fazer doação",
-        "effect_text": "Aumenta Aprovação em 10 e diminui Recursos Financeiros em 15",
+        "effect_text": "Aumenta Popularidade em 10 e diminui Recursos Financeiros em 15",
         "effects": {
             "approval": 10,
             "finance": -15
@@ -48,9 +48,13 @@ const event_random = [
     },
     {
         "name": "Se mijar",
-        "effect_text": "Diminui Aprovação em 10",
+        "effect_text": "Diminui Popularidade em 10",
         "effects": {
             "approval": -10
         }
     }
+]
+
+const event_history = [
+    // pra ser determinado
 ]
