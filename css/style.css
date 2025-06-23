@@ -1,8 +1,16 @@
 #header{
     background-color: black;
     color: azure;
-    margin-bottom: 2%;
-    margin-top: 2%;
+}
+
+#nav{
+    margin-bottom: 1%;
+    background-color: black;
+    width: 100%;
+}
+.nav-item{
+    margin-left: 0.5%;
+    margin-right: 0.5%;
 }
 
 h3{
