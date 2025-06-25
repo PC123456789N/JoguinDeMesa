@@ -6,7 +6,6 @@
     background-color: black;
     color: azure;
     margin-bottom: 1%;
-    margin-top: 1%;
     border-bottom-style: solid ;
     border-color: rgb(107, 107, 107);
 }
@@ -57,5 +56,9 @@
   #textR{
     border-top-style: none;
     border-color:rgb(107, 107, 107);
+  }
+
+  #buttons{
+    display: none;
   }
 }
