@@ -8,8 +8,8 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <title>Presidential Order</title>
 </head>
-<body>
-    <div class="container-fluid">
+<body style="background-color: lightgray;">
+    <div class="container-fluid" style="background-color: lightgray;">
         <div class="row">
             <div class="col-12" id="header">
                 <div class="text-center">
@@ -17,17 +17,32 @@
                     <br>
                     <em>Be the president of a small nation, guide your nation to ruin or to glory!</em>
                     <br><br>
-                    <button onclick="window.location.href = 'html/tutorial.html'">Como Jogar</button>
-                    <button onclick="window.location.href = 'html/creditos.html'">Créditos</button>
-                    <button onclick="window.location.href = 'html/fases/dia0.html'">Iniciar</button>
                 </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12" style="background-color: black; border-bottom-style: solid  ; border-color: rgb(107, 107, 107);">
+                <ul class="nav nav-pills nav-justified justify-content-center" id="nav">
+                    <li class="nav-item">
+                        <a href="html/tutorial.html" class="nav-link active" aria-current="page" style="background-color:whitesmoke;color: black;">Tutorial</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="html/fases/main.html" class="nav-link active" aria-current="page" style="background-color:whitesmoke;color: black;">Começar</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="html/creditos.html" class="nav-link active" aria-current="page" style="background-color:whitesmoke;color: black;">Creditos</a>
+                    </li>
+                </ul>
             </div>
         </div>
 
         <div class="row justify-content-center">
             <div class="col col-lg-10 col sm-12" id="maingame">
                 <div class="text-center">
-                    <img src="https://criticalhits.com.br/wp-content/uploads/2025/01/Roblox-Forsaken-Os-melhores-Assassinos-e-Sobreviventes.jpg" alt="" id="imagem">
+                    <img src="img/CapaProvisoria.png" alt="" id="imagem">
                 </div>
             </div>
         </div>
@@ -38,6 +53,8 @@
 
 <script src="js/core/common.js"></script>
 <script src="js/core/events.js"></script>
+<script src="js/core/input.js"></script>
 <script src="js/core/core.js"></script>
+<script src="js/day_handler.js"></script>
 
 </html>
