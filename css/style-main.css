@@ -5,8 +5,10 @@
 #header{
     background-color: black;
     color: azure;
-    margin-bottom: 2%;
-    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    border-bottom-style: solid ;
+    border-color: rgb(107, 107, 107);
 }
 
 #maingame{
@@ -20,8 +22,10 @@
 
 #textbox{
     background-color: black;
-    margin-bottom: 2%;
-    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    border-top-style: solid ;
+    border-color: rgb(107, 107, 107);
 }
 
 #textL{
@@ -40,11 +44,18 @@
     margin-top: 2%;
     font-family: 'Times New Roman', Times, serif;
     border-right: 3px;
+    border-top-style: solid;
+    border-color:rgb(107, 107, 107);
 }
 
 @media (min-width: 767px) {
   img#imagem {
     width: 70%;
     height: 30%;
+  }
+
+  #textR{
+    border-top-style: none;
+    border-color:rgb(107, 107, 107);
   }
 }
