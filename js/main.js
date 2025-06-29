@@ -1,134 +1,179 @@
 import {getRandomInt} from "./core/common.js";
 
-function gerarCasoNormal() {
+function gerarCasoNormal(returnCase) {
     const num = getRandomInt(0, casosNormais.length-1);
     const caso = casosNormais[num];
-    return caso
+    if (returnCase) {
+        return caso;
+    } else {
+        return num;
+    }
 }
 
 const btnGame = document.getElementById("clickBtn");
 btnGame.addEventListener("click", () => {
-    const casoAtual = gerarCasoNormal();
+    const casoAtual = gerarCasoNormal(true);
+    const indice = gerarCasoNormal(false);
     switch (casoAtual) {
         case "m1":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "m2":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "m3":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "m4":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "s1":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "s2":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "s3":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "s4":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "t1":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "t2":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "t3":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "t4":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "e1":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "e2":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "e3":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "e4":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "b1":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "b2":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "b3":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "b4":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "c1":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "c2":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "c3":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "c4":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "r1":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "r2":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "r3":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "r4":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "j1":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "j2":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "j3":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "j4":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "g1":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "g2":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "g3":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "g4":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "k1":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "k2":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "k3":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         case "k4":
-            alert("O caso escolhido no random eh: " + casoAtual);
+            alert("O caso escolhido no random eh: " + casoAtual); 
+            casosNormais.splice(indice, 1);
             break;
         default:
             alert("erro");
