@@ -1,8 +1,17 @@
-import {getRandomInt} from "./core/common.js";
+const casosNormais = ["m1", "m2", "m3", "m4", 
+    "s1", "s2", "s3", "s4", 
+    "t1", "t2", "t3", "t4", 
+    "e1", "e2", "e3", "e4", 
+    "b1", "b2", "b3", "b4", 
+    "c1", "c2", "c3", "c4", 
+    "r1", "r2", "r3", "r4", 
+    "j1", "j2", "j3", "j4", 
+    "g1", "g2", "g3", "g4", 
+    "k1", "k2", "k3", "k4"];
 
-const casoAtual = "";
-const casoAnterior = "";
-const indice = 0;
+let casoAtual = "main";
+let casoAnterior = "";
+let indice = 0;
 function gerarCasoNormal() {
     const num = getRandomInt(0, casosNormais.length-1);
     casoAtual = casosNormais[num];
@@ -179,14 +188,3 @@ btnGame.addEventListener("click", () => {
             break;
     }
 })
-
-const casosNormais = ["m1", "m2", "m3", "m4", 
-    "s1", "s2", "s3", "s4", 
-    "t1", "t2", "t3", "t4", 
-    "e1", "e2", "e3", "e4", 
-    "b1", "b2", "b3", "b4", 
-    "c1", "c2", "c3", "c4", 
-    "r1", "r2", "r3", "r4", 
-    "j1", "j2", "j3", "j4", 
-    "g1", "g2", "g3", "g4", 
-    "k1", "k2", "k3", "k4"];
