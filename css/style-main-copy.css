@@ -30,7 +30,7 @@ html, body {
 }
 
 #imagem2{
-    width: 70%;
+    width: 100%;
     height: auto;
     max-width: 100%;
 }
@@ -39,12 +39,16 @@ html, body {
     height: auto;
     max-width: 100%;
 }
-
-#textbox{
+#speechMobile{
+    background-color: black;
+    color: white;
+    margin-top: 1%;
+}
+#status{
     background-color: black;
     margin-bottom: 1%;
     margin-top: 1%;
-    border-top-style: solid ;
+    border-top-style: double ;
     border-color: rgb(107, 107, 107);
 }
 
@@ -81,7 +85,7 @@ html, body {
     max-width: 100%;
   }
   #imagem2 {
-    width: 70%;
+    width: 60%;
     height: auto;
     max-width: 100%;
   }
