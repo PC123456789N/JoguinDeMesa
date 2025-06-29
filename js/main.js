@@ -1,4 +1,4 @@
-import { getRandomInt } from "./core/common.js";
+import {getRandomInt} from "./core/common.js";
 
 const casosNormais = ["m1", "m2", "m3", "m4", 
     "s1", "s2", "s3", "s4", 
@@ -11,7 +11,7 @@ const casosNormais = ["m1", "m2", "m3", "m4",
     "g1", "g2", "g3", "g4", 
     "k1", "k2", "k3", "k4"];
 
-let casoAtual = "main";
+let casoAtual = "";
 let casoAnterior = "";
 let indice = 0;
 function gerarCasoNormal() {
