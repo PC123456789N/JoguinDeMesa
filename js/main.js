@@ -1,4 +1,4 @@
-import { getRandomInt } from "./core/common";
+import { getRandomInt } from "./core/common.js";
 
 const casosNormais = ["m1", "m2", "m3", "m4", 
     "s1", "s2", "s3", "s4", 
