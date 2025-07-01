@@ -1,34 +1,53 @@
-function getEvent() {
-    //TODO: add logic to avoid repeats
+import {event_random} from "./random_events.js";
+import {getRandomInt} from "./common.js";
+//import {getChoice} from "./input.js";
+
+export function getEvent() {
+    /** event structure
+     * name: str
+     * event_text: str
+     * choices: list [
+     *   choice: dict {
+     *     text: str
+     *     effects: dict {
+     *       resource1: number
+     *       resource2: number
+     *       ...
+     *     }
+     *   }
+     * ]
+     */
+
     const event = event_random[getRandomInt(0, event_random.length - 1) - 1]
 
     return event
 }
 
-function executeRandomEvent(event) {
-    console.log("Evento \"" + event["name"] + "\": " +event["effect_text"]);
+export function executeRandomEvent(event) {
+    console.log(event["event_text"]);
     
     // get choice from player
-    alert("Evento \"" + event["name"] + "\": " +event["effect_text"])
-    const choice = getChoice(event["accept"]["text"], event["deny"]["text"])
+    alert(event["event_text"])
+    alert("Escolhendo escolha 0")
+    const choice = 0//getChoice(event["accept"]["text"], event["deny"]["text"])
 
-    // proccess input here
+    // process input here
     
 
-    for (let affected in event[choice]["effects"]) {
+    for (let affected in event["choices"][choice]["effects"]) {
 
         switch (affected) {
             case "finance":
-                finance = finance + event[choice]["effects"][affected];
+                finance = finance + event["choices"][choice]["effects"][affected];
                 break;
             case "military":
-                military = military + event[choice]["effects"][affected];
+                military = military + event["choices"][choice]["effects"][affected];
                 break;
             case "population":
-                population = population + event[choice]["effects"][affected];
+                population = population + event["choices"][choice]["effects"][affected];
                 break;
             case "popularity":
-                popularity = popularity + event[choice]["effects"][affected];
+                popularity = popularity + event["choices"][choice]["effects"][affected];
                 break;
             default:
                 break;
@@ -37,7 +56,7 @@ function executeRandomEvent(event) {
 
 }
 
-function checkGameOver() {
+export function checkGameOver() {
     // finance, military, population, popularity
     // 1 is over and -1 is under
     let gameOverList = [0, 0, 0, 0]
@@ -77,8 +96,17 @@ function checkGameOver() {
     return gameOverList
 }
 
-let finance = 30;
-let military = 30;
-let population = 30;
-let popularity = 30;
+export let finance = 30;
+export let military = 30;
+export let population = 30;
+export let popularity = 30;
 
+console.log("core.js loaded")
+
+window.finance = finance
+window.military = military
+window.population = population
+window.popularity = popularity
+window.getEvent = getEvent
+window.executeRandomEvent = executeRandomEvent
+window.checkGameOver = checkGameOver

@@ -6,3 +6,5 @@ function getChoice(text1, text2) {
 
     return input
 }
+
+export {getChoice}
