@@ -18,6 +18,7 @@ function getChoice(choices) {
     
     choices.forEach(choice => {
         text += choice["text"] + "\n"
+        //TODO: Aviso, no futuro talvez eu remova todos os afetados que sejam apenas 0 para melhorar o tamanho do site
         text += `${choice["effects"]["finance"]} Finance, ${choice["effects"]["military"]} Military, ${choice["effects"]["population"]} Population, ${choice["effects"]["popularity"]} Popularity` + "\n"
     });
 
