@@ -33,12 +33,43 @@ html, body {
     width: 100%;
     height: auto;
     max-width: 100%;
+    position: absolute;
+    display: block;
+    top: 0%;
 }
 #imagem3{
     width: 100%;
     height: auto;
     max-width: 100%;
+    position: absolute;
+    display: block;
+    top: 0%;
 }
+
+#clickarea1{
+  display: block;
+  top: 57%; 
+  left: 20%; 
+  width: 14%; 
+  height: 10%;
+}
+
+#clickarea2{
+  display: block;
+  top: 57%; 
+  left: 43%; 
+  width: 14%; 
+  height: 10%;
+}
+
+#clickarea3{
+  display: block;
+  top: 57%; 
+  left: 66.5%; 
+  width: 14%; 
+  height: 10%;
+}
+
 #speechMobile{
     background-color: black;
     color: white;
@@ -85,14 +116,22 @@ html, body {
     max-width: 100%;
   }
   #imagem2 {
-    width: 60%;
+    width: 80%;
     height: auto;
     max-width: 100%;
+    position: absolute;
+    display: block;
+    top: 0%;
+    left: 10%;
   }
   #imagem3 {
-    width: 90%;
+    width: 100%;
     height: auto;
-    max-width: 100%;
+    max-width: 90%;
+    position: absolute;
+    display: block;
+    top: 0%;
+    left: 5%;
   }
 
   #textR{
