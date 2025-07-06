@@ -21,6 +21,12 @@ function gerarCasoNormal() {
 }
 
 const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn");
+btnGame.forEach(a => {
+    a.addEventListener("hover", () => {
+        alert("aaa");
+    })
+})
+
 btnGame.forEach(btn => {
     btn.addEventListener("click", () => {
         gerarCasoNormal()
@@ -30,7 +36,7 @@ btnGame.forEach(btn => {
         casoAnterior = casoAtual;
         switch (casoAtual) {
             case "m1":
-                alert("O caso escolhido no random eh: "  + casoAtual); 
+                
                 casosNormais.splice(indice, 1);
                 break;
             case "m2":

@@ -30,11 +30,11 @@ export function getEvent() {
 
 export function executeRandomEvent(event) {
     console.log(event["event_text"]);
-    console.log(event["choices"])
+    console.log(event["choices"]);
     
     // get choice from player
-    alert(event["event_text"])
-    let choice = Number(getChoice(event["choices"]))
+    alert(event["event_text"]);
+    let choice = Number(getChoice(event["choices"]));
 
     // process input here
 
@@ -62,61 +62,61 @@ export function executeRandomEvent(event) {
         }
     }
 
-    updateStats(finance, military, population, popularity)
+    updateStats(finance, military, population, popularity);
 
 }
 
 export function checkGameOver() {
     // finance, military, population, popularity
     // 1 is over and -1 is under
-    let gameOverList = [0, 0, 0, 0]
+    let gameOverList = [0, 0, 0, 0];
 
     if (finance <= 0) {
         console.log("Game over: bankrupted country");
-        gameOverList[0] = -1
+        gameOverList[0] = -1;
     } else if (finance >= 100) {
         console.log("Game over: the money got to your head");
-        gameOverList[0] = 1
+        gameOverList[0] = 1;
     }
 
     if (military <= 0) {
         console.log("Game over: invaded by neighboring countries");
-        gameOverList[1] = -1
+        gameOverList[1] = -1;
     } else if (military >= 100) {
         console.log("Game over: military takes over");
-        gameOverList[1] = 1
+        gameOverList[1] = 1;
     }
 
     if (population <= 0) {
         console.log("Game over: deserted country");
-        gameOverList[2] = -1
+        gameOverList[2] = -1;
     } else if (population >= 100) {
         console.log("Game over: overpopulated");
-        gameOverList[2] = 1
+        gameOverList[2] = 1;
     }
 
     if (popularity <= 0) {
         console.log("Game over: they don't like you anymore");
-        gameOverList[3] = -1
+        gameOverList[3] = -1;
     } else if (popularity >= 100) {
         console.log("Game over: assassinated ");
-        gameOverList[3] = 1
+        gameOverList[3] = 1;
     }
 
-    return gameOverList
+    return gameOverList;
 }
 
-export let finance = 30;
-export let military = 30;
-export let population = 30;
-export let popularity = 30;
+export let finance = 50;
+export let military = 50;
+export let population = 50;
+export let popularity = 50;
 
 console.log("core.js loaded")
 
-window.finance = finance
-window.military = military
-window.population = population
-window.popularity = popularity
-window.getEvent = getEvent
-window.executeRandomEvent = executeRandomEvent
-window.checkGameOver = checkGameOver
+window.finance = finance;
+window.military = military;
+window.population = population;
+window.popularity = popularity;
+window.getEvent = getEvent;
+window.executeRandomEvent = executeRandomEvent;
+window.checkGameOver = checkGameOver;
