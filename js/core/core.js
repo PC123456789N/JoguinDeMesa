@@ -5,6 +5,7 @@ import {getChoice, updateStats} from "./io_handler.js";
 let usedIndex = [];
 export function getEvent() {
     /** event structure
+     * character: str, should be single char
      * name: str
      * event_text: str
      * choices: list [

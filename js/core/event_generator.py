@@ -19,10 +19,10 @@ def generate_dict_text(groups):
             }},'''
     
     choices = []
-    choices.append(generate_choice(groups, 1))
-    choices.append(generate_choice(groups, 6))
+    choices.append(generate_choice(groups, 2))
+    choices.append(generate_choice(groups, 7))
     
-    thing = generate_choice(groups, 11)
+    thing = generate_choice(groups, 12)
     if thing:
         choices.append(thing)
     
@@ -32,7 +32,8 @@ def generate_dict_text(groups):
     
     return f'''\
     {{
-        "event_text": "{groups[0]}",
+        "character": "{groups[0]}",
+        "event_text": "{groups[1]}",
         "choices": [
             {choices_text}
         ]
@@ -42,7 +43,7 @@ def generate_dict_text(groups):
 with open("choices_document.txt", encoding="utf-8") as file:
     text = file.read()
 
-pattern = r'''[\w] \\- [\"“]([\w\\!?.,;‘’\n -]+)[\"”]  
+pattern = r'''([\w]) \\- [\"“]([\w\\!?.,;‘’\n -]+)[\"”]  
 ([\w\\%!?,' -]+):\s+\\([\+\-][\d]+)\s+militar\s+/\s+\\([\+\-][\d]+)\sdinheiro\s+/\s+\\([\+\-][\d]+)\s+população\s+/\s+\\([\+\-][\d]+)\s+popularidade\s+
 ([\w\\%!?,' -]+):\s+\\([\+\-][\d]+)\s+militar\s+/\s+\\([\+\-][\d]+)\sdinheiro\s+/\s+\\([\+\-][\d]+)\s+população\s+/\s+\\([\+\-][\d]+)\s+popularidade\s+
 (?:([\w\\%!?,' -]+):\s+\\([\+\-][\d]+)\s+militar\s+/\s+\\([\+\-][\d]+)\sdinheiro\s+/\s+\\([\+\-][\d]+)\s+população\s+/\s+\\([\+\-][\d]+)\s+popularidade\s*)?(?:OBS: [\w ]+)?'''
@@ -58,7 +59,7 @@ if do_write:
         file.write("\n]")
 
 for match in re.findall(pattern, text):
-    print("const event_random = [\n")
+    print("export const event_random = [\n")
     for match in re.findall(pattern, text):
         print(generate_dict_text(match))
     print("\n]")
