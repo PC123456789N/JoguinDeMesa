@@ -20,25 +20,29 @@ function gerarCasoNormal() {
     indice = num;
 }
 
-const btnOver = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn");
-btnOver.forEach(btn => {
+const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn");
+btnGame.forEach(btn => {
+    const img = document.getElementById("imagem3");
     btn.addEventListener("mouseover", () => {
         const title = btn.title;
         switch (title) {
             case "Escolha 1":
-                alert("a");
+                img.src = "../../img/fundos/mesa1.png";
                 break;
             case "Escolha 2":
-                alert("aa");
+                img.src = "../../img/fundos/mesa2.png";
                 break;
             case "Escolha 3":
-                alert("aaa");
+                img.src = "../../img/fundos/mesa3.png";
                 break;
         }
     })
+
+    btn.addEventListener("mouseout", () => {
+        img.src = "../../img/fundos/mesa.png";
+    })
 })
 
-const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn");
 btnGame.forEach(btn => {
     btn.addEventListener("click", () => {
         gerarCasoNormal()
