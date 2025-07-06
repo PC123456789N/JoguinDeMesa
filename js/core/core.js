@@ -2,6 +2,7 @@ import {event_random} from "./random_events.js";
 import {getRandomInt} from "./common.js";
 import {getChoice, updateStats} from "./io_handler.js";
 
+let usedIndex = [];
 export function getEvent() {
     /** event structure
      * name: str
@@ -18,14 +19,18 @@ export function getEvent() {
      * ]
      */
 
-    const index = getRandomInt(0, event_random.length - 1)
+    let index = getRandomInt(0, event_random.length - 1);
+    while (usedIndex.includes(index)) {
+        index = getRandomInt(0, event_random.length - 1);
+    }
+    usedIndex.push(index);
 
-    console.log("Event list has .length: " + event_random.length)
-    console.log("Getting event from index: " + index)
+    console.log("Event list has .length: " + event_random.length);
+    console.log("Getting event from index: " + index);
 
-    const event = event_random[index]
+    const event = event_random[index];
 
-    return event
+    return event;
 }
 
 export function executeRandomEvent(event) {
@@ -111,7 +116,7 @@ export let military = 50;
 export let population = 50;
 export let popularity = 50;
 
-console.log("core.js loaded")
+console.log("core.js loaded");
 
 window.finance = finance;
 window.military = military;
