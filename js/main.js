@@ -1,6 +1,6 @@
 import {executeRandomEvent, getEvent} from "./core/core.js";
 
-const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn");
+const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3");
 btnGame.forEach(btn => {
     const img = document.getElementById("imagem3");
     btn.addEventListener("mouseover", () => {
