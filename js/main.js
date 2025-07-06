@@ -20,13 +20,25 @@ function gerarCasoNormal() {
     indice = num;
 }
 
-const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn");
-btnGame.forEach(a => {
-    a.addEventListener("hover", () => {
-        alert("aaa");
+const btnOver = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn");
+btnOver.forEach(btn => {
+    btn.addEventListener("mouseover", () => {
+        const title = btn.title;
+        switch (title) {
+            case "Escolha 1":
+                alert("a");
+                break;
+            case "Escolha 2":
+                alert("aa");
+                break;
+            case "Escolha 3":
+                alert("aaa");
+                break;
+        }
     })
 })
 
+const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn");
 btnGame.forEach(btn => {
     btn.addEventListener("click", () => {
         gerarCasoNormal()
@@ -36,7 +48,6 @@ btnGame.forEach(btn => {
         casoAnterior = casoAtual;
         switch (casoAtual) {
             case "m1":
-                
                 casosNormais.splice(indice, 1);
                 break;
             case "m2":
