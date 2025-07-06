@@ -115,13 +115,3 @@ export let finance = 50;
 export let military = 50;
 export let population = 50;
 export let popularity = 50;
-
-console.log("core.js loaded");
-
-window.finance = finance;
-window.military = military;
-window.population = population;
-window.popularity = popularity;
-window.getEvent = getEvent;
-window.executeRandomEvent = executeRandomEvent;
-window.checkGameOver = checkGameOver;
