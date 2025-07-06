@@ -20,7 +20,7 @@ function gerarCasoNormal() {
     indice = num;
 }
 
-const btnGame = document.querySelectorAll(".clickBtn");
+const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn");
 btnGame.forEach(btn => {
     btn.addEventListener("click", () => {
         gerarCasoNormal()
