@@ -741,4 +741,4 @@ export const event_random = [
         ]
     },
 
-]
+];
