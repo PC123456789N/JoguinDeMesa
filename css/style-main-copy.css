@@ -90,14 +90,14 @@ html, body {
     background-color: black;
     color: azure;
     display: none;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:Arial, Helvetica, sans-serif;
     border-left: 3px;
 }
 
 #textR{
     background-color: black;
     color: azure;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:Arial, Helvetica, sans-serif;
     border-right: 3px;
     border-top-style: solid;
     border-color:rgb(107, 107, 107);
