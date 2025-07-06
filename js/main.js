@@ -22,6 +22,28 @@ function gerarCasoNormal() {
 
 const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn");
 btnGame.forEach(btn => {
+    const img = document.getElementById("imagem3");
+    btn.addEventListener("mouseover", () => {
+        const title = btn.title;
+        switch (title) {
+            case "Escolha 1":
+                img.src = "../../img/fundos/mesa1.png";
+                break;
+            case "Escolha 2":
+                img.src = "../../img/fundos/mesa2.png";
+                break;
+            case "Escolha 3":
+                img.src = "../../img/fundos/mesa3.png";
+                break;
+        }
+    })
+
+    btn.addEventListener("mouseout", () => {
+        img.src = "../../img/fundos/mesa.png";
+    })
+})
+
+btnGame.forEach(btn => {
     btn.addEventListener("click", () => {
         gerarCasoNormal()
         while (casoAtual[0] == casoAnterior[0]) {
@@ -30,7 +52,6 @@ btnGame.forEach(btn => {
         casoAnterior = casoAtual;
         switch (casoAtual) {
             case "m1":
-                alert("O caso escolhido no random eh: "  + casoAtual); 
                 casosNormais.splice(indice, 1);
                 break;
             case "m2":

@@ -39,7 +39,7 @@ def generate_dict_text(groups):
     }},
 '''
 
-with open("choices_document.txt") as file:
+with open("choices_document.txt", encoding="utf-8") as file:
     text = file.read()
 
 pattern = r'''[\w] \\- [\"“]([\w\\!?.,;‘’\n -]+)[\"”]  
@@ -51,7 +51,7 @@ do_write = bool(input("Coloque alguma coisa para escrever no arquivo auto_events
 
 if do_write:
     # Write to auto_events.js
-    with open("random_events.js", "w") as file:
+    with open("random_events.js", "w", encoding="utf-8") as file:
         file.write("const event_random = [\n")
         for match in re.findall(pattern, text):
             file.write(generate_dict_text(match))

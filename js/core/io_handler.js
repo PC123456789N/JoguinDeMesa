@@ -28,8 +28,10 @@ function getChoice(choices) {
 }
 
 function updateStats(finance, military, population, popularity) {
-    // @BrasilicioHenrique, @brasilicioh
-    // implementar função para mudar os valores nos elementos do html
+    document.getElementById("varDin").innerHTML = finance;
+    document.getElementById("varMil").innerHTML = military;
+    document.getElementById("varPopu").innerHTML = population;
+    document.getElementById("varFama").innerHTML = popularity;
 }
 
 export {getChoice, updateStats}

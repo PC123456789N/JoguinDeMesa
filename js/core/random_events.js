@@ -1,23 +1,23 @@
 export const event_random = [
     {
-        "event_text": "As bases do exército estão lotadas\! Nós estamos precisando de mais dinheiro para conseguir construir mais bases militares.",
+        "event_text": "As bases do exército estão lotadas\! Nós estamos precisando de mais dinheiro para conseguir construir outras bases.",
         "choices": [
                         {
                 "text": "Ajudar",
                 "effects": {
                     "military": +10,
-                    "finance": -5,
+                    "finance": -10,
                     "population": +0,
-                    "popularity": +0,
+                    "popularity": +5,
                 }
             },
             {
                 "text": "Não ajudar",
                 "effects": {
-                    "military": -10,
+                    "military": -5,
                     "finance": +5,
                     "population": +0,
-                    "popularity": +0,
+                    "popularity": -5,
                 }
             },
             {
@@ -26,7 +26,7 @@ export const event_random = [
                     "military": -20,
                     "finance": +20,
                     "population": +0,
-                    "popularity": -5,
+                    "popularity": -10,
                 }
             },
 
@@ -40,7 +40,7 @@ export const event_random = [
                 "effects": {
                     "military": +10,
                     "finance": -20,
-                    "population": +0,
+                    "population": +5,
                     "popularity": +10,
                 }
             },
@@ -48,7 +48,7 @@ export const event_random = [
                 "text": "Não fazer evento",
                 "effects": {
                     "military": -10,
-                    "finance": +10,
+                    "finance": +15,
                     "population": +0,
                     "popularity": -20,
                 }
@@ -58,6 +58,72 @@ export const event_random = [
                 "effects": {
                     "military": -5,
                     "finance": +5,
+                    "population": +0,
+                    "popularity": -10,
+                }
+            },
+
+        ]
+    },
+    {
+        "event_text": "Muitos refugiados estão chegando no território de maneira clandestina. O exército não está gostando disso. Devemos fazer algo?",
+        "choices": [
+                        {
+                "text": "Não faça nada",
+                "effects": {
+                    "military": -10,
+                    "finance": +0,
+                    "population": +15,
+                    "popularity": +15,
+                }
+            },
+            {
+                "text": "Faça o que achar melhor",
+                "effects": {
+                    "military": +15,
+                    "finance": +5,
+                    "population": -5,
+                    "popularity": -20,
+                }
+            },
+            {
+                "text": "Vamos ajudá-los",
+                "effects": {
+                    "military": -5,
+                    "finance": +5,
+                    "population": +10,
+                    "popularity": +5,
+                }
+            },
+
+        ]
+    },
+    {
+        "event_text": "Recentemente o exército vem recebendo falsas acusações de racismo. Devemos fazer algo a respeito?",
+        "choices": [
+                        {
+                "text": "Dê um fim nisso",
+                "effects": {
+                    "military": +15,
+                    "finance": +0,
+                    "population": -10,
+                    "popularity": -10,
+                }
+            },
+            {
+                "text": "Prenda os racistas",
+                "effects": {
+                    "military": -15,
+                    "finance": +0,
+                    "population": +0,
+                    "popularity": +5,
+                }
+            },
+            {
+                "text": "Censure as denúncias",
+                "effects": {
+                    "military": +10,
+                    "finance": +0,
                     "population": +0,
                     "popularity": -10,
                 }
@@ -99,43 +165,199 @@ export const event_random = [
         ]
     },
     {
-        "event_text": "Avistou-se alguns navios estranhos no mar. Qual o procedimento?",
+        "event_text": "Há boatos que a Argentina e Uruguai estão invadindo nosso território e, de forma ilegal, roubando nossos recursos minerais. Devemos fazer algo ou esperamos mais tempo?",
         "choices": [
                         {
-                "text": "Ignorar",
+                "text": "Fechem as fronteiras",
                 "effects": {
-                    "military": -5,
-                    "finance": +0,
-                    "population": +0,
-                    "popularity": +5,
-                }
-            },
-            {
-                "text": "Tentar se comunicar",
-                "effects": {
-                    "military": +5,
-                    "finance": -5,
-                    "population": +0,
+                    "military": +10,
+                    "finance": -10,
+                    "population": -5,
                     "popularity": +0,
                 }
             },
             {
-                "text": "Atacar",
+                "text": "Avise para não fazerem isso",
                 "effects": {
-                    "military": +15,
+                    "military": -10,
+                    "finance": +0,
+                    "population": +0,
+                    "popularity": +10,
+                }
+            },
+            {
+                "text": "São apenas boatos",
+                "effects": {
+                    "military": -5,
                     "finance": -10,
-                    "population": -10,
-                    "popularity": -10,
+                    "population": +0,
+                    "popularity": +0,
                 }
             },
 
         ]
     },
     {
-        "event_text": "O país está com uma grande dívida externa, precisamos pagar\! devemos aumentar os impostos?",
+        "event_text": "Os habitantes de Pau dos Ferros do Rio Grande do Norte estão com escassez de água. Começaram a reclamar do seu governo. O que faremos?",
         "choices": [
                         {
-                "text": "Pode aumentar\!",
+                "text": "Levem recursos e ajudem-os",
+                "effects": {
+                    "military": -5,
+                    "finance": -15,
+                    "population": +0,
+                    "popularity": +15,
+                }
+            },
+            {
+                "text": "A falta de água na região é normal",
+                "effects": {
+                    "military": +5,
+                    "finance": +0,
+                    "population": +0,
+                    "popularity": -5,
+                }
+            },
+
+        ]
+    },
+    {
+        "event_text": "A aeronáutica de Brasília está precisando de mais um aeroporto; mas a população também. Existe apenas um terreno para fazer a construção.",
+        "choices": [
+                        {
+                "text": "Construam a base militar",
+                "effects": {
+                    "military": +15,
+                    "finance": -10,
+                    "population": +0,
+                    "popularity": -5,
+                }
+            },
+            {
+                "text": "Façam um aeroporto misto",
+                "effects": {
+                    "military": +10,
+                    "finance": -20,
+                    "population": +5,
+                    "popularity": +10,
+                }
+            },
+            {
+                "text": "Não façam nenhum aeroporto",
+                "effects": {
+                    "military": -5,
+                    "finance": +5,
+                    "population": +0,
+                    "popularity": -5,
+                }
+            },
+
+        ]
+    },
+    {
+        "event_text": "Nós da marinha precisamos de uma praia de nossa posse para realizarmos operações militares. Mas o povo fica invadindo a praia.",
+        "choices": [
+                        {
+                "text": "Deixem a praia para a população",
+                "effects": {
+                    "military": -15,
+                    "finance": +0,
+                    "population": +0,
+                    "popularity": +10,
+                }
+            },
+            {
+                "text": "Botem cercas",
+                "effects": {
+                    "military": +15,
+                    "finance": -5,
+                    "population": +0,
+                    "popularity": -10,
+                }
+            },
+            {
+                "text": "Comprem o terreno se quiserem usar",
+                "effects": {
+                    "military": -20,
+                    "finance": +15,
+                    "population": +0,
+                    "popularity": +0,
+                }
+            },
+
+        ]
+    },
+    {
+        "event_text": "Notamos que muitos moradores de rua estão se aglomerando próximo das praias. Isso causa insatisfação das pessoas que vão para as praias e também à marinha.",
+        "choices": [
+                        {
+                "text": "Tirem-os de lá",
+                "effects": {
+                    "military": +10,
+                    "finance": -5,
+                    "population": +0,
+                    "popularity": -5,
+                }
+            },
+            {
+                "text": "Ajudem-os para eles saírem",
+                "effects": {
+                    "military": -5,
+                    "finance": -10,
+                    "population": +0,
+                    "popularity": +5,
+                }
+            },
+            {
+                "text": "Não façam nada",
+                "effects": {
+                    "military": -10,
+                    "finance": +0,
+                    "population": +0,
+                    "popularity": -5,
+                }
+            },
+
+        ]
+    },
+    {
+        "event_text": "A ilha em Pernambuco Fernando de Noronha se popularizou muito e tem belos mares; a marinha pode ficar com o local?",
+        "choices": [
+                        {
+                "text": "Fiquem",
+                "effects": {
+                    "military": +20,
+                    "finance": -10,
+                    "population": +0,
+                    "popularity": -10,
+                }
+            },
+            {
+                "text": "Deixem o local público",
+                "effects": {
+                    "military": -10,
+                    "finance": +5,
+                    "population": +0,
+                    "popularity": +10,
+                }
+            },
+            {
+                "text": "Façam o local ser privado",
+                "effects": {
+                    "military": -5,
+                    "finance": +20,
+                    "population": +0,
+                    "popularity": -5,
+                }
+            },
+
+        ]
+    },
+    {
+        "event_text": "O país está com uma grande dívida externa; precisamos pagar\! Devemos aumentar os impostos?",
+        "choices": [
+                        {
+                "text": "Aumentem",
                 "effects": {
                     "military": +0,
                     "finance": +10,
@@ -144,7 +366,7 @@ export const event_random = [
                 }
             },
             {
-                "text": "Não aumentem\!",
+                "text": "Não aumentem",
                 "effects": {
                     "military": +0,
                     "finance": -10,
@@ -153,19 +375,19 @@ export const event_random = [
                 }
             },
             {
-                "text": "TRIPLIQUEM OS IMPOSTOS\!",
+                "text": "Tripliquem-os",
                 "effects": {
                     "military": +0,
                     "finance": +30,
                     "population": +0,
-                    "popularity": -30,
+                    "popularity": -25,
                 }
             },
 
         ]
     },
     {
-        "event_text": "O exército está consumindo muitos dos recursos financeiros que poderiam ser re-estabelecidos em outras áreas. Podemos tomar esses recursos para nós?",
+        "event_text": "O exército está consumindo muitos dos recursos financeiros que poderiam ser usados em outras áreas para a população ou para o governo. Podemos tomar esses recursos?",
         "choices": [
                         {
                 "text": "Pegue uma parte",
@@ -173,7 +395,7 @@ export const event_random = [
                     "military": -15,
                     "finance": +15,
                     "population": +0,
-                    "popularity": +0,
+                    "popularity": +5,
                 }
             },
             {
@@ -182,7 +404,7 @@ export const event_random = [
                     "military": +10,
                     "finance": -10,
                     "population": +0,
-                    "popularity": +0,
+                    "popularity": -5,
                 }
             },
             {
@@ -190,7 +412,7 @@ export const event_random = [
                 "effects": {
                     "military": -10,
                     "finance": -10,
-                    "population": +20,
+                    "population": +5,
                     "popularity": +10,
                 }
             },
@@ -198,15 +420,15 @@ export const event_random = [
         ]
     },
     {
-        "event_text": "Estamos com os cofres cheios\! As pessoas precisam de ajuda, Deveríamos criar um programa de auxílio para os necessitados?",
+        "event_text": "Estamos com os cofres cheios\! As pessoas precisam de ajuda, deveríamos criar um programa de auxílio para os necessitados?",
         "choices": [
                         {
                 "text": "Crie um",
                 "effects": {
                     "military": +0,
                     "finance": -20,
-                    "population": +10,
-                    "popularity": +10,
+                    "population": +5,
+                    "popularity": +15,
                 }
             },
             {
@@ -215,7 +437,7 @@ export const event_random = [
                     "military": +0,
                     "finance": +10,
                     "population": -10,
-                    "popularity": +0,
+                    "popularity": -5,
                 }
             },
             {
@@ -223,8 +445,8 @@ export const event_random = [
                 "effects": {
                     "military": +0,
                     "finance": +20,
-                    "population": -20,
-                    "popularity": -10,
+                    "population": -15,
+                    "popularity": -15,
                 }
             },
 
@@ -238,7 +460,7 @@ export const event_random = [
                 "effects": {
                     "military": +0,
                     "finance": -10,
-                    "population": +0,
+                    "population": -10,
                     "popularity": +10,
                 }
             },
@@ -247,8 +469,8 @@ export const event_random = [
                 "effects": {
                     "military": +0,
                     "finance": +10,
-                    "population": +0,
-                    "popularity": -10,
+                    "population": -15,
+                    "popularity": -20,
                 }
             },
             {
@@ -256,29 +478,29 @@ export const event_random = [
                 "effects": {
                     "military": +0,
                     "finance": -30,
-                    "population": +0,
-                    "popularity": +20,
+                    "population": -5,
+                    "popularity": +25,
                 }
             },
 
         ]
     },
     {
-        "event_text": "Senhor, a população aqui é péssima em pagar seus empréstimos\! Eu gostaria de uma pequena força militar para ‘dissuadir’ os devedores\!",
+        "event_text": "Senhor, a população é péssima em pagar seus empréstimos\! Eu gostaria de uma pequena força militar para ‘dissuadir’ os devedores\!",
         "choices": [
                         {
-                "text": "Junte alguns soldados e saia da frente",
+                "text": "Junte alguns soldados",
                 "effects": {
                     "military": -10,
-                    "finance": +30,
-                    "population": -10,
+                    "finance": +20,
+                    "population": -5,
                     "popularity": -10,
                 }
             },
             {
                 "text": "Os soldados não vão trabalhar para você",
                 "effects": {
-                    "military": +10,
+                    "military": +5,
                     "finance": -10,
                     "population": +0,
                     "popularity": +0,
@@ -297,76 +519,43 @@ export const event_random = [
         ]
     },
     {
-        "event_text": "Senhor, os bancos foram assaltados recentemente\! é de facto uma pena, eu gostaria de pedir a honra de ser confiado um empréstimo de vossa excelência\!",
+        "event_text": "Senhor, os bancos foram assaltados recentemente\! Isso é uma pena. Eu gostaria de pedir a honra de ser confiado um empréstimo de vossa excelência\!",
         "choices": [
                         {
-                "text": "Claro, mas a 10% de juros ao mês\!",
+                "text": "Claro, não vejo problemas",
                 "effects": {
                     "military": +0,
-                    "finance": -20,
+                    "finance": -25,
                     "population": +0,
-                    "popularity": +10,
+                    "popularity": +5,
                 }
             },
             {
-                "text": "Jamais, Não é culpa minha que você não proteje seu dinheiro",
+                "text": "Não farei isso",
                 "effects": {
                     "military": +0,
                     "finance": +0,
                     "population": +0,
-                    "popularity": -10,
+                    "popularity": -15,
                 }
             },
             {
-                "text": "Pegue dinheiro da previdência\!",
+                "text": "Pegue dinheiro da previdência",
                 "effects": {
                     "military": +0,
                     "finance": +10,
-                    "population": -20,
-                    "popularity": -10,
-                }
-            },
-
-        ]
-    },
-    {
-        "event_text": "Senhor, queria apresentar uma proposta porque não lançamos uma nova medida de Juros compostos para todas as linhas de crédito do Brasil? certamente poderíamos lucrar com isso, metade de toda a renda será sua em impostos\!",
-        "choices": [
-                        {
-                "text": "boa ideia\! vamos fazer isso",
-                "effects": {
-                    "military": +0,
-                    "finance": +30,
                     "population": -10,
-                    "popularity": -30,
-                }
-            },
-            {
-                "text": "o'que? Isso é impensável\! é abuso do consumidor",
-                "effects": {
-                    "military": +0,
-                    "finance": +0,
-                    "population": +10,
-                    "popularity": +10,
-                }
-            },
-            {
-                "text": "saia daqui seu agiota maldito\!",
-                "effects": {
-                    "military": +0,
-                    "finance": +0,
-                    "population": +0,
-                    "popularity": +20,
+                    "popularity": -15,
                 }
             },
 
         ]
     },
     {
-        "event_text": "Vossa excelência\! Deveríamos liberar crédito igualmente para as mulheres e homens? tendo em vista que as cidadãs do nosso grande país precisam ser independentes para gastar seu dinheiro\!",
+        "event_text": "Vossa excelência\! Deveríamos liberar crédito igualmente para as mulheres e homens? Tendo em vista que as cidadãs do nosso país precisam ser independentes para gastar seu dinheiro\!",
         "choices": [
                         {
-                "text": "Ue, mas as mulheres já podem abrir contas bancárias",
+                "text": "Mas as mulheres já podem ter contas bancárias",
                 "effects": {
                     "military": +0,
                     "finance": +0,
@@ -379,7 +568,7 @@ export const event_random = [
                 "effects": {
                     "military": +0,
                     "finance": +0,
-                    "population": +10,
+                    "population": +5,
                     "popularity": +10,
                 }
             },
@@ -389,7 +578,7 @@ export const event_random = [
                     "military": +10,
                     "finance": +0,
                     "population": +0,
-                    "popularity": +10,
+                    "popularity": -5,
                 }
             },
 
