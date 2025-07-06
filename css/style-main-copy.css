@@ -21,7 +21,13 @@ html, body {
     padding: 0%;
 }
 
-
+#Start{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+    top:0%
+}
 
 #imagem1{
     width: 100%;
@@ -116,6 +122,12 @@ html, body {
 }
 
 @media (min-width: 767px) {
+  #Start{
+    width: 90%;
+    height: auto;
+    max-width: 100%;
+  }
+  
   #imagem1 {
     width: 90%;
     height: auto;
