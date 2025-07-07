@@ -1,4 +1,4 @@
-const event_random = [
+export const event_random = [
     {
         "character": "Marechal Silva",
         "event_text": "As bases do exército estão lotadas\! Nós estamos precisando de mais dinheiro para conseguir construir outras bases.",
