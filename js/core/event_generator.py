@@ -43,7 +43,7 @@ def generate_dict_text(groups):
 with open("choices_document.txt", encoding="utf-8") as file:
     text = file.read()
 
-pattern = r'''([\w]) \\- [\"“](.+)[\"”]  
+pattern = r'''(.+) \\- [\"“](.+)[\"”]  
 (.+):\s+\\([\+\-][\d]+)\s+militar\s+/\s+\\([\+\-][\d]+)\sdinheiro\s+/\s+\\([\+\-][\d]+)\s+população\s+/\s+\\([\+\-][\d]+)\s+popularidade\s+
 (.+):\s+\\([\+\-][\d]+)\s+militar\s+/\s+\\([\+\-][\d]+)\sdinheiro\s+/\s+\\([\+\-][\d]+)\s+população\s+/\s+\\([\+\-][\d]+)\s+popularidade\s+
 (?:(.+):\s+\\([\+\-][\d]+)\s+militar\s+/\s+\\([\+\-][\d]+)\sdinheiro\s+/\s+\\([\+\-][\d]+)\s+população\s+/\s+\\([\+\-][\d]+)\s+popularidade\s*)?(?:OBS: [\w ]+)?'''

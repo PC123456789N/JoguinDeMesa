@@ -1,6 +1,6 @@
 import {event_random} from "./random_events.js";
 import {getRandomInt} from "./common.js";
-import {getChoice, updateStats} from "./io_handler.js";
+import {getChoice, updateHtmlEvent, updateStats} from "./io_handler.js";
 
 let usedIndex = [];
 export function getEvent() {
@@ -68,8 +68,8 @@ export function executeRandomEvent(event) {
         }
     }
 
+    updateHtmlEvent(event);
     updateStats(finance, military, population, popularity);
-
 }
 
 export function checkGameOver() {

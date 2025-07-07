@@ -1,6 +1,6 @@
 const event_random = [
     {
-        "character": "M",
+        "character": "Marechal Silva",
         "event_text": "As bases do exército estão lotadas\! Nós estamos precisando de mais dinheiro para conseguir construir outras bases.",
         "choices": [
                         {
@@ -34,7 +34,7 @@ const event_random = [
         ]
     },
     {
-        "character": "M",
+        "character": "Marechal Silva",
         "event_text": "Nós queremos fazer um evento em escala internacional para comemorar o aniversário do exército. O governo pode arcar com os custos?",
         "choices": [
                         {
@@ -68,7 +68,7 @@ const event_random = [
         ]
     },
     {
-        "character": "M",
+        "character": "Marechal Silva",
         "event_text": "Muitos refugiados estão chegando no território de maneira clandestina. O exército não está gostando disso. Devemos fazer algo?",
         "choices": [
                         {
@@ -102,7 +102,7 @@ const event_random = [
         ]
     },
     {
-        "character": "M",
+        "character": "Marechal Silva",
         "event_text": "Recentemente o exército vem recebendo falsas acusações de racismo. Devemos fazer algo a respeito?",
         "choices": [
                         {
@@ -136,7 +136,7 @@ const event_random = [
         ]
     },
     {
-        "character": "S",
+        "character": "Tenente Taísa Torres",
         "event_text": "A aeronáutica do Brasil está chamando atenção do mundo afora. Muitos jovens de outros países querem entrar no país por isso.",
         "choices": [
                         {
@@ -170,7 +170,7 @@ const event_random = [
         ]
     },
     {
-        "character": "S",
+        "character": "Tenente Taísa Torres",
         "event_text": "Há boatos que a Argentina e Uruguai estão invadindo nosso território e, de forma ilegal, roubando nossos recursos minerais. Devemos fazer algo ou esperamos mais tempo?",
         "choices": [
                         {
@@ -204,7 +204,7 @@ const event_random = [
         ]
     },
     {
-        "character": "S",
+        "character": "Tenente Taísa Torres",
         "event_text": "Os habitantes de Pau dos Ferros do Rio Grande do Norte estão com escassez de água. Começaram a reclamar do seu governo. O que faremos?",
         "choices": [
                         {
@@ -238,7 +238,7 @@ const event_random = [
         ]
     },
     {
-        "character": "S",
+        "character": "Tenente Taísa Torres",
         "event_text": "A aeronáutica de Brasília está precisando de mais um aeroporto; mas a população também. Existe apenas um terreno para fazer a construção.",
         "choices": [
                         {
@@ -272,7 +272,7 @@ const event_random = [
         ]
     },
     {
-        "character": "T",
+        "character": "Sargento Márcio",
         "event_text": "Avistou-se alguns navios estranhos no mar. Qual o procedimento?",
         "choices": [
                         {
@@ -306,7 +306,7 @@ const event_random = [
         ]
     },
     {
-        "character": "T",
+        "character": "Sargento Márcio",
         "event_text": "Nós da marinha precisamos de uma praia de nossa posse para realizarmos operações militares. Mas o povo fica invadindo a praia.",
         "choices": [
                         {
@@ -340,7 +340,7 @@ const event_random = [
         ]
     },
     {
-        "character": "T",
+        "character": "Sargento Márcio",
         "event_text": "Notamos que muitos moradores de rua estão se aglomerando próximo das praias. Isso causa insatisfação das pessoas que vão para as praias e também à marinha.",
         "choices": [
                         {
@@ -374,7 +374,7 @@ const event_random = [
         ]
     },
     {
-        "character": "T",
+        "character": "Sargento Márcio",
         "event_text": "A ilha em Pernambuco Fernando de Noronha se popularizou muito e tem belos mares; a marinha pode ficar com o local?",
         "choices": [
                         {
@@ -408,7 +408,7 @@ const event_random = [
         ]
     },
     {
-        "character": "E",
+        "character": "Economista Síntia",
         "event_text": "O país está com uma grande dívida externa; precisamos pagar\! Devemos aumentar os impostos?",
         "choices": [
                         {
@@ -442,7 +442,7 @@ const event_random = [
         ]
     },
     {
-        "character": "E",
+        "character": "Economista Síntia",
         "event_text": "O exército está consumindo muitos dos recursos financeiros que poderiam ser usados em outras áreas para a população ou para o governo. Podemos tomar esses recursos?",
         "choices": [
                         {
@@ -476,7 +476,7 @@ const event_random = [
         ]
     },
     {
-        "character": "E",
+        "character": "Economista Síntia",
         "event_text": "Estamos com os cofres cheios\! As pessoas precisam de ajuda, deveríamos criar um programa de auxílio para os necessitados?",
         "choices": [
                         {
@@ -510,7 +510,7 @@ const event_random = [
         ]
     },
     {
-        "character": "E",
+        "character": "Economista Síntia",
         "event_text": "Uma nação vizinha está em ruínas graças a um terremoto na noite passada, acha que deveríamos mandar uma pequena doação?",
         "choices": [
                         {
@@ -544,7 +544,7 @@ const event_random = [
         ]
     },
     {
-        "character": "B",
+        "character": "Banqueiro Bruno Barros",
         "event_text": "Senhor, a população é péssima em pagar seus empréstimos\! Eu gostaria de uma pequena força militar para ‘dissuadir’ os devedores\!",
         "choices": [
                         {
@@ -578,7 +578,7 @@ const event_random = [
         ]
     },
     {
-        "character": "B",
+        "character": "Banqueiro Bruno Barros",
         "event_text": "Senhor, os bancos foram assaltados recentemente\! Isso é uma pena. Eu gostaria de pedir a honra de ser confiado um empréstimo de vossa excelência\!",
         "choices": [
                         {
@@ -612,7 +612,7 @@ const event_random = [
         ]
     },
     {
-        "character": "B",
+        "character": "Banqueiro Bruno Barros",
         "event_text": "Senhor, queria apresentar uma proposta. Por que não lançamos uma nova medida de juros compostos para todas as linhas de crédito do Brasil? Certamente poderíamos lucrar com isso, metade de toda a renda será sua em impostos\!",
         "choices": [
                         {
@@ -646,7 +646,7 @@ const event_random = [
         ]
     },
     {
-        "character": "B",
+        "character": "Banqueiro Bruno Barros",
         "event_text": "Vossa excelência\! Deveríamos liberar crédito igualmente para as mulheres e homens? Tendo em vista que as cidadãs do nosso país precisam ser independentes para gastar seu dinheiro\!",
         "choices": [
                         {
@@ -680,7 +680,7 @@ const event_random = [
         ]
     },
     {
-        "character": "C",
+        "character": "Contador Roberto",
         "event_text": "Muitas pessoas começaram a vir para o Brasil; não existe uma cidade sequer sem turistas.",
         "choices": [
                         {
@@ -714,7 +714,7 @@ const event_random = [
         ]
     },
     {
-        "character": "C",
+        "character": "Contador Roberto",
         "event_text": "O nosso país está com um grande número de idosos devido ao nosso novo sistema de saúde; não existe uma família sequer sem pelo menos 2 idosos.",
         "choices": [
                         {
@@ -748,7 +748,7 @@ const event_random = [
         ]
     },
     {
-        "character": "C",
+        "character": "Contador Roberto",
         "event_text": "O número de crianças por mulher está caindo esporadicamente, era 6 filhos por mulher 10 anos atrás. Devemos fazer algo a respeito?",
         "choices": [
                         {
@@ -782,7 +782,7 @@ const event_random = [
         ]
     },
     {
-        "character": "C",
+        "character": "Contador Roberto",
         "event_text": "O número de mulheres solteiras que trabalham para sustentar os filhos está crescendo, isso pode causar uma redução na natalidade. O que faremos?",
         "choices": [
                         {
@@ -816,7 +816,7 @@ const event_random = [
         ]
     },
     {
-        "character": "R",
+        "character": "Recenseadora do IBGE Maria",
         "event_text": "Notamos que o país teve um aumento gigantesco na taxa de natalidade. Devemos fazer algum tipo de controle para isso?",
         "choices": [
                         {
@@ -850,7 +850,7 @@ const event_random = [
         ]
     },
     {
-        "character": "R",
+        "character": "Recenseadora do IBGE Maria",
         "event_text": "Notamos que boa parte da nossa população está morando nas zonas mais litorâneas. Devemos estimular a migração pro interior?",
         "choices": [
                         {
@@ -884,7 +884,7 @@ const event_random = [
         ]
     },
     {
-        "character": "R",
+        "character": "Recenseadora do IBGE Maria",
         "event_text": "Os recentes dados de emigração indicam que as maiores mentes do país estão fugindo para o exterior, eles culpam a falta de investimento e condições de vida e salários, isso pode atrasar o desenvolvimento e o militarismo do país.",
         "choices": [
                         {
@@ -918,7 +918,7 @@ const event_random = [
         ]
     },
     {
-        "character": "R",
+        "character": "Recenseadora do IBGE Maria",
         "event_text": "A taxa de desemprego do país está muito alta. Isso pode gerar péssimos problemas para o futuro.",
         "choices": [
                         {
@@ -952,7 +952,7 @@ const event_random = [
         ]
     },
     {
-        "character": "J",
+        "character": "Jornalista Jaime Jason",
         "event_text": "A expansão urbana no interior da floresta amazônica está provocando problemas ambientais e sociais com os habitantes nativos da região.",
         "choices": [
                         {
@@ -986,7 +986,7 @@ const event_random = [
         ]
     },
     {
-        "character": "J",
+        "character": "Jornalista Jaime Jason",
         "event_text": "Nessa tarde, um blindado do exército atropelou uma criança. Diversas notícias sobre a morte de crianças estão aparecendo por todos os cantos do país, a mortalidade infantil está muito alta, o senhor deve fazer algo a respeito.",
         "choices": [
                         {
@@ -1020,7 +1020,7 @@ const event_random = [
         ]
     },
     {
-        "character": "J",
+        "character": "Jornalista Jaime Jason",
         "event_text": "Muitos brasileiros estão com problemas relacionados à moradia ou até mesmo em situação de rua. A população demanda que o senhor faça algo a respeito disso\!",
         "choices": [
                         {
@@ -1054,7 +1054,7 @@ const event_random = [
         ]
     },
     {
-        "character": "J",
+        "character": "Jornalista Jaime Jason",
         "event_text": "Meu filho está na faculdade. Ele diz que a população jovem está insatisfeita com seu governo. Eles pedem mais políticas públicas direcionadas a eles e à inclusão social.",
         "choices": [
                         {
@@ -1088,7 +1088,7 @@ const event_random = [
         ]
     },
     {
-        "character": "G",
+        "character": "Guarda Glória Góis",
         "event_text": "É notório o alto índice no aumento de criminalidade. Existem poucos policiais e vigilantes nas ruas. Todas as classes do país estão sofrendo com isso.",
         "choices": [
                         {
@@ -1122,7 +1122,7 @@ const event_random = [
         ]
     },
     {
-        "character": "G",
+        "character": "Guarda Glória Góis",
         "event_text": "Uma nova favela surgiu próximo à rodovia. Já passam de mil moradores. Não há saneamento, e o tráfico está se instalando rapidamente.",
         "choices": [
                         {
@@ -1156,7 +1156,7 @@ const event_random = [
         ]
     },
     {
-        "character": "G",
+        "character": "Guarda Glória Góis",
         "event_text": "Recebemos várias denúncias de pais revoltados. A escola da região não comporta mais o número de alunos, e as filas nos hospitais passam de 10 horas.",
         "choices": [
                         {
@@ -1190,7 +1190,7 @@ const event_random = [
         ]
     },
     {
-        "character": "G",
+        "character": "Guarda Glória Góis",
         "event_text": "Enquanto fazia minha patrulha noturna, acho que vi o marechal junto de pessoas que parecem ser um esquadrão criminoso. Suspeito que eles possam estar tramando algo. Posso enviar policiais para prender esse esquadrão?",
         "choices": [
                         {
@@ -1224,7 +1224,7 @@ const event_random = [
         ]
     },
     {
-        "character": "K",
+        "character": "Karateca Kátia Kane",
         "event_text": "Senhor, com as olimpíadas se aproximando, gostaria de pedir uma quantidade significativa de fundos para abrir academias e dojos de treinamento públicos para estimular o esporte nacional.",
         "choices": [
                         {
@@ -1258,8 +1258,8 @@ const event_random = [
         ]
     },
     {
-        "character": "K",
-        "event_text": "Senhor, Alguns Militares invadiram uma academia da região para capturar um jornalista\! Gostaria de pedir para que isso fosse evitado no futuro. Alguns estão com medo de simplesmente sair de casa.",
+        "character": "Karateca Kátia Kane",
+        "event_text": "Senhor, alguns militares invadiram uma academia da região para capturar um jornalista\! Gostaria de pedir para que isso fosse evitado no futuro. Alguns estão com medo de simplesmente sair de casa.",
         "choices": [
                         {
                 "text": "Irei reclamar com a tenente a respeito disso",
@@ -1292,7 +1292,7 @@ const event_random = [
         ]
     },
     {
-        "character": "K",
+        "character": "Karateca Kátia Kane",
         "event_text": "Senhor, uma famosa equipe de atletas está protestando publicamente contra a polícia. Peço que deixe-os protestar, o esporte deve ser uma área livre para a liberdade de expressão.",
         "choices": [
                         {
@@ -1326,7 +1326,7 @@ const event_random = [
         ]
     },
     {
-        "character": "K",
+        "character": "Karateca Kátia Kane",
         "event_text": "Meu dojô está planejando fazer um evento público para ensinar defesa pessoal. Esse evento será destinado à mulheres e crianças. Mas precisamos de recursos financeiros para fazê-ló.",
         "choices": [
                         {
