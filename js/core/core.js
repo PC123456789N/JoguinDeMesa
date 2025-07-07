@@ -21,15 +21,17 @@ export function getEvent() {
      */
 
     let index = getRandomInt(0, event_random.length - 1);
-    while (usedIndex.includes(index)) {
-        index = getRandomInt(0, event_random.length - 1);
+    let event = event_random[index];
+    if (usedIndex.length != 0) {
+        while (usedIndex.includes(index) || (usedIndex.length > 0 && event["character"] === event_random[usedIndex.at(-1)]["character"])) {        
+            index = getRandomInt(0, event_random.length - 1);
+            event = event_random[index];
+        }
     }
     usedIndex.push(index);
 
     console.log("Event list has .length: " + event_random.length);
     console.log("Getting event from index: " + index);
-
-    const event = event_random[index];
 
     return event;
 }
