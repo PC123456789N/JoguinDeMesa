@@ -44,19 +44,19 @@ export function updateHtmlEvent(event) {
 
     switch (event["character"]) {
         case "Marechal Silva":
-            document.getElementById("imagem2").src = "../../img/personagens/marechal.png";
+            document.getElementById("imagem2").src = "../img/personagens/marechal.png";
             break;
         case "Tenente Taísa Torres":
-            document.getElementById("imagem2").src = "../../img/personagens/tenente.png";
+            document.getElementById("imagem2").src = "../img/personagens/tenente.png";
             break;
         case "Sargento Márcio":
-            document.getElementById("imagem2").src = "../../img/personagens/sargento.png";
+            document.getElementById("imagem2").src = "../img/personagens/sargento.png";
             break;
         case "Economista Síntia":
-            document.getElementById("imagem2").src = "../../img/personagens/economista.png";
+            document.getElementById("imagem2").src = "../img/personagens/economista.png";
             break;
         case "Banqueiro Bruno Barros":
-            document.getElementById("imagem2").src = "../../img/personagens/banqueiro.png";
+            document.getElementById("imagem2").src = "../img/personagens/banqueiro.png";
             break;
         case "Contador Roberto":
             document.getElementById("imagem2").src = "../../img/personagens/contador.png";
