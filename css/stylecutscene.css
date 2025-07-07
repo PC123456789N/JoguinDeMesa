@@ -1,0 +1,11 @@
+.container-fluid{
+  background-color: darkgrey;
+}
+
+#header{
+  background-color: black;
+  color: azure;
+  margin-bottom: 1%;
+  border-bottom-style: solid ;
+  border-color: rgb(107, 107, 107);
+}
