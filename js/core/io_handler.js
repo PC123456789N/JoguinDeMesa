@@ -59,19 +59,19 @@ export function updateHtmlEvent(event) {
             document.getElementById("imagem2").src = "../img/personagens/banqueiro.png";
             break;
         case "Contador Roberto":
-            document.getElementById("imagem2").src = "../../img/personagens/contador.png";
+            document.getElementById("imagem2").src = "../img/personagens/contador.png";
             break;
         case "Recenseadora do IBGE Maria":
-            document.getElementById("imagem2").src = "../../img/personagens/recenseadora.png";
+            document.getElementById("imagem2").src = "../img/personagens/recenseadora.png";
             break;
         case "Jornalista Jaime Jason":
-            document.getElementById("imagem2").src = "../../img/personagens/jornalista.png";
+            document.getElementById("imagem2").src = "../img/personagens/jornalista.png";
             break;
         case "Guarda Glória Góis":
-            document.getElementById("imagem2").src = "../../img/personagens/guarda.png";
+            document.getElementById("imagem2").src = "../img/personagens/guarda.png";
             break;
         case "Karateca Kátia Kane":
-            document.getElementById("imagem2").src = "../../img/personagens/karateca.png";
+            document.getElementById("imagem2").src = "../img/personagens/karateca.png";
             break;
     }
 }
