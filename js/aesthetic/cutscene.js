@@ -7,27 +7,25 @@ const area2 = document.getElementById("clickarea2");
 const area3 = document.getElementById("clickarea3");
 const audio = document.getElementById("startmusic");
 
-area1.style.display = "none";
-area2.style.display = "none";
-area3.style.display = "none";
+img1.src = "../../img/fundos/StartScreen.png";
+start.src = "../../img/fundos/StartScreen.png";
+img3.style.display = "none";
 
 
-start.addEventListener("click", function() {
-    start.style.display = "none";
-    img1.src = "../../img/GIFs/startscreen.gif";
-    audio.muted = false;
-    audio.play();
+start.addEventListener("click", function(){
+    start.src = "../../img/GIFs/video.mp4"
+    start.muted = false;
+    start.play();
     
-    setTimeout(() => {
+    
+}, {once: true});
+
+start.onended = function() {
+    start.style.display = "none";
     img1.src = "../../img/fundos/backmorning.jpeg";
-    img3.src = "../../img/fundos/mesa.png"
-    audio.pause();
+    img3.src = "../../img/fundos/mesa.png";
+    img3.style.display = "block";
+    };
 
-    area1.style.display = "block";
-    area2.style.display = "block";
-    area3.style.display = "block";
+   
 
-    }, 12000);
-
-
-});
