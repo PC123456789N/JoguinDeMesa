@@ -1,11 +1,131 @@
-.container-fluid{
-  background-color: darkgrey;
+html, body {
+  overflow-x:hidden;
 }
 
+.container-fluid{
+    background-color: darkgrey;
+}
+
+#warning{
+  display: none;
+}
 #header{
-  background-color: black;
-  color: azure;
-  margin-bottom: 1%;
-  border-bottom-style: solid ;
-  border-color: rgb(107, 107, 107);
+    background-color: black;
+    color: azure;
+    margin-bottom: 1%;
+    border-bottom-style: solid ;
+    border-color: rgb(107, 107, 107);
+}
+
+#mainvideo{
+    padding: 0%;
+}
+
+#Start{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+    top:0%
+}
+
+#video{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+#capa {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+#speechMobile{
+    background-color: black;
+    color: white;
+    margin-top: 1%;
+    padding-top: 2%;
+}
+#status{
+    background-color: black;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    border-top-style: double ;
+    border-color: rgb(107, 107, 107);
+}
+
+#textL{
+    background-color: black;
+    color: azure;
+    display: none;
+    font-family:Arial, Helvetica, sans-serif;
+    border-left: 3px;
+    padding-top: 2%;
+}
+
+#textR{
+    background-color: black;
+    color: azure;
+    font-family:Arial, Helvetica, sans-serif;
+    border-right: 3px;
+    border-top-style: solid;
+    border-color:rgb(107, 107, 107);
+    padding-top: 2%;
+}
+
+.title-pc{
+  display: none;
+}
+
+.img-fluid{
+  width: 50px;
+  height: 50px;
+}
+
+@media (min-width: 767px) {
+  #Start{
+    width: 90%;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  #video {
+    width: 90%;
+    height: auto;
+    max-width: 100%;
+  }
+  #capa {
+    width: 90%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  #textR{
+    border-top-style: none;
+    border-color:rgb(107, 107, 107);
+  }
+
+  #textL{
+    display: inline;
+  }
+
+  #buttons{
+    display: none;
+  }
+  #speechMobile{
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .title-pc{
+    display: inline;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 767px){
+  #warning{
+    display: block;
+  }
 }
