@@ -46,13 +46,13 @@ btnGame.forEach((btn, index) => {
                             break;
                     }
                     if (mudanca == -5 || mudanca == 0 || mudanca == 5) {
-                        document.getElementById(ide[0]).src = "../img/atri/tinyball.png";
+                        document.getElementById(ide[0]).src = "../img/atri/ball0.png";
                     } else if (mudanca == -15 || mudanca == -10 || mudanca == 10 || mudanca == 15) {
-                        document.getElementById(ide[0]).src = "../img/atri/smallball.png";
+                        document.getElementById(ide[0]).src = "../img/atri/ball1.png";
                     } else if (mudanca == -25 || mudanca == -20 || mudanca == 20 || mudanca == 25) {
-                        document.getElementById(ide[0]).src = "../img/atri/mediumball.png";
+                        document.getElementById(ide[0]).src = "../img/atri/ball2.png";
                     } else {
-                        document.getElementById(ide[0]).src = "../img/atri/bigball.png";
+                        document.getElementById(ide[0]).src = "../img/atri/ball3.png";
                     }
                 }
             }
