@@ -1,3 +1,4 @@
+import { voltarHTMLAoNormal } from "./core/common.js";
 import { checkGameOver, executeRandomEvent, getEvent } from "./core/core.js";
 import { updateHtmlEvent } from "./core/io_handler.js";
 
@@ -7,36 +8,58 @@ let first_press = true;
 const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn1, #clickBtn2, #clickBtn3");
 btnGame.forEach((btn, index) => {
     if (btn.id != "clickBtn1" && btn.id != "clickBtn2" && btn.id != "clickBtn3") {
-        const img = document.getElementById("imagem3");
         btn.addEventListener("mouseover", () => {
             const title = btn.title;
             switch (title) {
                 case "Escolha 1":
-                    img.src = "../img/fundos/mesa1.png";
+                    document.getElementById("imagem3").src = "../img/fundos/mesa1.png";
                     document.getElementById("escolha1").style.fontWeight = "bold";
                     document.getElementById("escolha1").style.fontSize = "large";
                     break;
                 case "Escolha 2":
-                    img.src = "../img/fundos/mesa2.png";
+                    document.getElementById("imagem3").src = "../img/fundos/mesa2.png";
                     document.getElementById("escolha2").style.fontWeight = "bold";
                     document.getElementById("escolha2").style.fontSize = "large";
                     break;
                 case "Escolha 3":
-                    img.src = "../img/fundos/mesa3.png";
+                    document.getElementById("imagem3").src = "../img/fundos/mesa3.png";
                     document.getElementById("escolha3").style.fontWeight = "bold";
                     document.getElementById("escolha3").style.fontSize = "large";
                     break;
             }
+            if (!first_press) {
+                for (let affected in current_event["choices"][index]["effects"]) {
+                    const mudanca = Number(current_event["choices"][index]["effects"][affected]);
+                    const ide = [];
+                    switch (affected) {
+                        case "military":
+                            ide[0] = "varMilMud";
+                            break;
+                        case "finance":
+                            ide[0] = "varDinMud";
+                            break;
+                        case "population":
+                            ide[0] = "varPopuMud";
+                            break;
+                        case "popularity":
+                            ide[0] = "varFamaMud";
+                            break;
+                    }
+                    if (mudanca == -5 || mudanca == 0 || mudanca == 5) {
+                        document.getElementById(ide[0]).src = "../img/atri/tinyball.png";
+                    } else if (mudanca == -15 || mudanca == -10 || mudanca == 10 || mudanca == 15) {
+                        document.getElementById(ide[0]).src = "../img/atri/smallball.png";
+                    } else if (mudanca == -25 || mudanca == -20 || mudanca == 20 || mudanca == 25) {
+                        document.getElementById(ide[0]).src = "../img/atri/mediumball.png";
+                    } else {
+                        document.getElementById(ide[0]).src = "../img/atri/bigball.png";
+                    }
+                }
+            }
         })
 
         btn.addEventListener("mouseout", () => {
-            img.src = "../img/fundos/mesa.png";
-            document.getElementById("escolha1").style.fontWeight = "";
-            document.getElementById("escolha1").style.fontSize = "";
-            document.getElementById("escolha2").style.fontWeight = "";
-            document.getElementById("escolha2").style.fontSize = "";
-            document.getElementById("escolha3").style.fontWeight = "";
-            document.getElementById("escolha3").style.fontSize = "";
+            voltarHTMLAoNormal();
         })
     }
 
@@ -56,5 +79,6 @@ btnGame.forEach((btn, index) => {
         current_event = getEvent();
         updateHtmlEvent(current_event);
         checkGameOver();
+        voltarHTMLAoNormal();
     })
 })
