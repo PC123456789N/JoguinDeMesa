@@ -42,22 +42,39 @@ export function executeRandomEvent(event, choice) {
 
     for (let affected in event["choices"][choice]["effects"]) {
         console.log("Affected: " + affected);
+        const mudanca = event["choices"][choice]["effects"][affected];
         switch (affected) {
-            case "finance":
-                finance = finance + event["choices"][choice]["effects"][affected];
-                console.log("current: " + finance);
-                break;
             case "military":
-                military = military + event["choices"][choice]["effects"][affected];
-                console.log("current: " + military);
+                military = military + mudanca;
+                if (mudanca < 0) {
+                    document.getElementById("varMilimg").src = "../img/atri/ball-.png";
+                } else if (mudanca > 0) {
+                    document.getElementById("varMilimg").src = "../img/atri/ball+.png";
+                }
+                break;
+            case "finance":
+                finance = finance + mudanca;
+                if (mudanca < 0) {
+                    document.getElementById("varDinimg").src = "../img/atri/ball-.png";
+                } else if (mudanca > 0) {
+                    document.getElementById("varDinimg").src = "../img/atri/ball+.png";
+                }
                 break;
             case "population":
-                population = population + event["choices"][choice]["effects"][affected];
-                console.log("current: " + population);
+                population = population + mudanca;
+                if (mudanca < 0) {
+                    document.getElementById("varPopuimg").src = "../img/atri/ball-.png";
+                } else if (mudanca > 0) {
+                    document.getElementById("varPopuimg").src = "../img/atri/ball+.png";
+                }
                 break;
             case "popularity":
-                popularity = popularity + event["choices"][choice]["effects"][affected];
-                console.log("current: " + popularity);
+                popularity = popularity + mudanca;
+                if (mudanca < 0) {
+                    document.getElementById("varFamaimg").src = "../img/atri/ball-.png";
+                } else if (mudanca > 0) {
+                    document.getElementById("varFamaimg").src = "../img/atri/ball+.png";
+                }
                 break;
             default:
                 break;
