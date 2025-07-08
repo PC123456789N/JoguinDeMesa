@@ -6,7 +6,7 @@ let first_press = true;
 
 const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn1, #clickBtn2, #clickBtn3");
 btnGame.forEach((btn, index) => {
-    if (btn.id != "clickBtn") {
+    if (btn.id != "clickBtn1" && btn.id != "clickBtn2" && btn.id != "clickBtn3") {
         const img = document.getElementById("imagem3");
         btn.addEventListener("mouseover", () => {
             const title = btn.title;
