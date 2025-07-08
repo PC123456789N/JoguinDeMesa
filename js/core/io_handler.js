@@ -1,3 +1,5 @@
+import { military, finance, population, popularity } from "./core.js";
+
 export function getChoice(choices) {
     // lista de escolhas, cada uma com a estrutura
     /**
@@ -35,6 +37,27 @@ export function updateStats(finance, military, population, popularity) {
 }
 
 export function updateHtmlEvent(event) {
+    if (military >= 75 || military <= 25) {
+        document.getElementById("varMil").style.color = "red";
+    } else {
+        document.getElementById("varMil").style.color = "black";
+    }
+    if (finance >= 75 || finance <= 25) {
+        document.getElementById("varDin").style.color = "red";
+    } else {
+        document.getElementById("varDin").style.color = "black";
+    }
+    if (population >= 75 || population <= 25) {
+        document.getElementById("varPopu").style.color = "red";
+    } else {
+        document.getElementById("varPopu").style.color = "black";
+    }
+    if (popularity >= 75 || popularity <= 25) {
+        document.getElementById("varFama").style.color = "red";
+    } else {
+        document.getElementById("varFama").style.color = "black";
+    }
+
     document.getElementById("characterName").innerHTML = event["character"];
     document.getElementById("ocasiaoText").innerHTML = event["event_text"];
     document.getElementById("escolhaText").innerHTML = "";
