@@ -4,25 +4,25 @@ export const event_random = [
         "event_text": "As bases do exército estão lotadas\! Nós estamos precisando de mais dinheiro para conseguir construir outras bases.",
         "choices": [
                         {
-                "text": "Ajudar",
+                "text": "Construir mais bases",
                 "effects": {
                     "military": +10,
-                    "finance": -10,
+                    "finance": -15,
                     "population": +0,
                     "popularity": +5,
                 }
             },
             {
-                "text": "Não ajudar",
+                "text": "Não ajudarei",
                 "effects": {
-                    "military": -5,
+                    "military": -10,
                     "finance": +5,
                     "population": +0,
                     "popularity": -5,
                 }
             },
             {
-                "text": "Demitir militares",
+                "text": "Demita militares",
                 "effects": {
                     "military": -20,
                     "finance": +20,
@@ -38,7 +38,7 @@ export const event_random = [
         "event_text": "Nós queremos fazer um evento em escala internacional para comemorar o aniversário do exército. O governo pode arcar com os custos?",
         "choices": [
                         {
-                "text": "Pagar",
+                "text": "Irei pagar esse evento",
                 "effects": {
                     "military": +10,
                     "finance": -20,
@@ -47,21 +47,21 @@ export const event_random = [
                 }
             },
             {
-                "text": "Não fazer evento",
+                "text": "Não façam o evento",
                 "effects": {
-                    "military": -10,
+                    "military": -15,
                     "finance": +15,
                     "population": +0,
                     "popularity": -20,
                 }
             },
             {
-                "text": "Não pagar os custos",
+                "text": "Não pagarei os custos",
                 "effects": {
-                    "military": -5,
+                    "military": -10,
                     "finance": +5,
                     "population": +0,
-                    "popularity": -10,
+                    "popularity": +5,
                 }
             },
 
@@ -83,7 +83,7 @@ export const event_random = [
             {
                 "text": "Faça o que achar melhor",
                 "effects": {
-                    "military": +15,
+                    "military": +20,
                     "finance": +5,
                     "population": -5,
                     "popularity": -20,
@@ -129,12 +129,15 @@ export const event_random = [
                     "military": +10,
                     "finance": +0,
                     "population": +0,
-                    "popularity": -10,
+                    "popularity": -20,
                 }
             },
 
         ]
     },
+
+    //////////////////////////////////////////////////////////////////////////////////////////////
+    
     {
         "character": "Tenente Taísa Torres",
         "event_text": "A aeronáutica do Brasil está chamando atenção do mundo afora. Muitos jovens de outros países querem entrar no país por isso.",
