@@ -1,4 +1,5 @@
 import {executeRandomEvent, getEvent} from "./core/core.js";
+import {updateHtmlEvent} from "./core/io_handler.js";
 
 const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn");
 btnGame.forEach(btn => {
@@ -37,8 +38,21 @@ btnGame.forEach(btn => {
     }
 })
 
-btnGame.forEach(btn => {
+let current_event;
+let first_press = true;
+
+btnGame.forEach((btn, index) => {
     btn.addEventListener("click", () => {
-        executeRandomEvent(getEvent());
+        if (first_press) {
+            current_event = getEvent();
+            updateHtmlEvent(current_event);
+            first_press = false;
+            return;
+        }
+
+        executeRandomEvent(current_event, index);
+
+        current_event = getEvent();
+        updateHtmlEvent(current_event);
     })
 });

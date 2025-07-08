@@ -36,41 +36,40 @@ export function getEvent() {
     return event;
 }
 
-export function executeRandomEvent(event) {
-    // console.log(event["event_text"]);
-    // console.log(event["choices"]);
-    
-    // // get choice from player
+export function executeRandomEvent(event, choice) {
+    console.log(event["event_text"]);
+    console.log(event["choices"]);
+
+    // get choice from player
     // alert(event["event_text"]);
     // let choice = Number(getChoice(event["choices"]));
 
-    // // process input here
+    // process input here
 
-    // for (let affected in event["choices"][choice]["effects"]) {
-    //     console.log("Affected: " + affected);
-    //     switch (affected) {
-    //         case "finance":
-    //             finance = finance + event["choices"][choice]["effects"][affected];
-    //             console.log("current: " + finance);
-    //             break;
-    //         case "military":
-    //             military = military + event["choices"][choice]["effects"][affected];
-    //             console.log("current: " + military);
-    //             break;
-    //         case "population":
-    //             population = population + event["choices"][choice]["effects"][affected];
-    //             console.log("current: " + population);
-    //             break;
-    //         case "popularity":
-    //             popularity = popularity + event["choices"][choice]["effects"][affected];
-    //             console.log("current: " + popularity);
-    //             break;
-    //         default:
-    //             break;
-    //     }
-    // }
+    for (let affected in event["choices"][choice]["effects"]) {
+        console.log("Affected: " + affected);
+        switch (affected) {
+            case "finance":
+                finance = finance + event["choices"][choice]["effects"][affected];
+                console.log("current: " + finance);
+                break;
+            case "military":
+                military = military + event["choices"][choice]["effects"][affected];
+                console.log("current: " + military);
+                break;
+            case "population":
+                population = population + event["choices"][choice]["effects"][affected];
+                console.log("current: " + population);
+                break;
+            case "popularity":
+                popularity = popularity + event["choices"][choice]["effects"][affected];
+                console.log("current: " + popularity);
+                break;
+            default:
+                break;
+        }
+    }
 
-    updateHtmlEvent(event);
     updateStats(finance, military, population, popularity);
 }
 
