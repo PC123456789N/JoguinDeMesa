@@ -1,5 +1,5 @@
-import {checkGameOver, executeRandomEvent, getEvent} from "./core/core.js";
-import {updateHtmlEvent} from "./core/io_handler.js";
+import { checkGameOver, executeRandomEvent, getEvent } from "./core/core.js";
+import { updateHtmlEvent } from "./core/io_handler.js";
 
 const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn");
 btnGame.forEach(btn => {
@@ -47,6 +47,7 @@ btnGame.forEach((btn, index) => {
             current_event = getEvent();
             updateHtmlEvent(current_event);
             first_press = false;
+            document.getElementById("titleGame").innerText = "Presidential Order - Dia 1";
             return;
         }
 

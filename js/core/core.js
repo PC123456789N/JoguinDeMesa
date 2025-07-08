@@ -1,6 +1,6 @@
-import {event_random} from "./random_events.js";
-import {getRandomInt} from "./common.js";
-import {getChoice, updateHtmlEvent, updateStats} from "./io_handler.js";
+import { event_random } from "./random_events.js";
+import { getRandomInt } from "./common.js";
+import { updateStats } from "./io_handler.js";
 
 let usedIndex = [];
 export function getEvent() {
@@ -39,12 +39,6 @@ export function getEvent() {
 export function executeRandomEvent(event, choice) {
     console.log(event["event_text"]);
     console.log(event["choices"]);
-
-    // get choice from player
-    // alert(event["event_text"]);
-    // let choice = Number(getChoice(event["choices"]));
-
-    // process input here
 
     for (let affected in event["choices"][choice]["effects"]) {
         console.log("Affected: " + affected);
