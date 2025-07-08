@@ -50,6 +50,8 @@ export function executeRandomEvent(event, choice) {
                     document.getElementById("varMilimg").src = "../img/atri/ball-.png";
                 } else if (mudanca > 0) {
                     document.getElementById("varMilimg").src = "../img/atri/ball+.png";
+                } else {
+                    document.getElementById("varMilimg").src = "";
                 }
                 break;
             case "finance":
@@ -58,6 +60,8 @@ export function executeRandomEvent(event, choice) {
                     document.getElementById("varDinimg").src = "../img/atri/ball-.png";
                 } else if (mudanca > 0) {
                     document.getElementById("varDinimg").src = "../img/atri/ball+.png";
+                } else {
+                    document.getElementById("varDinimg").src = "";
                 }
                 break;
             case "population":
@@ -66,6 +70,8 @@ export function executeRandomEvent(event, choice) {
                     document.getElementById("varPopuimg").src = "../img/atri/ball-.png";
                 } else if (mudanca > 0) {
                     document.getElementById("varPopuimg").src = "../img/atri/ball+.png";
+                } else {
+                    document.getElementById("varPopuimg").src = "";
                 }
                 break;
             case "popularity":
@@ -74,6 +80,8 @@ export function executeRandomEvent(event, choice) {
                     document.getElementById("varFamaimg").src = "../img/atri/ball-.png";
                 } else if (mudanca > 0) {
                     document.getElementById("varFamaimg").src = "../img/atri/ball+.png";
+                } else {
+                    document.getElementById("varFamaimg").src = "";
                 }
                 break;
             default:

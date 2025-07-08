@@ -59,7 +59,9 @@ export function updateHtmlEvent(event) {
     }
 
     document.getElementById("characterName").innerHTML = event["character"];
-    document.getElementById("ocasiaoText").innerHTML = event["event_text"];
+    document.querySelectorAll("#ocasiaoText").forEach(text => {
+        text.innerHTML = event["event_text"];
+    });
     document.getElementById("escolhaText").innerHTML = "";
     document.getElementById("escolha1").innerHTML = "1. " + event["choices"][0]["text"];
     document.getElementById("escolha2").innerHTML = "2. " + event["choices"][1]["text"];
