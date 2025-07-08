@@ -30,8 +30,8 @@ export function getChoice(choices) {
 }
 
 export function updateStats(finance, military, population, popularity) {
-    document.getElementById("varDin").innerHTML = finance;
     document.getElementById("varMil").innerHTML = military;
+    document.getElementById("varDin").innerHTML = finance;
     document.getElementById("varPopu").innerHTML = population;
     document.getElementById("varFama").innerHTML = popularity;
 }

@@ -69,51 +69,36 @@ export function executeRandomEvent(event, choice) {
                 break;
         }
     }
-
     updateStats(finance, military, population, popularity);
 }
 
 export function checkGameOver() {
-    // finance, military, population, popularity
-    // 1 is over and -1 is under
-    let gameOverList = [0, 0, 0, 0];
-
-    if (finance <= 0) {
-        console.log("Game over: bankrupted country");
-        gameOverList[0] = -1;
-    } else if (finance >= 100) {
-        console.log("Game over: the money got to your head");
-        gameOverList[0] = 1;
+    if (military <= 0 || military >= 100 || finance <= 0 || finance >= 100 || population <= 0 || population >= 100 || popularity <= 0 || popularity >= 100) {
+        if (military <= 0) {
+            alert("Seu país foi envadido por falta de militar. Voltando para o menu.");
+        } else if (military >= 100) {
+            alert("Seu país sofreu um golpe militar. Voltando para o menu.");
+        }
+        if (finance <= 0) {
+            alert("Seu país faliu. Voltando para o menu.");
+        } else if (finance >= 100) {
+            alert("Ao ver tanto dinheiro, você e sua família enlouqueceram e pegaram o dinheiro para si. Voltando para o menu.");
+        }
+        if (population <= 0) {
+            alert("Seu não tem população. Voltando para o menu.");
+        } else if (population >= 100) {
+            alert("Seu país está com superlotação e você não consegue mais administrar o povo. Voltando para o menu.");
+        }
+        if (popularity <= 0) {
+            alert("O povo não gosta de você, fizeram um golpe civil. Voltando para o menu.");
+        } else if (popularity >= 100) {
+            alert("As pessoas gostam muito de você; mas nem todos são tão amados assim. Você foi alvo de um assasino e morreu. Voltando para o menu.");
+        }
+        window.location.href = "../index.html";
     }
-
-    if (military <= 0) {
-        console.log("Game over: invaded by neighboring countries");
-        gameOverList[1] = -1;
-    } else if (military >= 100) {
-        console.log("Game over: military takes over");
-        gameOverList[1] = 1;
-    }
-
-    if (population <= 0) {
-        console.log("Game over: deserted country");
-        gameOverList[2] = -1;
-    } else if (population >= 100) {
-        console.log("Game over: overpopulated");
-        gameOverList[2] = 1;
-    }
-
-    if (popularity <= 0) {
-        console.log("Game over: they don't like you anymore");
-        gameOverList[3] = -1;
-    } else if (popularity >= 100) {
-        console.log("Game over: assassinated ");
-        gameOverList[3] = 1;
-    }
-
-    return gameOverList;
 }
 
-export let finance = 50;
 export let military = 50;
+export let finance = 50;
 export let population = 50;
 export let popularity = 50;
