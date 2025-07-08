@@ -43,49 +43,31 @@ export function executeRandomEvent(event, choice) {
     for (let affected in event["choices"][choice]["effects"]) {
         console.log("Affected: " + affected);
         const mudanca = event["choices"][choice]["effects"][affected];
+        const ide = [];
         switch (affected) {
             case "military":
                 military = military + mudanca;
-                if (mudanca < 0) {
-                    document.getElementById("varMilimg").src = "../img/atri/ball-.png";
-                } else if (mudanca > 0) {
-                    document.getElementById("varMilimg").src = "../img/atri/ball+.png";
-                } else {
-                    document.getElementById("varMilimg").src = "";
-                }
+                ide[0] = "varMilimg";
                 break;
             case "finance":
                 finance = finance + mudanca;
-                if (mudanca < 0) {
-                    document.getElementById("varDinimg").src = "../img/atri/ball-.png";
-                } else if (mudanca > 0) {
-                    document.getElementById("varDinimg").src = "../img/atri/ball+.png";
-                } else {
-                    document.getElementById("varDinimg").src = "";
-                }
+                ide[0] = "varDinimg";
                 break;
             case "population":
                 population = population + mudanca;
-                if (mudanca < 0) {
-                    document.getElementById("varPopuimg").src = "../img/atri/ball-.png";
-                } else if (mudanca > 0) {
-                    document.getElementById("varPopuimg").src = "../img/atri/ball+.png";
-                } else {
-                    document.getElementById("varPopuimg").src = "";
-                }
+                ide[0] = "varPopuimg";
                 break;
             case "popularity":
                 popularity = popularity + mudanca;
-                if (mudanca < 0) {
-                    document.getElementById("varFamaimg").src = "../img/atri/ball-.png";
-                } else if (mudanca > 0) {
-                    document.getElementById("varFamaimg").src = "../img/atri/ball+.png";
-                } else {
-                    document.getElementById("varFamaimg").src = "";
-                }
+                ide[0] = "varFamaimg";
                 break;
-            default:
-                break;
+        }
+        if (mudanca < 0) {
+            document.getElementById(ide[0]).src = "../img/atri/ball-.png";
+        } else if (mudanca > 0) {
+            document.getElementById(ide[0]).src = "../img/atri/ball+.png";
+        } else {
+            document.getElementById(ide[0]).src = "";
         }
     }
     updateStats(finance, military, population, popularity);
