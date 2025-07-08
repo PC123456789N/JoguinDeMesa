@@ -185,10 +185,17 @@ em{
   #textR{
     border-top-style: none;
     border-color:rgb(107, 107, 107);
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-width: 1%;
   }
 
   #textL{
     display: inline;
+    border-color:rgb(107, 107, 107);
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-width: 1%;
   }
 
   #buttons{
