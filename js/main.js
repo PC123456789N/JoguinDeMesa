@@ -12,17 +12,17 @@ btnGame.forEach((btn, index) => {
             const title = btn.title;
             switch (title) {
                 case "Escolha 1":
-                    document.getElementById("imagem3").src = "../img/fundos/mesa1.png";
+                    document.getElementById("imagem3").src = "../img/fundos/mesa3_0.png";
                     document.getElementById("escolha1").style.fontWeight = "bold";
                     document.getElementById("escolha1").style.fontSize = "large";
                     break;
                 case "Escolha 2":
-                    document.getElementById("imagem3").src = "../img/fundos/mesa2.png";
+                    document.getElementById("imagem3").src = "../img/fundos/mesa3_1.png";
                     document.getElementById("escolha2").style.fontWeight = "bold";
                     document.getElementById("escolha2").style.fontSize = "large";
                     break;
                 case "Escolha 3":
-                    document.getElementById("imagem3").src = "../img/fundos/mesa3.png";
+                    document.getElementById("imagem3").src = "../img/fundos/mesa3_2.png";
                     document.getElementById("escolha3").style.fontWeight = "bold";
                     document.getElementById("escolha3").style.fontSize = "large";
                     break;
@@ -85,17 +85,17 @@ btnGame.forEach((btn, index) => {
             const title = btn.alt;
             switch (title) {
                 case "escolha1":
-                    document.getElementById("imagem3").src = "../img/fundos/mesa1.png";
+                    document.getElementById("imagem3").src = "../img/fundos/mesa3_0.png";
                     document.getElementById("escolha1").style.fontWeight = "bold";
                     document.getElementById("escolha1").style.fontSize = "large";
                     break;
                 case "escolha2":
-                    document.getElementById("imagem3").src = "../img/fundos/mesa2.png";
+                    document.getElementById("imagem3").src = "../img/fundos/mesa3_1.png";
                     document.getElementById("escolha2").style.fontWeight = "bold";
                     document.getElementById("escolha2").style.fontSize = "large";
                     break;
                 case "escolha3":
-                    document.getElementById("imagem3").src = "../img/fundos/mesa3.png";
+                    document.getElementById("imagem3").src = "../img/fundos/mesa3_2.png";
                     document.getElementById("escolha3").style.fontWeight = "bold";
                     document.getElementById("escolha3").style.fontSize = "large";
                     break;

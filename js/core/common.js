@@ -3,7 +3,7 @@ export function getRandomInt(min, max) {
 }
 
 export function voltarHTMLAoNormal() {
-    document.getElementById("imagem3").src = "../img/fundos/mesa.png";
+    document.getElementById("imagem3").src = "../img/fundos/mesa3.png";
     document.getElementById("escolha1").style.fontWeight = "";
     document.getElementById("escolha1").style.fontSize = "";
     document.getElementById("escolha2").style.fontWeight = "";
