@@ -12,8 +12,10 @@ btnGame.forEach((btn, index) => {
     if (btn.id != "clickBtn1" && btn.id != "clickBtn2" && btn.id != "clickBtn3") { // For pc
         btn.addEventListener("mouseover", () => { // Show pressed button image
             caracteristicaBtn = btn.title;
-            highlight_choice(caracteristicaBtn);
-            if (!first_press) { // If has already passed the 'greeting' screen
+            if (first_press) {
+                highlight_choice(caracteristicaBtn, 1);
+            } else { // If has already passed the 'greeting' screen
+                highlight_choice(caracteristicaBtn, 3);
                 show_resource_changes(index);
             }
         })
@@ -25,6 +27,9 @@ btnGame.forEach((btn, index) => {
                 updateHtmlEvent(current_event);
                 first_press = false;
                 document.getElementById("titleGame").innerText = "Presidential Order - Dia 1";
+                document.getElementById("clickarea1").style.display = "";
+                document.getElementById("clickarea3").style.display = "";
+                voltarHTMLAoNormal(3);
                 return;
             }
             executeRandomEvent(current_event, index);
@@ -32,12 +37,16 @@ btnGame.forEach((btn, index) => {
             current_event = getEvent();
             updateHtmlEvent(current_event);
             checkGameOver();
-            voltarHTMLAoNormal();
+            voltarHTMLAoNormal(3);
         })
 
         // On mouse out of the buttons return table to normal png
         btn.addEventListener("mouseout", () => {
-            voltarHTMLAoNormal();
+            if (first_press) {
+                voltarHTMLAoNormal(1);
+            } else {
+                voltarHTMLAoNormal(3);
+            }
         })
     } else { // For mobile
         btn.addEventListener("click", () => {
@@ -53,16 +62,18 @@ btnGame.forEach((btn, index) => {
                 
                 console.log("Second button press");
             } else {
-                voltarHTMLAoNormal()
+                voltarHTMLAoNormal(3);
             }
             if (firstPressButton) { // If is first press on the button
                 console.log("First button press")
                 // Change the button that was pressed to the current
                 caracteristicaBtn = btn.title;
-                highlight_choice(caracteristicaBtn);
                 if (!first_press) { // If not the greetings screen show the resource changes
+                    highlight_choice(caracteristicaBtn, 3);
                     console.log("Showing resource changes for choice ", index)
                     show_resource_changes(index);
+                } else {
+                    highlight_choice(caracteristicaBtn, 1);
                 }
             } else { // If is the second press of the button
                 if (first_press) {
@@ -71,6 +82,9 @@ btnGame.forEach((btn, index) => {
                     updateHtmlEvent(current_event);
                     first_press = false;
                     document.getElementById("titleGame").innerText = "Presidential Order - Dia 1";
+                    document.getElementById("btnPhone1").style.display = "";
+                    document.getElementById("btnPhone3").style.display = "";
+                    voltarHTMLAoNormal(3);
                     return;
                 }
                 console.log("Executing event");
@@ -85,7 +99,7 @@ btnGame.forEach((btn, index) => {
                 
                 checkGameOver();
                 
-                voltarHTMLAoNormal();
+                voltarHTMLAoNormal(3);
                 
                 firstPressButton = true;
                 caracteristicaBtn = "";
@@ -94,29 +108,28 @@ btnGame.forEach((btn, index) => {
     }
 })
 document.addEventListener("click", (element) => { // clique em todo documento
-    const elementId = element.target.id;
-    if (!Array.from(btnGame).some(btn => btn.contains(element.target))) { // só ocorre se o id do item clicado não for algum dos botões
-        console.log("clicou fora dos botões")
-        voltarHTMLAoNormal();
+    const clicaveis = ["clickBtn1", "clickBtn2", "clickBtn3", "imgBtn"]
+    if (!clicaveis.includes(element.target.id)) { // só ocorre se o id do item clicado não for algum dos botões
+        voltarHTMLAoNormal(3);
     }
 })
 
-function highlight_choice(caracteristicaBtn) {
+function highlight_choice(caracteristicaBtn, qtdBotoes) {
     switch (caracteristicaBtn) {
         case "Escolha 1":
-            document.getElementById("imagem3").src = "../img/fundos/mesa3_0.png";
-            document.getElementById("escolha1").style.fontWeight = "bold";
-            document.getElementById("escolha1").style.fontSize = "large";
+            document.getElementById(`imagem3`).src = `../img/fundos/mesa/mesa${qtdBotoes}_0.png`;
+            document.getElementById(`escolha1`).style.fontWeight = `bold`;
+            document.getElementById(`escolha1`).style.fontSize = `large`;
             break;
         case "Escolha 2":
-            document.getElementById("imagem3").src = "../img/fundos/mesa3_1.png";
-            document.getElementById("escolha2").style.fontWeight = "bold";
-            document.getElementById("escolha2").style.fontSize = "large";
+            document.getElementById(`imagem3`).src = `../img/fundos/mesa/mesa${qtdBotoes}_1.png`;
+            document.getElementById(`escolha2`).style.fontWeight = `bold`;
+            document.getElementById(`escolha2`).style.fontSize = `large`;
             break;
         case "Escolha 3":
-            document.getElementById("imagem3").src = "../img/fundos/mesa3_2.png";
-            document.getElementById("escolha3").style.fontWeight = "bold";
-            document.getElementById("escolha3").style.fontSize = "large";
+            document.getElementById(`imagem3`).src = `../img/fundos/mesa/mesa${qtdBotoes}_2.png`;
+            document.getElementById(`escolha3`).style.fontWeight = `bold`;
+            document.getElementById(`escolha3`).style.fontSize = `large`;
             break;
     }
 }
