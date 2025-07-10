@@ -27,10 +27,6 @@ btnGame.forEach((btn, index) => {
                 document.getElementById("titleGame").innerText = "Presidential Order - Dia 1";
                 return;
             }
-            // Else Just execute normal behavior
-            if (index > 2) {
-                index = index - 3;
-            }
             executeRandomEvent(current_event, index);
     
             current_event = getEvent();
@@ -56,6 +52,8 @@ btnGame.forEach((btn, index) => {
                 firstPressButton = false;
                 
                 console.log("Second button press");
+            } else {
+                voltarHTMLAoNormal()
             }
             if (firstPressButton) { // If is first press on the button
                 console.log("First button press")
@@ -93,6 +91,13 @@ btnGame.forEach((btn, index) => {
                 caracteristicaBtn = "";
             }
         })
+    }
+})
+document.addEventListener("click", (element) => { // clique em todo documento
+    const elementId = element.target.id;
+    if (!Array.from(btnGame).some(btn => btn.contains(element.target))) { // só ocorre se o id do item clicado não for algum dos botões
+        console.log("clicou fora dos botões")
+        voltarHTMLAoNormal();
     }
 })
 
