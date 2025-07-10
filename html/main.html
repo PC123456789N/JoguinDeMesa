@@ -39,10 +39,10 @@
                 <div class="text-center" style="position: relative;">
                     <img src="../img/fundos/fundo0.jpg" alt="" id="imagem1">
                     <img src="" alt="" id="imagem2">
-                    <img src="../img/fundos/mesa3.png" alt="" id="imagem3">
-                    <span title="Escolha 1" id="clickarea1" style="position: absolute;"></span>
+                    <img src="../img/fundos/mesa/mesa1.png" alt="" id="imagem3">
+                    <span title="Escolha 1" id="clickarea1" style="position: absolute; display: none;"></span>
                     <span title="Escolha 2" id="clickarea2" style="position: absolute;"></span>
-                    <span title="Escolha 3" id="clickarea3" style="position: absolute;"></span>
+                    <span title="Escolha 3" id="clickarea3" style="position: absolute; display: none;"></span>
                 </div>
             </div>
 
@@ -62,9 +62,9 @@
                     <span id="escolhaText">Diariamente você terá que fazer escolhas.
                     Cada botão representa uma escolha entre as possíveis.
                     Ao clicar neles, você está decidindo sua decisão. Lembre-se: toda decisão tem suas consequências.<br><br></span>
-                    <span id="escolha1">1. Começar o dia</span><br>
-                    <span id="escolha2">2. Começar o dia</span><br>
-                    <span id="escolha3">3. Começar o dia</span><br>
+                    <span id="escolha1"></span><br>
+                    <span id="escolha2">1. Começar o dia</span><br>
+                    <span id="escolha3"></span><br>
                 </p>
             </div>
         </div>
@@ -104,23 +104,23 @@
         </div>
 
         <div class="row justify-content-center flex-nowrap" id="buttons">
-            <div class="col-4 col-md-4 text-center">
+            <div id="btnPhone1" class="col-4 col-md-4 text-center" style="display: none;">
                 <button title="Escolha 1" id="clickBtn1" type="button" class="btn btn-outline-dark w-100">
-                    <img src="../img/btn/swords.png" class="img-fluid" alt="escolha1">
+                    <img id="imgBtn" src="../img/btn/swords.png" class="img-fluid" alt="escolha1">
                 </button>
                 <p>Escolha 1</p> 
             </div>
 
-            <div class="col-4 col-md-4 text-center">
+            <div id="btnPhone2" class="col-4 col-md-4 text-center">
                 <button title="Escolha 2" id="clickBtn2" type="button" class="btn btn-outline-dark w-100">
-                    <img src="../img/btn/star.png" class="img-fluid" alt="escolha2">
+                    <img id="imgBtn" src="../img/btn/star.png" class="img-fluid" alt="escolha2">
                 </button>
                 <p>Escolha 2</p> 
             </div>
 
-            <div class="col-4 col-md-4 text-center">
+            <div id="btnPhone3" class="col-4 col-md-4 text-center" style="display: none;">
                 <button title="Escolha 3" id="clickBtn3" type="button" class="btn btn-outline-dark w-100">
-                    <img src="../img/btn/shield.png" class="img-fluid" alt="escolha3">
+                    <img id="imgBtn" src="../img/btn/shield.png" class="img-fluid" alt="escolha3">
                 </button>
                 <p>Escolha 3</p> 
             </div>

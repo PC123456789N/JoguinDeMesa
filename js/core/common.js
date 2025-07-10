@@ -2,8 +2,8 @@ export function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export function voltarHTMLAoNormal() {
-    document.getElementById("imagem3").src = "../img/fundos/mesa3.png";
+export function voltarHTMLAoNormal(qtdBotoes) {
+    document.getElementById("imagem3").src = `../img/fundos/mesa/mesa${qtdBotoes}.png`;
     document.getElementById("escolha1").style.fontWeight = "";
     document.getElementById("escolha1").style.fontSize = "";
     document.getElementById("escolha2").style.fontWeight = "";
