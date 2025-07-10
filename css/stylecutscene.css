@@ -35,6 +35,17 @@ html, body {
     max-width: 100%;
 }
 
+#play{
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  right: 0%;
+  border-radius: 0% 0%;
+  font-size:1em;
+  font-family:Arial, Helvetica, sans-serif;
+  }
+
 #capa {
     width: 100%;
     height: auto;
@@ -83,6 +94,11 @@ html, body {
   height: 50px;
 }
 
+#varDin, #varMil, #varPopu, #varFama{
+  font-size:80%;
+  font-weight: bolder;
+}
+
 @media (min-width: 767px) {
   #Start{
     width: 90%;
@@ -94,6 +110,17 @@ html, body {
     width: 90%;
     height: auto;
     max-width: 100%;
+  }
+  #play{
+  display: none;
+  width: 90%;
+  position: absolute;
+  top: 40%;
+  right: 5%;
+  border-radius: 0% 0%;
+  font-weight: bolder;
+  font-size:1em;
+  font-family:Arial, Helvetica, sans-serif;
   }
   #capa {
     width: 90%;
@@ -116,11 +143,25 @@ html, body {
   #speechMobile{
     display: none;
   }
+  #varDin, #varMil, #varPopu, #varFama{
+  font-size:150%;
+  font-weight: bolder;
+}
 }
 
 @media (min-width: 992px) {
   .title-pc{
     display: inline;
+  }
+  #play{
+    display: none;
+    width: 90%;
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    border-radius: 0% 0%;
+    font-size:2em;
+    font-family:Arial, Helvetica, sans-serif;
   }
 }
 
