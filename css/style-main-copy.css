@@ -59,11 +59,9 @@ em {
     display: block;
     top: 0%;
 }
-#seta{
-    position: absolute;
+#seta {
     left: 55%;
     top: 35%;
-    display: none;
 }
 
 #clickarea1 {
@@ -175,11 +173,9 @@ em {
         top: 0%;
         left: 5%;
     }
-    #seta{
-    position: absolute;
-    left: 60%;
-    top: 40%;
-    display: none;
+    #seta {
+        left: 60%;
+        top: 40%;
     }
 
     #clickarea1 {
@@ -242,11 +238,9 @@ em {
     .title-pc {
         display: inline;
     }
-    #seta{
-    position: absolute;
-    left: 65%;
-    top: 40%;
-    display: none;
+    #seta {
+        left: 65%;
+        top: 40%;
     }
 }
 
