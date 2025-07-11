@@ -69,12 +69,6 @@ export function executeRandomEvent(event, choice) {
         } else {
             document.getElementById(ide[0]).src = "";
         }
-        setTimeout(() => {
-            document.getElementById("varMilimg").src = "";
-            document.getElementById("varDinimg").src = "";
-            document.getElementById("varPopuimg").src = "";
-            document.getElementById("varFamaimg").src = "";
-        }, 5000);
     }
     updateStats(finance, military, population, popularity);
 }

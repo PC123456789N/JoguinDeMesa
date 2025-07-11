@@ -7,9 +7,24 @@ let current_event;
 let first_press = true;
 let firstPressButton = true;
 
-const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3, #clickBtn1, #clickBtn2, #clickBtn3");
+const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3,  #clickBtn1, #clickBtn2, #clickBtn3, #mic");
 btnGame.forEach((btn, index) => {
-    if (btn.id != "clickBtn1" && btn.id != "clickBtn2" && btn.id != "clickBtn3") { // For pc
+    if (btn.id == "mic") {
+        btn.addEventListener("click", () => {
+            updateHtmlEvent(current_event);
+            document.getElementById("clickarea1").style.display = "";
+            document.getElementById("clickarea2").style.display = "";
+            document.getElementById("clickarea3").style.display = "";
+            document.getElementById("btnPhone1").style.display = "";
+            document.getElementById("btnPhone2").style.display = "";
+            document.getElementById("btnPhone3").style.display = "";
+            document.getElementById("mic").style.display = "none";
+            document.getElementById("varMilimg").src = "";
+            document.getElementById("varDinimg").src = "";
+            document.getElementById("varPopuimg").src = "";
+            document.getElementById("varFamaimg").src = "";
+        });
+    } else if (btn.id != "clickBtn1" && btn.id != "clickBtn2" && btn.id != "clickBtn3") { // For pc
         btn.addEventListener("mouseover", () => { // Show pressed button image
             caracteristicaBtn = btn.title;
             if (first_press) {
@@ -18,27 +33,28 @@ btnGame.forEach((btn, index) => {
                 highlight_choice(caracteristicaBtn, 3);
                 show_resource_changes(index);
             }
-        })
+        });
 
         btn.addEventListener("click", () => {
             if (first_press) { // Is greeting screen
                 // Get event and update the html to it
-                current_event = getEvent();
-                updateHtmlEvent(current_event);
                 first_press = false;
+                current_event = getEvent();
                 document.getElementById("titleGame").innerText = "Presidential Order - Dia 1";
-                document.getElementById("clickarea1").style.display = "";
-                document.getElementById("clickarea3").style.display = "";
-                voltarHTMLAoNormal(3);
+                document.getElementById("clickarea2").style.display = "none";
+                ativarMic(current_event);
                 return;
             }
             executeRandomEvent(current_event, index);
-    
-            current_event = getEvent();
             updateHtmlEvent(current_event);
             checkGameOver();
-            voltarHTMLAoNormal(3);
-        })
+            current_event = getEvent();
+            document.getElementById("clickarea1").style.display = "none";
+            document.getElementById("clickarea2").style.display = "none";
+            document.getElementById("clickarea3").style.display = "none";
+            document.getElementById("imagem2").src = "";
+            ativarMic(current_event);
+        });
 
         // On mouse out of the buttons return table to normal png
         btn.addEventListener("mouseout", () => {
@@ -47,7 +63,7 @@ btnGame.forEach((btn, index) => {
             } else {
                 voltarHTMLAoNormal(3);
             }
-        })
+        });
     } else { // For mobile
         btn.addEventListener("click", () => {
             if (index > 2) {
@@ -65,12 +81,12 @@ btnGame.forEach((btn, index) => {
                 voltarHTMLAoNormal(3);
             }
             if (firstPressButton) { // If is first press on the button
-                console.log("First button press")
+                console.log("First button press");
                 // Change the button that was pressed to the current
                 caracteristicaBtn = btn.title;
                 if (!first_press) { // If not the greetings screen show the resource changes
                     highlight_choice(caracteristicaBtn, 3);
-                    console.log("Showing resource changes for choice ", index)
+                    console.log("Showing resource changes for choice ", index);
                     show_resource_changes(index);
                 } else {
                     highlight_choice(caracteristicaBtn, 1);
@@ -81,33 +97,33 @@ btnGame.forEach((btn, index) => {
                 if (first_press) {
                     console.log("Exiting greetings screen");
                     current_event = getEvent();
-                    updateHtmlEvent(current_event);
                     first_press = false;
                     document.getElementById("titleGame").innerText = "Presidential Order - Dia 1";
-                    document.getElementById("btnPhone1").style.display = "";
-                    document.getElementById("btnPhone3").style.display = "";
+                    document.getElementById("btnPhone2").style.display = "none";
                     voltarHTMLAoNormal(3);
+                    ativarMic(current_event);
                     return;
                 }
                 console.log("Executing event");
 
                 console.log("index for", current_event);
-                console.log(index)
-
-                executeRandomEvent(current_event, index);
-                current_event = getEvent();
-                
-                updateHtmlEvent(current_event);
-                
-                checkGameOver();
-                
+                console.log(index);
                 voltarHTMLAoNormal(3);
+                executeRandomEvent(current_event, index);
+                updateHtmlEvent(current_event);
+                checkGameOver();
+                current_event = getEvent();
+                document.getElementById("btnPhone1").style.display = "none";
+                document.getElementById("btnPhone2").style.display = "none";
+                document.getElementById("btnPhone3").style.display = "none";
+                document.getElementById("imagem2").src = "";
+                ativarMic(current_event);
             }
-        })
+        });
     }
-})
+});
 document.addEventListener("click", (element) => { // clique em todo documento
-    const clicaveis = ["clickBtn1", "clickBtn2", "clickBtn3", "imgBtn"]
+    const clicaveis = ["clickBtn1", "clickBtn2", "clickBtn3", "imgBtn", "mic"]
     if (!clicaveis.includes(element.target.id)) { // só ocorre se o id do item clicado não for algum dos botões
         if (first_press) {
             voltarHTMLAoNormal(1);
@@ -117,7 +133,7 @@ document.addEventListener("click", (element) => { // clique em todo documento
         firstPressButton = true;
         caracteristicaBtn = "";
     }
-})
+});
 
 function highlight_choice(caracteristicaBtn, qtdBotoes) {
     switch (caracteristicaBtn) {
@@ -169,4 +185,16 @@ function show_resource_changes(index) {
             document.getElementById(ide[0]).src = "../img/atri/ball3.png";
         }
     }
+}
+
+function ativarMic(event) {
+    document.getElementById("mic").style.display = "";
+    document.getElementById("characterName").innerHTML = event["character"];
+    document.querySelectorAll("#ocasiaoText").forEach(text => {
+        text.innerHTML = `${event["character"]} quer entrar para falar com você, parece ser importante.`;
+    });
+    document.getElementById("escolhaText").innerHTML = `Clique no microfone para permitir que ${event["character"]} entre.`;
+    document.getElementById("escolha1").innerHTML = "";
+    document.getElementById("escolha2").innerHTML = "";
+    document.getElementById("escolha3").innerHTML = "";
 }
