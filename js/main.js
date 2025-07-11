@@ -31,6 +31,7 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
             document.getElementById("varDinimg").src = "";
             document.getElementById("varPopuimg").src = "";
             document.getElementById("varFamaimg").src = "";
+            document.getElementById("seta").style.display = "none";
         });
     } else if (btn.id == "clickarea1" || btn.id == "clickarea2" || btn.id == "clickarea3") { // se os btn de PC forem clicados
         btn.addEventListener("mouseover", () => { // se mouse ficar em cima do btn, img de pressionado aparece
@@ -212,4 +213,5 @@ function ativarMic(event) {
     document.getElementById("escolha1").innerHTML = "";
     document.getElementById("escolha2").innerHTML = "";
     document.getElementById("escolha3").innerHTML = "";
+    document.getElementById("seta").style.display = "";
 }
