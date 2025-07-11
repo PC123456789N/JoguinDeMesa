@@ -76,6 +76,8 @@ btnGame.forEach((btn, index) => {
                     highlight_choice(caracteristicaBtn, 1);
                 }
             } else { // If is the second press of the button
+                firstPressButton = true;
+                caracteristicaBtn = "";
                 if (first_press) {
                     console.log("Exiting greetings screen");
                     current_event = getEvent();
@@ -100,9 +102,6 @@ btnGame.forEach((btn, index) => {
                 checkGameOver();
                 
                 voltarHTMLAoNormal(3);
-                
-                firstPressButton = true;
-                caracteristicaBtn = "";
             }
         })
     }
@@ -110,7 +109,13 @@ btnGame.forEach((btn, index) => {
 document.addEventListener("click", (element) => { // clique em todo documento
     const clicaveis = ["clickBtn1", "clickBtn2", "clickBtn3", "imgBtn"]
     if (!clicaveis.includes(element.target.id)) { // só ocorre se o id do item clicado não for algum dos botões
-        voltarHTMLAoNormal(3);
+        if (first_press) {
+            voltarHTMLAoNormal(1);
+        } else {
+            voltarHTMLAoNormal(3);
+        }
+        firstPressButton = true;
+        caracteristicaBtn = "";
     }
 })
 
