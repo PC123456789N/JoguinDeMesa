@@ -1,0 +1,70 @@
+html, body {
+  overflow-x:hidden;
+}
+
+.container-fluid{
+    background-color: rgb(53, 53, 53);
+}
+
+#header{
+    background-color: black;
+    color: azure;
+    margin-bottom: 0%;
+    border-bottom-style: solid ;
+    border-color: rgb(107, 107, 107);
+}
+
+#thanks{
+    color:aliceblue
+}
+
+#written{
+    background-color: rgb(122, 122, 122);
+    border-style: double;
+}
+
+.img{
+    width: 40% ;
+    height: auto;
+}
+
+
+#muraltitle{
+    color:rgb(255, 255, 255);
+    background-color: black;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    border-left-style: double;
+    border-right-style: double ;
+    border-top-style:groove;
+    border-bottom-style:groove;
+    border-color: gold;
+}
+
+#mural{
+    background-color: rgb(97, 97, 97);
+}
+
+#mural > ul{
+    background-color: black;
+    border-left-style: double;
+    border-right-style: double ;
+    border-bottom-style:groove;
+    border-color: gold;
+}
+
+#list{
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#list > li{
+    margin-top: 1%;
+}
+
+ul > li{
+    color:azure;
+}
+
+@media (min-width: 767px) {
+    
+}
