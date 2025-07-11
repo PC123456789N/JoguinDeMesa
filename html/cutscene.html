@@ -28,7 +28,7 @@
             <div class="col-12 col-md-2" id="textL">
                 <h2 id="characterName" class="title-pc">Bem-Vindo</h2>
                 <p id="ocasiaoText">
-                    Presidente. Seja bem vindo ao ofício, seu trabalho será admiravel...<br><br>
+                    Presidente. Seja bem vindo ao ofício, seu trabalho será admirável...<br><br>
                     <strong><em>Ou Desastroso.</em></strong><br><br>
                     Bom jogo.
                 </p>
@@ -48,7 +48,7 @@
             <div class="col-12 col-md-8" id="speechMobile">
                 <h2 id="characterName" class="title-pc">Bem-Vindo</h2>
                 <p id="ocasiaoText">
-                    Presidente. Seja bem vindo ao ofício, seu trabalho será admiravel...<br><br>
+                    Presidente. Seja bem vindo ao ofício, seu trabalho será admirável...<br><br>
                     <strong><em>Ou Desastroso.</em></strong><br>
                     Bom jogo.
                 </p>
@@ -61,7 +61,7 @@
                     <br><br>
                     <strong><em>Clique Na Tela Para Iniciar.</em></strong>
                     <br><br>
-                    <em style="color: rgb(77, 77, 77);" onclick="window.location.href='main.html'">Pular Cutscene.</em>
+                    <em style="color: rgb(105, 105, 105); cursor: pointer;" onmouseover="this.style.fontWeight='bold'" onmouseout="this.style.fontWeight='normal'" onclick="window.location.href='main.html'">Pular Cutscene.</em>
                     </span>
                     
                 </p>
@@ -124,14 +124,13 @@
     </div>
 
     <script>
-        var vid = document.getElementById("video")
-        var play = document.getElementById("play")
+        var video = document.getElementById("video");
+        var play = document.getElementById("play");
 
         video.addEventListener("click", () => {
             capa.style.display = "none";
             video.muted = false;
             video.play();
-
         }, {once: true});
 
         video.onended = function() {
