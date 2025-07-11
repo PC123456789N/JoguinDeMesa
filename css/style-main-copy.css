@@ -59,6 +59,11 @@ em {
     display: block;
     top: 0%;
 }
+#seta{
+    position: absolute;
+    left: 50%;
+    top: 35%;
+}
 
 #clickarea1 {
     display: none;
@@ -169,6 +174,11 @@ em {
         top: 0%;
         left: 5%;
     }
+    #seta{
+    position: absolute;
+    left: 60%;
+    top: 40%;
+    }
 
     #clickarea1 {
         display: block;
@@ -229,6 +239,11 @@ em {
 @media (min-width: 992px) {
     .title-pc {
         display: inline;
+    }
+    #seta{
+    position: absolute;
+    left: 70%;
+    top: 40%;
     }
 }
 
