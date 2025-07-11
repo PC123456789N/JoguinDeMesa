@@ -54,7 +54,7 @@ html, body {
 }
 
 #speechMobile {
-    background-color: black;
+    background-color: rgb(44, 44, 44);
     color: white;
     margin-top: 1%;
     padding-top: 2%;
@@ -69,7 +69,7 @@ html, body {
 }
 
 #textL {
-    background-color: black;
+    background-color: rgb(44, 44, 44);
     color: azure;
     display: none;
     font-family:Arial, Helvetica, sans-serif;
@@ -78,7 +78,7 @@ html, body {
 }
 
 #textR {
-    background-color: black;
+    background-color: rgb(44, 44, 44);
     color: azure;
     font-family:Arial, Helvetica, sans-serif;
     border-right: 3px;
@@ -135,10 +135,16 @@ html, body {
     #textR {
         border-top-style: none;
         border-color:rgb(107, 107, 107);
+        border-left-style: solid ;
+        border-bottom-style: solid;
+        border-color:rgb(0, 0, 0);
     }
 
     #textL {
         display: inline;
+        border-right-style: solid ;
+        border-bottom-style: solid;
+        border-color:rgb(0, 0, 0);
     }
     
     #buttons {
