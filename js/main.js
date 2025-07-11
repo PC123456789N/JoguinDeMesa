@@ -2,61 +2,76 @@ import { voltarHTMLAoNormal } from "./core/common.js";
 import { checkGameOver, executeRandomEvent, getEvent } from "./core/core.js";
 import { updateHtmlEvent } from "./core/io_handler.js";
 
-let caracteristicaBtn = "";
-let current_event;
-let first_press = true;
-let firstPressButton = true;
+let current_event; // atual evento
+let caracteristicaBtn = ""; // característica do botão para comparar os clicados
+let first_press = true; // primeiro clique do jogo (botão de iniciar)
+let firstPressButton = true; // boolean para saber se é o primeiro btn clicado no celular
 
+// todos btn clicáveis do jogo
 const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3,  #clickBtn1, #clickBtn2, #clickBtn3, #mic");
-btnGame.forEach((btn, index) => {
+
+btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se algum foi clicado, pegando seu elemento e seu index no array
     if (btn.id == "mic") {
-        btn.addEventListener("click", () => {
-            updateHtmlEvent(current_event);
+        btn.addEventListener("click", () => { // se microfone foi clicado
+            updateHtmlEvent(current_event); // edita o html atual para ficar comoo deveria
+
+            // deixa todos botões visíveis
             document.getElementById("clickarea1").style.display = "";
             document.getElementById("clickarea2").style.display = "";
             document.getElementById("clickarea3").style.display = "";
             document.getElementById("btnPhone1").style.display = "";
             document.getElementById("btnPhone2").style.display = "";
             document.getElementById("btnPhone3").style.display = "";
+
+            // deixa o microfone não clicável
             document.getElementById("mic").style.display = "none";
+
+            // tira os + e - de mudança de atributo
             document.getElementById("varMilimg").src = "";
             document.getElementById("varDinimg").src = "";
             document.getElementById("varPopuimg").src = "";
             document.getElementById("varFamaimg").src = "";
         });
-    } else if (btn.id != "clickBtn1" && btn.id != "clickBtn2" && btn.id != "clickBtn3") { // For pc
-        btn.addEventListener("mouseover", () => { // Show pressed button image
+    } else if (btn.id == "clickarea1" || btn.id == "clickarea2" || btn.id == "clickarea3") { // se os btn de PC forem clicados
+        btn.addEventListener("mouseover", () => { // se mouse ficar em cima do btn, img de pressionado aparece
             caracteristicaBtn = btn.title;
-            if (first_press) {
+            if (first_press) { // analisa se é a tela inicial do jogo
                 highlight_choice(caracteristicaBtn, 1);
-            } else { // If has already passed the 'greeting' screen
+            } else {
                 highlight_choice(caracteristicaBtn, 3);
                 show_resource_changes(index);
             }
         });
 
         btn.addEventListener("click", () => {
-            if (first_press) { // Is greeting screen
-                // Get event and update the html to it
+            if (first_press) { // se for a tela inicial do jogo
+                // pega a primeira ocasião e ativa o clique do mic para personagem entrar na sala
                 first_press = false;
-                current_event = getEvent();
+
                 document.getElementById("titleGame").innerText = "Presidential Order - Dia 1";
                 document.getElementById("clickarea2").style.display = "none";
+
+                // define evento e ativa mic a partir desse evento
+                current_event = getEvent();
                 ativarMic(current_event);
                 return;
             }
+
+            // se não for primeiro clique, ele executa os problemas do evento anterior e altera html a partir disso
             executeRandomEvent(current_event, index);
             updateHtmlEvent(current_event);
-            checkGameOver();
-            current_event = getEvent();
+            checkGameOver(); // verifica se usuário perdeu
+
             document.getElementById("clickarea1").style.display = "none";
             document.getElementById("clickarea2").style.display = "none";
             document.getElementById("clickarea3").style.display = "none";
             document.getElementById("imagem2").src = "";
+            // desativa os btn, tira antigo personagem de fundo, gera novo evento e ativa o mic
+            current_event = getEvent();
             ativarMic(current_event);
         });
 
-        // On mouse out of the buttons return table to normal png
+        // se mouse sair de hover, volta a tela normal
         btn.addEventListener("mouseout", () => {
             if (first_press) {
                 voltarHTMLAoNormal(1);
