@@ -1,12 +1,12 @@
 html, body {
-  overflow-x:hidden;
+    overflow-x:hidden;
 }
 
-.container-fluid{
+.container-fluid {
     background-color: rgb(53, 53, 53);
 }
 
-#header{
+#header {
     background-color: black;
     color: azure;
     margin-bottom: 0%;
@@ -14,22 +14,21 @@ html, body {
     border-color: rgb(107, 107, 107);
 }
 
-#thanks{
+#thanks {
     color:aliceblue
 }
 
-#written{
+#written {
     background-color: rgb(122, 122, 122);
     border-style: double;
 }
 
-.img{
+.img {
     width: 40% ;
     height: auto;
 }
 
-
-#muraltitle{
+#muraltitle {
     color:rgb(255, 255, 255);
     background-color: black;
     padding-bottom: 5%;
@@ -41,11 +40,11 @@ html, body {
     border-color: gold;
 }
 
-#mural{
+#mural {
     background-color: rgb(97, 97, 97);
 }
 
-#mural > ul{
+#mural > ul {
     background-color: black;
     border-left-style: double;
     border-right-style: double ;
@@ -53,15 +52,16 @@ html, body {
     border-color: gold;
 }
 
-#list{
+#list {
     list-style-type: none;
     font-family: Arial, Helvetica, sans-serif;
 }
-#list > li{
+
+#list > li {
     margin-top: 1%;
 }
 
-ul > li{
+ul > li {
     color:azure;
 }
 

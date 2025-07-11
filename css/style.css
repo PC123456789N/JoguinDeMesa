@@ -1,34 +1,35 @@
-#header{
+#header {
     background-color: black;
     color: azure;
 }
 
-#nav{
+#nav {
     margin-bottom: 1%;
     background-color: black;
     width: 100%;
 }
-.nav-item{
+
+.nav-item {
     margin-left: 0.5%;
     margin-right: 0.5%;
 }
 
-h3{
+h3 {
     padding-top: 10%;
 }
 
-#maingame{
+#maingame {
     padding: 0%;
 }
 
-#imagem{
+#imagem {
     width: 100%;
     height: 45%;
 }
 
 @media (min-width: 767px) {
-  img#imagem {
-    width: 70%;
-    height: 30%;
-  }
+    img#imagem {
+        width: 70%;
+        height: 30%;
+    }
 }
