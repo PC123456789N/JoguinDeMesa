@@ -63,6 +63,7 @@ em {
     position: absolute;
     left: 55%;
     top: 35%;
+    display: none;
 }
 
 #clickarea1 {
@@ -178,6 +179,7 @@ em {
     position: absolute;
     left: 60%;
     top: 40%;
+    display: none;
     }
 
     #clickarea1 {
@@ -244,6 +246,7 @@ em {
     position: absolute;
     left: 65%;
     top: 40%;
+    display: none;
     }
 }
 
