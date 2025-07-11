@@ -176,13 +176,13 @@ function show_resource_changes(index) {
 
         // Add balls to each resource representing how much they will change
         if (mudanca == -5 || mudanca == 0 || mudanca == 5) {
-            document.getElementById(ide[0]).src = "../img/atri/ball0.png";
+            document.getElementById(ide[0]).src = "../img/atributos/mudancas/ball0.png";
         } else if (mudanca == -10 || mudanca == 10) {
-            document.getElementById(ide[0]).src = "../img/atri/ball1.png";
+            document.getElementById(ide[0]).src = "../img/atributos/mudancas/ball1.png";
         } else if (mudanca == -15 || mudanca == 15) {
-            document.getElementById(ide[0]).src = "../img/atri/ball2.png";
+            document.getElementById(ide[0]).src = "../img/atributos/mudancas/ball2.png";
         } else {
-            document.getElementById(ide[0]).src = "../img/atri/ball3.png";
+            document.getElementById(ide[0]).src = "../img/atributos/mudancas/ball3.png";
         }
     }
 }

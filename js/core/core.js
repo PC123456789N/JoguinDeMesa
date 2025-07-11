@@ -63,9 +63,9 @@ export function executeRandomEvent(event, choice) {
                 break;
         }
         if (mudanca < 0) {
-            document.getElementById(ide[0]).src = "../img/atri/ball-.png";
+            document.getElementById(ide[0]).src = "../img/atributos/mudancas/ball-.png";
         } else if (mudanca > 0) {
-            document.getElementById(ide[0]).src = "../img/atri/ball+.png";
+            document.getElementById(ide[0]).src = "../img/atributos/mudancas/ball+.png";
         } else {
             document.getElementById(ide[0]).src = "";
         }
