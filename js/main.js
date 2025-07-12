@@ -2,6 +2,7 @@ import { voltarHTMLAoNormal } from "./core/common.js";
 import { checkGameOver, executeRandomEvent, getEvent } from "./core/core.js";
 import { updateHtmlEvent } from "./core/io_handler.js";
 
+let event_number = 0;
 let current_event; // atual evento
 let caracteristicaBtn = ""; // característica do botão para comparar os clicados
 let first_press = true; // primeiro clique do jogo (botão de iniciar)
@@ -70,6 +71,9 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
             // desativa os btn, tira antigo personagem de fundo, gera novo evento e ativa o mic
             current_event = getEvent();
             ativarMic(current_event);
+
+            // mudar o fundo para o próximo horário
+            avancarHorario(); // fundo
         });
 
         // se mouse sair de hover, volta a tela normal
@@ -134,6 +138,8 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
                 document.getElementById("btnPhone3").style.display = "none";
                 document.getElementById("imagem2").src = "";
                 ativarMic(current_event);
+
+                avancarHorario();
             }
         });
     }
@@ -150,6 +156,11 @@ document.addEventListener("click", (element) => { // clique em todo documento
         caracteristicaBtn = "";
     }
 });
+
+function avancarHorario() {
+    event_number = (event_number + 1) % 4
+    document.getElementById("imagem1").src = `../img/fundos/sala/fundo${event_number}.jpg`;
+}
 
 function highlight_choice(caracteristicaBtn, qtdBotoes) {
     switch (caracteristicaBtn) {
