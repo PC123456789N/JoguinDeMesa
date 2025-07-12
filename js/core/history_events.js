@@ -405,4 +405,68 @@ export const history_event = {
             },
         ],
     },
+    "MP7": {
+        "character": "Tenente Taísa Torres",
+        "event_text": "Senhor, Agradeçemos por aceitar o novo cargo, estou certa de que haverá um futuro brilhante pela frente. o exército está extremamente satisfeito, o povo não está lidando muito bem com isso, mas com o tempo tenho certeza que ficará tudo bem. ",
+        "choices": [
+            {
+                "text": "Vida longa ao Brasil!",
+                "effects": {
+                    "military": +5,
+                    "finance": +5,
+                    "population": +5,
+                    "popularity": -5
+                },
+                "leads_to": "final"
+            },
+        ],
+    },
+    "MG7": {
+        "character": "Tenente Taísa Torres",
+        "event_text": "Senhor, Agradeçemos por aceitar o novo cargo, estou certa de que haverá um futuro turbulento pela frente. o exército está extremamente satisfeito, o povo não está lidando muito bem com isso, mas com o tempo tenho certeza que ficará tudo bem.",
+        "choices": [
+            {
+                "text": "Vida longa ao Brasil!",
+                "effects": {
+                    "military": +15,
+                    "finance": +0,
+                    "population": +0,
+                    "popularity": -10
+                },
+                "leads_to": "final"
+            },
+        ],
+    },
+    "RP7": {
+        "character": " Jornalista Jaime Jason ",
+        "event_text": "Senhor, Você não foi eleito pelo voto popular, mas o importante de tudo, é que graças aos seus esforços, a democracia foi restaurada, o povo está lidando muito bem com isso, mas com o tempo tenho certeza que ficará tudo bem. ",
+        "choices": [
+            {
+                "text": "Sair do cargo",
+                "effects": {
+                    "military": -20,
+                    "finance": +0,
+                    "population": +0,
+                    "popularity": +20
+                },
+                "leads_to": "final"
+            },
+        ],
+    },
+    "RG7": {
+        "character": " Jornalista Jaime Jason ",
+        "event_text": "Presidente! os rebeldes estão na porta do palácio do planalto!, o exército tentou impedir a revolta, mas, o exército acabou se unindo a revolta, o povo não está lidando bem com isso, o seu governo causou uma guerra civil!",
+        "choices": [
+            {
+                "text": "Se render e ser removido do cargo!",
+                "effects": {
+                    "military": -20,
+                    "finance": +0,
+                    "population": +0,
+                    "popularity": -20
+                },
+                "leads_to": "final"
+            },
+        ],
+    },
 }
