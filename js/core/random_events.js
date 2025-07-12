@@ -4,18 +4,18 @@ export const event_random = [
         "event_text": "As bases do exército estão lotadas\! Nós estamos precisando de mais dinheiro para conseguir construir outras bases.",
         "choices": [
                         {
-                "text": "Construir mais bases",
+                "text": "Ajudar o exército",
                 "effects": {
                     "military": +10,
-                    "finance": -15,
+                    "finance": -10,
                     "population": +0,
                     "popularity": +5,
                 }
             },
             {
-                "text": "Não ajudarei",
+                "text": "Não darei dinheiro para isso",
                 "effects": {
-                    "military": -10,
+                    "military": -5,
                     "finance": +5,
                     "population": +0,
                     "popularity": -5,
@@ -24,10 +24,10 @@ export const event_random = [
             {
                 "text": "Demita militares",
                 "effects": {
-                    "military": -20,
-                    "finance": +20,
+                    "military": -15,
+                    "finance": +10,
                     "population": +0,
-                    "popularity": -10,
+                    "popularity": -5,
                 }
             },
 
@@ -38,30 +38,30 @@ export const event_random = [
         "event_text": "Nós queremos fazer um evento em escala internacional para comemorar o aniversário do exército. O governo pode arcar com os custos?",
         "choices": [
                         {
-                "text": "Irei pagar esse evento",
+                "text": "Ajudar na preparação desse evento",
                 "effects": {
                     "military": +10,
-                    "finance": -20,
+                    "finance": -15,
                     "population": +5,
                     "popularity": +10,
                 }
             },
             {
-                "text": "Não façam o evento",
-                "effects": {
-                    "military": -15,
-                    "finance": +15,
-                    "population": +0,
-                    "popularity": -20,
-                }
-            },
-            {
-                "text": "Não pagarei os custos",
+                "text": "Não permitir que ocorra o evento",
                 "effects": {
                     "military": -10,
                     "finance": +5,
+                    "population": -5,
+                    "popularity": -10,
+                }
+            },
+            {
+                "text": "Não pagar os custos",
+                "effects": {
+                    "military": -5,
+                    "finance": +0,
                     "population": +0,
-                    "popularity": +5,
+                    "popularity": -5,
                 }
             },
 
@@ -77,14 +77,14 @@ export const event_random = [
                     "military": -10,
                     "finance": +0,
                     "population": +15,
-                    "popularity": +15,
+                    "popularity": -5,
                 }
             },
             {
                 "text": "Faça o que achar melhor",
                 "effects": {
                     "military": +20,
-                    "finance": +5,
+                    "finance": +0,
                     "population": -5,
                     "popularity": -20,
                 }
@@ -93,9 +93,9 @@ export const event_random = [
                 "text": "Vamos ajudá-los",
                 "effects": {
                     "military": -5,
-                    "finance": +5,
+                    "finance": -5,
                     "population": +10,
-                    "popularity": +5,
+                    "popularity": +10,
                 }
             },
 
@@ -129,52 +129,49 @@ export const event_random = [
                     "military": +10,
                     "finance": +0,
                     "population": +0,
-                    "popularity": -20,
+                    "popularity": -10,
                 }
             },
 
         ]
     },
-
-    //////////////////////////////////////////////////////////////////////////////////////////////
-    
     {
         "character": "Tenente Taísa Torres",
-        "event_text": "A aeronáutica do Brasil está chamando atenção do mundo afora. Muitos jovens de outros países querem entrar no país por isso.",
+        "event_text": "A aeronáutica do Brasil está chamando atenção mundo afora. Muitos jovens de outros países querem entrar no país por isso.",
         "choices": [
                         {
-                "text": "Permitir que entrem",
+                "text": "Permitir que eles entrem",
                 "effects": {
                     "military": +10,
-                    "finance": -15,
-                    "population": +20,
-                    "popularity": +10,
-                }
-            },
-            {
-                "text": "Não permitir",
-                "effects": {
-                    "military": -10,
-                    "finance": +15,
-                    "population": +0,
-                    "popularity": -10,
-                }
-            },
-            {
-                "text": "Fazer exames de seleção",
-                "effects": {
-                    "military": +5,
                     "finance": -5,
                     "population": +10,
                     "popularity": +5,
                 }
             },
+            {
+                "text": "Não vamos permitir isso",
+                "effects": {
+                    "military": -10,
+                    "finance": +0,
+                    "population": +0,
+                    "popularity": -10,
+                }
+            },
+            {
+                "text": "Façam exames de seleção",
+                "effects": {
+                    "military": +5,
+                    "finance": -5,
+                    "population": +5,
+                    "popularity": +10,
+                }
+            },
 
         ]
     },
     {
         "character": "Tenente Taísa Torres",
-        "event_text": "Há boatos que a Argentina e Uruguai estão invadindo nosso território e, de forma ilegal, roubando nossos recursos minerais. Devemos fazer algo ou esperamos mais tempo?",
+        "event_text": "Há boatos que a Argentina e Uruguai estão invadindo nosso território e, de forma ilegal, roubando nossos recursos minerais. Devemos fazer algo ou devemos analisar a situação?",
         "choices": [
                         {
                 "text": "Fechem as fronteiras",
@@ -182,7 +179,7 @@ export const event_random = [
                     "military": +10,
                     "finance": -10,
                     "population": -5,
-                    "popularity": +0,
+                    "popularity": -5,
                 }
             },
             {
@@ -191,7 +188,7 @@ export const event_random = [
                     "military": -10,
                     "finance": +0,
                     "population": +0,
-                    "popularity": +10,
+                    "popularity": +5,
                 }
             },
             {
@@ -208,7 +205,7 @@ export const event_random = [
     },
     {
         "character": "Tenente Taísa Torres",
-        "event_text": "Os habitantes de Pau dos Ferros do Rio Grande do Norte estão com escassez de água. Começaram a reclamar do seu governo. O que faremos?",
+        "event_text": "Habitantes de Pau dos Ferros do Rio Grande do Norte e outras cidades do interior do Nordeste estão com escassez de água. Começaram a reclamar do seu governo. O que faremos?",
         "choices": [
                         {
                 "text": "Levem recursos e ajudem-os",
@@ -225,11 +222,11 @@ export const event_random = [
                     "military": +5,
                     "finance": +0,
                     "population": +0,
-                    "popularity": -5,
+                    "popularity": -10,
                 }
             },
             {
-                "text": "Vamos vender mais água. Lucraremos com isso\!",
+                "text": "Vamos vender mais água. Lucraremos com isso",
                 "effects": {
                     "military": +5,
                     "finance": +15,
@@ -242,7 +239,7 @@ export const event_random = [
     },
     {
         "character": "Tenente Taísa Torres",
-        "event_text": "A aeronáutica de Brasília está precisando de mais um aeroporto; mas a população também. Existe apenas um terreno para fazer a construção.",
+        "event_text": "A aeronáutica de Brasília está precisando de mais um aeroporto com urgência; mas a população também. Existe apenas um terreno para fazer a construção.",
         "choices": [
                         {
                 "text": "Construam a base militar",
@@ -256,10 +253,10 @@ export const event_random = [
             {
                 "text": "Façam um aeroporto misto",
                 "effects": {
-                    "military": +10,
+                    "military": +5,
                     "finance": -20,
                     "population": +5,
-                    "popularity": +10,
+                    "popularity": +5,
                 }
             },
             {
@@ -284,7 +281,7 @@ export const event_random = [
                     "military": -5,
                     "finance": +0,
                     "population": +0,
-                    "popularity": +5,
+                    "popularity": +0,
                 }
             },
             {
@@ -297,11 +294,11 @@ export const event_random = [
                 }
             },
             {
-                "text": "Ataquem",
+                "text": "Ataquem-os",
                 "effects": {
-                    "military": +15,
+                    "military": +10,
                     "finance": -10,
-                    "population": -10,
+                    "population": -5,
                     "popularity": -10,
                 }
             },
@@ -310,7 +307,7 @@ export const event_random = [
     },
     {
         "character": "Sargento Márcio",
-        "event_text": "Nós da marinha precisamos de uma praia de nossa posse para realizarmos operações militares. Mas o povo fica invadindo a praia.",
+        "event_text": "A marinha necessita de uma praia própria para realizar operações militares. Mas o povo fica invadindo as praias.",
         "choices": [
                         {
                 "text": "Deixem a praia para a população",
@@ -324,7 +321,7 @@ export const event_random = [
             {
                 "text": "Botem cercas",
                 "effects": {
-                    "military": +15,
+                    "military": +10,
                     "finance": -5,
                     "population": +0,
                     "popularity": -10,
@@ -383,7 +380,7 @@ export const event_random = [
                         {
                 "text": "Fiquem",
                 "effects": {
-                    "military": +20,
+                    "military": +15,
                     "finance": -10,
                     "population": +0,
                     "popularity": -10,
@@ -393,9 +390,9 @@ export const event_random = [
                 "text": "Deixem o local público",
                 "effects": {
                     "military": -10,
-                    "finance": +5,
+                    "finance": -5,
                     "population": +0,
-                    "popularity": +10,
+                    "popularity": +15,
                 }
             },
             {
@@ -436,9 +433,9 @@ export const event_random = [
                 "text": "Tripliquem-os",
                 "effects": {
                     "military": +0,
-                    "finance": +30,
+                    "finance": +20,
                     "population": +0,
-                    "popularity": -25,
+                    "popularity": -20,
                 }
             },
 
@@ -446,21 +443,21 @@ export const event_random = [
     },
     {
         "character": "Economista Síntia",
-        "event_text": "O exército está consumindo muitos dos recursos financeiros que poderiam ser usados em outras áreas para a população ou para o governo. Podemos tomar esses recursos?",
+        "event_text": "O exército está consumindo muitos dos recursos financeiros que poderiam ser usados em outras áreas para a população ou para o governo. Podemos utilizar esses recursos?",
         "choices": [
                         {
                 "text": "Pegue uma parte",
                 "effects": {
-                    "military": -15,
-                    "finance": +15,
+                    "military": -10,
+                    "finance": +5,
                     "population": +0,
                     "popularity": +5,
                 }
             },
             {
-                "text": "Não pegue nada\!",
+                "text": "Não pegue nada",
                 "effects": {
-                    "military": +10,
+                    "military": +5,
                     "finance": -10,
                     "population": +0,
                     "popularity": -5,
@@ -470,7 +467,7 @@ export const event_random = [
                 "text": "Invista os recursos na população",
                 "effects": {
                     "military": -10,
-                    "finance": -10,
+                    "finance": -5,
                     "population": +5,
                     "popularity": +10,
                 }
@@ -483,12 +480,12 @@ export const event_random = [
         "event_text": "Estamos com os cofres cheios\! As pessoas precisam de ajuda, deveríamos criar um programa de auxílio para os necessitados?",
         "choices": [
                         {
-                "text": "Crie um",
+                "text": "Criaremos um",
                 "effects": {
                     "military": +0,
-                    "finance": -20,
+                    "finance": -15,
                     "population": +5,
-                    "popularity": +15,
+                    "popularity": +10,
                 }
             },
             {
@@ -496,16 +493,16 @@ export const event_random = [
                 "effects": {
                     "military": +0,
                     "finance": +10,
-                    "population": -10,
-                    "popularity": -5,
+                    "population": -5,
+                    "popularity": -10,
                 }
             },
             {
-                "text": "Ninguém toca no meu dinheiro\!",
+                "text": "Ninguém toca no meu dinheiro",
                 "effects": {
                     "military": +0,
-                    "finance": +20,
-                    "population": -15,
+                    "finance": +15,
+                    "population": -5,
                     "popularity": -15,
                 }
             },
@@ -522,25 +519,25 @@ export const event_random = [
                     "military": +0,
                     "finance": -10,
                     "population": -10,
-                    "popularity": +10,
+                    "popularity": +5,
                 }
             },
             {
-                "text": "Eles conseguem se virar\!",
+                "text": "Eles conseguem se virar",
                 "effects": {
                     "military": +0,
-                    "finance": +10,
+                    "finance": +5,
                     "population": -15,
-                    "popularity": -20,
+                    "popularity": -10,
                 }
             },
             {
-                "text": "Mande uma grande doação\!",
+                "text": "Mande uma grande doação",
                 "effects": {
                     "military": +0,
-                    "finance": -30,
+                    "finance": -20,
                     "population": -5,
-                    "popularity": +25,
+                    "popularity": +15,
                 }
             },
 
@@ -548,13 +545,13 @@ export const event_random = [
     },
     {
         "character": "Banqueiro Bruno Barros",
-        "event_text": "Senhor, a população é péssima em pagar seus empréstimos\! Eu gostaria de uma pequena força militar para ‘dissuadir’ os devedores\!",
+        "event_text": "Senhor, a população é péssima em pagar seus empréstimos\! Eu gostaria de uma pequena força militar para “dissuadir” os devedores\!",
         "choices": [
                         {
                 "text": "Junte alguns soldados",
                 "effects": {
-                    "military": -10,
-                    "finance": +20,
+                    "military": -5,
+                    "finance": +10,
                     "population": -5,
                     "popularity": -10,
                 }
@@ -574,7 +571,7 @@ export const event_random = [
                     "military": +0,
                     "finance": -10,
                     "population": +0,
-                    "popularity": +10,
+                    "popularity": +5,
                 }
             },
 
@@ -588,27 +585,27 @@ export const event_random = [
                 "text": "Claro, não vejo problemas",
                 "effects": {
                     "military": +0,
-                    "finance": -25,
+                    "finance": -15,
                     "population": +0,
                     "popularity": +5,
                 }
             },
             {
-                "text": "Não farei isso",
+                "text": "Não emprestarei dinheiro à você",
                 "effects": {
                     "military": +0,
                     "finance": +0,
                     "population": +0,
-                    "popularity": -15,
+                    "popularity": -5,
                 }
             },
             {
                 "text": "Pegue dinheiro da previdência",
                 "effects": {
                     "military": +0,
-                    "finance": +10,
-                    "population": -10,
-                    "popularity": -15,
+                    "finance": +5,
+                    "population": -5,
+                    "popularity": -10,
                 }
             },
 
@@ -622,27 +619,27 @@ export const event_random = [
                 "text": "Boa Ideia. Faremos isso",
                 "effects": {
                     "military": +0,
-                    "finance": +30,
-                    "population": -10,
-                    "popularity": -30,
+                    "finance": +20,
+                    "population": -5,
+                    "popularity": -15,
                 }
             },
             {
                 "text": "Isso é impossível. É um abuso às pessoas",
                 "effects": {
                     "military": +0,
-                    "finance": -10,
-                    "population": +5,
-                    "popularity": +10,
+                    "finance": -5,
+                    "population": +0,
+                    "popularity": +5,
                 }
             },
             {
                 "text": "Vamos fazer isso apenas em uma parte do país",
                 "effects": {
                     "military": +0,
-                    "finance": +15,
+                    "finance": +10,
                     "population": -5,
-                    "popularity": -15,
+                    "popularity": -10,
                 }
             },
 
@@ -671,12 +668,12 @@ export const event_random = [
                 }
             },
             {
-                "text": "Libere crédito somente para os militares\!",
+                "text": "Libere crédito somente para os militares",
                 "effects": {
                     "military": +10,
                     "finance": +0,
                     "population": +0,
-                    "popularity": -5,
+                    "popularity": -10,
                 }
             },
 
@@ -692,24 +689,24 @@ export const event_random = [
                     "military": +0,
                     "finance": -10,
                     "population": -5,
-                    "popularity": -20,
+                    "popularity": -15,
                 }
             },
             {
                 "text": "Investir no turismo",
                 "effects": {
                     "military": +0,
-                    "finance": +0,
-                    "population": +10,
-                    "popularity": +20,
+                    "finance": -10,
+                    "population": +5,
+                    "popularity": +10,
                 }
             },
             {
                 "text": "Deixe-os se divertir",
                 "effects": {
                     "military": +0,
-                    "finance": +20,
-                    "population": +5,
+                    "finance": +5,
+                    "population": +10,
                     "popularity": +10,
                 }
             },
@@ -718,23 +715,23 @@ export const event_random = [
     },
     {
         "character": "Contador Roberto",
-        "event_text": "O nosso país está com um grande número de idosos devido ao nosso novo sistema de saúde; não existe uma família sequer sem pelo menos 2 idosos.",
+        "event_text": "O nosso país está com um grande número de idosos devido ao nosso novo sistema de saúde; não existe uma família sequer sem idosos.",
         "choices": [
                         {
-                "text": "Reduzir a aposentadoria",
+                "text": "Aumentar a aposentadoria",
                 "effects": {
                     "military": +0,
                     "finance": +10,
                     "population": -5,
-                    "popularity": -20,
+                    "popularity": -10,
                 }
             },
             {
                 "text": "Criar mais asilos",
                 "effects": {
                     "military": +0,
-                    "finance": -15,
-                    "population": +10,
+                    "finance": -10,
+                    "population": +5,
                     "popularity": +5,
                 }
             },
@@ -752,15 +749,15 @@ export const event_random = [
     },
     {
         "character": "Contador Roberto",
-        "event_text": "O número de crianças por mulher está caindo esporadicamente, era 6 filhos por mulher 10 anos atrás. Devemos fazer algo a respeito?",
+        "event_text": "O número de crianças por mulher está caindo esporadicamente, eram seis filhos por mulher alguns anos atrás. Devemos fazer algo a respeito?",
         "choices": [
                         {
                 "text": "Banir métodos contraceptivos",
                 "effects": {
                     "military": +0,
                     "finance": -5,
-                    "population": +25,
-                    "popularity": -5,
+                    "population": +15,
+                    "popularity": -10,
                 }
             },
             {
@@ -792,9 +789,9 @@ export const event_random = [
                 "text": "Tornar abandono parental um crime ",
                 "effects": {
                     "military": +0,
-                    "finance": +0,
+                    "finance": -5,
                     "population": +5,
-                    "popularity": +5,
+                    "popularity": +0,
                 }
             },
             {
@@ -802,7 +799,7 @@ export const event_random = [
                 "effects": {
                     "military": +0,
                     "finance": -10,
-                    "population": +10,
+                    "population": +5,
                     "popularity": +5,
                 }
             },
@@ -812,7 +809,7 @@ export const event_random = [
                     "military": +0,
                     "finance": +0,
                     "population": -10,
-                    "popularity": -15,
+                    "popularity": -5,
                 }
             },
 
@@ -820,24 +817,24 @@ export const event_random = [
     },
     {
         "character": "Recenseadora do IBGE Maria",
-        "event_text": "Notamos que o país teve um aumento gigantesco na taxa de natalidade. Devemos fazer algum tipo de controle para isso?",
+        "event_text": "Notamos que o país teve, de forma imprevisível, um aumento na taxa de natalidade. Devemos fazer algum tipo de controle para isso?",
         "choices": [
                         {
                 "text": "Não é necessário",
                 "effects": {
                     "military": +0,
                     "finance": +5,
-                    "population": +30,
+                    "population": +15,
                     "popularity": -5,
                 }
             },
             {
-                "text": "Controle de natalidade",
+                "text": "Faremos um controle de natalidade",
                 "effects": {
                     "military": +0,
-                    "finance": -10,
+                    "finance": -5,
                     "population": +0,
-                    "popularity": -15,
+                    "popularity": -5,
                 }
             },
             {
@@ -845,8 +842,8 @@ export const event_random = [
                 "effects": {
                     "military": +0,
                     "finance": -15,
-                    "population": +50,
-                    "popularity": +10,
+                    "population": +20,
+                    "popularity": +5,
                 }
             },
 
@@ -861,7 +858,7 @@ export const event_random = [
                 "effects": {
                     "military": +0,
                     "finance": +5,
-                    "population": -10,
+                    "population": -5,
                     "popularity": -5,
                 }
             },
@@ -870,17 +867,17 @@ export const event_random = [
                 "effects": {
                     "military": +0,
                     "finance": -10,
-                    "population": +15,
+                    "population": +10,
                     "popularity": +5,
                 }
             },
             {
-                "text": "Forçar famílias pobres a se mudar para o interior",
+                "text": "Façam famílias pobres se mudarem para o interior",
                 "effects": {
                     "military": +0,
                     "finance": -5,
-                    "population": +25,
-                    "popularity": -20,
+                    "population": +15,
+                    "popularity": -10,
                 }
             },
 
@@ -888,12 +885,12 @@ export const event_random = [
     },
     {
         "character": "Recenseadora do IBGE Maria",
-        "event_text": "Os recentes dados de emigração indicam que as maiores mentes do país estão fugindo para o exterior, eles culpam a falta de investimento e condições de vida e salários, isso pode atrasar o desenvolvimento e o militarismo do país.",
+        "event_text": "Os recentes dados de emigração indicam que as maiores mentes do país estão fugindo para o exterior, eles culpam a falta de investimento, condições de vida e salários; isso pode atrasar o desenvolvimento tecnológico do país.",
         "choices": [
                         {
                 "text": "Deixe eles irem",
                 "effects": {
-                    "military": -15,
+                    "military": +0,
                     "finance": +5,
                     "population": -10,
                     "popularity": -10,
@@ -902,8 +899,8 @@ export const event_random = [
             {
                 "text": "Investir mais na tecnologia",
                 "effects": {
-                    "military": +10,
-                    "finance": -25,
+                    "military": +0,
+                    "finance": -15,
                     "population": +10,
                     "popularity": +5,
                 }
@@ -911,10 +908,10 @@ export const event_random = [
             {
                 "text": "Forcem-os a ficar",
                 "effects": {
-                    "military": +5,
+                    "military": +0,
                     "finance": +0,
                     "population": +5,
-                    "popularity": -15,
+                    "popularity": -10,
                 }
             },
 
@@ -929,8 +926,8 @@ export const event_random = [
                 "effects": {
                     "military": +0,
                     "finance": +5,
-                    "population": -5,
-                    "popularity": -5,
+                    "population": +0,
+                    "popularity": -10,
                 }
             },
             {
@@ -939,7 +936,7 @@ export const event_random = [
                     "military": +0,
                     "finance": -5,
                     "population": -10,
-                    "popularity": -10,
+                    "popularity": -5,
                 }
             },
             {
@@ -947,7 +944,7 @@ export const event_random = [
                 "effects": {
                     "military": +0,
                     "finance": +0,
-                    "population": -15,
+                    "population": -10,
                     "popularity": +0,
                 }
             },
@@ -961,10 +958,10 @@ export const event_random = [
                         {
                 "text": "Ignorar",
                 "effects": {
-                    "military": -5,
+                    "military": +0,
                     "finance": +10,
-                    "population": -15,
-                    "popularity": -10,
+                    "population": -5,
+                    "popularity": -15,
                 }
             },
             {
@@ -981,8 +978,8 @@ export const event_random = [
                 "effects": {
                     "military": +0,
                     "finance": +5,
-                    "population": +10,
-                    "popularity": -20,
+                    "population": +5,
+                    "popularity": -25,
                 }
             },
 
@@ -993,7 +990,7 @@ export const event_random = [
         "event_text": "Nessa tarde, um blindado do exército atropelou uma criança. Diversas notícias sobre a morte de crianças estão aparecendo por todos os cantos do país, a mortalidade infantil está muito alta, o senhor deve fazer algo a respeito.",
         "choices": [
                         {
-                "text": "Culpar os pais",
+                "text": "Culpar os pais da criança",
                 "effects": {
                     "military": +0,
                     "finance": +0,
@@ -1002,12 +999,12 @@ export const event_random = [
                 }
             },
             {
-                "text": "investir na medicina",
+                "text": "Investir na medicina",
                 "effects": {
                     "military": +0,
                     "finance": -10,
-                    "population": +15,
-                    "popularity": +5,
+                    "population": -5,
+                    "popularity": +10,
                 }
             },
             {
@@ -1030,9 +1027,9 @@ export const event_random = [
                 "text": "Construir apartamentos do estado",
                 "effects": {
                     "military": +0,
-                    "finance": -20,
-                    "population": +15,
-                    "popularity": +10,
+                    "finance": -15,
+                    "population": +10,
+                    "popularity": +5,
                 }
             },
             {
@@ -1049,7 +1046,7 @@ export const event_random = [
                 "effects": {
                     "military": +0,
                     "finance": -10,
-                    "population": -5,
+                    "population": +5,
                     "popularity": -10,
                 }
             },
@@ -1061,12 +1058,12 @@ export const event_random = [
         "event_text": "Meu filho está na faculdade. Ele diz que a população jovem está insatisfeita com seu governo. Eles pedem mais políticas públicas direcionadas a eles e à inclusão social.",
         "choices": [
                         {
-                "text": "Jovens não sabem o que querem",
+                "text": "Os jovens não sabem o que querem",
                 "effects": {
-                    "military": +5,
+                    "military": +0,
                     "finance": +0,
-                    "population": -10,
-                    "popularity": -15,
+                    "population": -5,
+                    "popularity": -10,
                 }
             },
             {
@@ -1075,16 +1072,16 @@ export const event_random = [
                     "military": +0,
                     "finance": -10,
                     "population": +10,
-                    "popularity": +15,
+                    "popularity": +5,
                 }
             },
             {
                 "text": "Prender quem se opor ao governo",
                 "effects": {
                     "military": +10,
-                    "finance": +0,
+                    "finance": -5,
                     "population": -10,
-                    "popularity": -20,
+                    "popularity": -15,
                 }
             },
 
@@ -1098,9 +1095,9 @@ export const event_random = [
                 "text": "Aumente o salário dos policiais",
                 "effects": {
                     "military": -5,
-                    "finance": -20,
+                    "finance": -15,
                     "population": +0,
-                    "popularity": +20,
+                    "popularity": +10,
                 }
             },
             {
@@ -1109,16 +1106,16 @@ export const event_random = [
                     "military": +5,
                     "finance": +5,
                     "population": -5,
-                    "popularity": -20,
+                    "popularity": -15,
                 }
             },
             {
                 "text": "Vamos aumentar a segurança particular",
                 "effects": {
                     "military": +0,
-                    "finance": +20,
+                    "finance": +15,
                     "population": -10,
-                    "popularity": -10,
+                    "popularity": -15,
                 }
             },
 
@@ -1132,15 +1129,15 @@ export const event_random = [
                 "text": "Ajudem-os com o que for necessário",
                 "effects": {
                     "military": -5,
-                    "finance": -15,
-                    "population": +10,
-                    "popularity": +10,
+                    "finance": -10,
+                    "population": +5,
+                    "popularity": +5,
                 }
             },
             {
                 "text": "Tirem eles de lá, estão deixando a cidade feia",
                 "effects": {
-                    "military": +5,
+                    "military": +0,
                     "finance": -10,
                     "population": -10,
                     "popularity": -20,
@@ -1149,10 +1146,10 @@ export const event_random = [
             {
                 "text": "Ocultem essa favela com outras construções",
                 "effects": {
-                    "military": +5,
-                    "finance": -20,
-                    "population": -5,
-                    "popularity": -15,
+                    "military": +0,
+                    "finance": -10,
+                    "population": +5,
+                    "popularity": -10,
                 }
             },
 
@@ -1160,7 +1157,7 @@ export const event_random = [
     },
     {
         "character": "Guarda Glória Góis",
-        "event_text": "Recebemos várias denúncias de pais revoltados. A escola da região não comporta mais o número de alunos, e as filas nos hospitais passam de 10 horas.",
+        "event_text": "Recebemos várias denúncias de pais revoltados. A escola da região não comporta mais o número de alunos. Além disso, os hospitais públicos ficam com filas enormes\!",
         "choices": [
                         {
                 "text": "Investiremos mais na educação e saúde da população",
@@ -1168,7 +1165,7 @@ export const event_random = [
                     "military": +0,
                     "finance": -25,
                     "population": +0,
-                    "popularity": +20,
+                    "popularity": +10,
                 }
             },
             {
@@ -1186,7 +1183,7 @@ export const event_random = [
                     "military": +10,
                     "finance": -10,
                     "population": -10,
-                    "popularity": -25,
+                    "popularity": -20,
                 }
             },
 
@@ -1228,19 +1225,19 @@ export const event_random = [
     },
     {
         "character": "Karateca Kátia Kane",
-        "event_text": "Senhor, com as olimpíadas se aproximando, gostaria de pedir uma quantidade significativa de fundos para abrir academias e dojos de treinamento públicos para estimular o esporte nacional.",
+        "event_text": "Senhor, com as olimpíadas se aproximando, gostaria de pedir uma quantidade significativa de fundos para abrir academias e dojos públicos para estimular o esporte nacional.",
         "choices": [
                         {
-                "text": "Claro, todos merecem acesso ao esporte\!",
+                "text": "Claro, todos merecem acesso ao esporte",
                 "effects": {
                     "military": +0,
                     "finance": -20,
-                    "population": +10,
+                    "population": +5,
                     "popularity": +15,
                 }
             },
             {
-                "text": "Não, não temos dinheiro para essas coisas\!",
+                "text": "Não, não temos dinheiro para essas coisas",
                 "effects": {
                     "military": +0,
                     "finance": +5,
@@ -1249,9 +1246,9 @@ export const event_random = [
                 }
             },
             {
-                "text": "Claro, Mas somente os militares podem utilizar esses espaços",
+                "text": "Claro, mas somente os militares podem utilizar esses espaços",
                 "effects": {
-                    "military": +20,
+                    "military": +10,
                     "finance": -10,
                     "population": +0,
                     "popularity": -10,
@@ -1262,10 +1259,10 @@ export const event_random = [
     },
     {
         "character": "Karateca Kátia Kane",
-        "event_text": "Senhor, alguns militares invadiram uma academia da região para capturar um jornalista\! Gostaria de pedir para que isso fosse evitado no futuro. Alguns estão com medo de simplesmente sair de casa.",
+        "event_text": "Senhor, alguns militares invadiram uma academia da região para capturar um jornalista\! Gostaria de pedir para que isso fosse evitado no futuro. Existem pessoas com medo de sair de casa.",
         "choices": [
                         {
-                "text": "Irei reclamar com a tenente a respeito disso",
+                "text": "Irei reclamar com o marechal sobre isso",
                 "effects": {
                     "military": -10,
                     "finance": +0,
@@ -1279,7 +1276,7 @@ export const event_random = [
                     "military": +10,
                     "finance": +0,
                     "population": +0,
-                    "popularity": -15,
+                    "popularity": -10,
                 }
             },
             {
@@ -1310,7 +1307,7 @@ export const event_random = [
             {
                 "text": "Eles devem ser responsabilizados pelo que falarem",
                 "effects": {
-                    "military": +0,
+                    "military": +5,
                     "finance": +0,
                     "population": +0,
                     "popularity": -15,
@@ -1333,12 +1330,12 @@ export const event_random = [
         "event_text": "Meu dojô está planejando fazer um evento público para ensinar defesa pessoal. Esse evento será destinado à mulheres e crianças. Mas precisamos de recursos financeiros para fazê-ló.",
         "choices": [
                         {
-                "text": "O governo irá te ajudar",
+                "text": "O governo irá ajudar",
                 "effects": {
                     "military": -5,
-                    "finance": -15,
+                    "finance": -10,
                     "population": +5,
-                    "popularity": +20,
+                    "popularity": +15,
                 }
             },
             {
@@ -1347,16 +1344,16 @@ export const event_random = [
                     "military": +5,
                     "finance": +5,
                     "population": -5,
-                    "popularity": -20,
+                    "popularity": -10,
                 }
             },
             {
                 "text": "Os militares farão esse evento",
                 "effects": {
                     "military": +10,
-                    "finance": -5,
+                    "finance": -10,
                     "population": +0,
-                    "popularity": +10,
+                    "popularity": +5,
                 }
             },
 
