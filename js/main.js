@@ -7,6 +7,7 @@ let current_event; // atual evento
 let caracteristicaBtn = ""; // característica do botão para comparar os clicados
 let first_press = true; // primeiro clique do jogo (botão de iniciar)
 let firstPressButton = true; // boolean para saber se é o primeiro btn clicado no celular
+let dia = 1;
 
 // todos btn clicáveis do jogo
 const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3,  #clickBtn1, #clickBtn2, #clickBtn3, #mic");
@@ -50,7 +51,7 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
                 // pega a primeira ocasião e ativa o clique do mic para personagem entrar na sala
                 first_press = false;
 
-                document.getElementById("titleGame").innerText = "Presidential Order - Dia 1";
+                document.getElementById("titleGame").innerText = `Presidential Order - Dia ${dia}`;
                 document.getElementById("clickarea2").style.display = "none";
 
                 // define evento e ativa mic a partir desse evento
@@ -118,7 +119,7 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
                     console.log("Exiting greetings screen");
                     current_event = getEvent();
                     first_press = false;
-                    document.getElementById("titleGame").innerText = "Presidential Order - Dia 1";
+                    document.getElementById("titleGame").innerText = `Presidential Order - Dia ${dia}`;
                     document.getElementById("btnPhone2").style.display = "none";
                     voltarHTMLAoNormal(3);
                     ativarMic(current_event);
@@ -160,6 +161,10 @@ document.addEventListener("click", (element) => { // clique em todo documento
 function avancarHorario() {
     event_number = (event_number + 1) % 4
     document.getElementById("imagem1").src = `../img/fundos/sala/fundo${event_number}.jpg`;
+    if (event_number == 0) {
+        dia += 1;
+        document.getElementById("titleGame").innerText = `Presidential Order - Dia ${dia}`;
+    }
 }
 
 function highlight_choice(caracteristicaBtn, qtdBotoes) {
