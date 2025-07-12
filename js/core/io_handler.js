@@ -100,3 +100,13 @@ export function updateHtmlEvent(event) {
             break;
     }
 }
+
+export function showResourceChangesBalls(mudanca, ide) {
+    if (mudanca < 0) {
+        document.getElementById(ide[0]).src = "../img/atributos/mudancas/ball-.png";
+    } else if (mudanca > 0) {
+        document.getElementById(ide[0]).src = "../img/atributos/mudancas/ball+.png";
+    } else {
+        document.getElementById(ide[0]).src = "";
+    }
+}
