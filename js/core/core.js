@@ -1,7 +1,7 @@
 import { event_random } from "./random_events.js";
 import { history_event} from "./history_events.js";
 import { getRandomInt } from "./common.js";
-import { updateStats, showResourceChangesBalls} from "./io_handler.js";
+import { updateStats, showResourceChangesBalls } from "./io_handler.js";
 
 let nextEvent = "N1"
 
@@ -44,9 +44,6 @@ export function getHistoryEvent() {
 }
 
 export function executeRandomEvent(event, choice) {
-    console.log(event["event_text"]);
-    console.log(event["choices"]);
-
     for (let affected in event["choices"][choice]["effects"]) {
         console.log("Affected: " + affected);
         const mudanca = event["choices"][choice]["effects"][affected];
@@ -69,22 +66,14 @@ export function executeRandomEvent(event, choice) {
                 ide[0] = "varFamaimg";
                 break;
         }
-
         showResourceChangesBalls(mudanca, ide);
     }
     updateStats(finance, military, population, popularity);
 }
 
 export function executeHistoryEvent(event, choice) {
-    // Execute the event as normal and set nextEvent to the one from the choice
-    executeRandomEvent(event, choice)
-
-    // Set next event
-    nextEvent = event["choices"][choice]["leads_to"]
-
-    // @brasilicioh, @BrasilicioHenrique
-    //TODO: Adicionar mudança de cenário e verificar se isso tá funcionando
-    // parte do código vai ter que estar no frontend
+    executeRandomEvent(event, choice);
+    nextEvent = event["choices"][choice]["leads_to"];
 }
 
 export function checkGameOver() {
