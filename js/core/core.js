@@ -1,6 +1,6 @@
 import { event_random } from "./random_events.js";
 import { getRandomInt } from "./common.js";
-import { updateStats } from "./io_handler.js";
+import { updateStats, showResourceChangesBalls} from "./io_handler.js";
 
 let usedIndex = [];
 export function getEvent() {
@@ -62,13 +62,8 @@ export function executeRandomEvent(event, choice) {
                 ide[0] = "varFamaimg";
                 break;
         }
-        if (mudanca < 0) {
-            document.getElementById(ide[0]).src = "../img/atributos/mudancas/ball-.png";
-        } else if (mudanca > 0) {
-            document.getElementById(ide[0]).src = "../img/atributos/mudancas/ball+.png";
-        } else {
-            document.getElementById(ide[0]).src = "";
-        }
+
+        showResourceChangesBalls(mudanca, ide);
     }
     updateStats(finance, military, population, popularity);
 }
