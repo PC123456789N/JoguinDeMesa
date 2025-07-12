@@ -59,6 +59,10 @@ html, body {
 
 #list > li {
     margin-top: 1%;
+    text-align: left;
+    
+}
+h4{
 }
 
 ul > li {
