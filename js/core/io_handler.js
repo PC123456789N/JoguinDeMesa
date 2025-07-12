@@ -34,9 +34,18 @@ export function updateHtmlEvent(event) {
         text.innerHTML = event["event_text"];
     });
     document.getElementById("escolhaText").innerHTML = "";
-    document.getElementById("escolha1").innerHTML = "1. " + event["choices"][0]["text"];
-    document.getElementById("escolha2").innerHTML = "2. " + event["choices"][1]["text"];
-    document.getElementById("escolha3").innerHTML = "3. " + event["choices"][2]["text"];
+    if (event["choices"].length == 1) {
+        document.getElementById("escolha2").innerHTML = "1. " + event["choices"][0]["text"];
+    }
+    if (event["choices"].length == 2) {
+        document.getElementById("escolha1").innerHTML = "1. " + event["choices"][0]["text"];
+        document.getElementById("escolha3").innerHTML = "2. " + event["choices"][1]["text"];
+    }
+    if (event["choices"].length >= 3) {
+        document.getElementById("escolha1").innerHTML = "1. " + event["choices"][0]["text"];
+        document.getElementById("escolha2").innerHTML = "2. " + event["choices"][1]["text"];
+        document.getElementById("escolha3").innerHTML = "3. " + event["choices"][2]["text"];
+    }
     console.log(event["character"]);
     switch (event["character"]) {
         case "Marechal Silva":
