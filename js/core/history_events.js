@@ -146,7 +146,7 @@ export const history_event = {
         ],
     },
     "RP4": {
-        "character": "Guarda Glória Góis ",
+        "character": "Guarda Glória Góis",
         "event_text": "Senhor, os rebeldes estão invadindo escolas e estádios públicos para protestar! Deveremos intervir?",
         "choices": [
             {
@@ -223,7 +223,7 @@ export const history_event = {
             },
         ],
     },
-    "MP5": {
+    "MG5": {
         "character": "Banqueiro Bruno Barros",
         "event_text": "Senhor, descobrimos que o marechal tinha um montante secreto devido seu alto nível de corrupção! Além disso, todos os soldados dele acabaram se revoltando contra ele. Eles desejam assassiná-lo para que o senhor fique no poder!",
         "choices": [
@@ -438,7 +438,7 @@ export const history_event = {
         ],
     },
     "RP7": {
-        "character": " Jornalista Jaime Jason",
+        "character": "Jornalista Jaime Jason",
         "event_text": "Senhor, você não foi eleito pelo voto popular, mas o importante de tudo, é que, graças aos seus esforços, a democracia foi restaurada. O povo está lidando muito bem com isso. Com o tempo tenho certeza que ficará tudo bem. ",
         "choices": [
             {
@@ -454,7 +454,7 @@ export const history_event = {
         ],
     },
     "RG7": {
-        "character": " Jornalista Jaime Jason",
+        "character": "Jornalista Jaime Jason",
         "event_text": "Presidente! Os rebeldes estão na porta do Palácio do Planalto! O exército tentou impedir a revolta, mas acabaram se unindo. O povo não está lidando bem com isso, o seu governo causou uma guerra civil!",
         "choices": [
             {
