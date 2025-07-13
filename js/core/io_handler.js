@@ -100,6 +100,7 @@ export function showResourceChangesBalls(mudanca, ide) {
 
 // funcao usada quando o jogador perder por chegar em atributo 0 ou 100
 export function finalAtributo(atributo, valor) {
+    console.log("finalAtributo", atributo, valor);
     let endTitle, endText;
     switch (atributo) {
         case "militar":

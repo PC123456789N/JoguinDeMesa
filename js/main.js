@@ -1,14 +1,14 @@
 import { voltarHTMLAoNormal } from "./core/common.js";
-import { checkGameOver, executeHistoryEvent, executeRandomEvent, getEvent, getHistoryEvent } from "./core/core.js";
+import { checkGameOver, executeEndGame, executeHistoryEvent, executeRandomEvent, getEvent, getHistoryEvent, gameOver } from "./core/core.js";
 import { updateHtmlEvent } from "./core/io_handler.js";
 import { finalAtributo } from "./core/io_handler.js";
 
+let dia = 1; // dia do jogo atual e seu momento.
 if (window.location.pathname.split("/").pop() == "main.html") {
     let escolhaIndex; // índice de escolha do usuário -> pode ser mutável
     let current_event; // atual evento
 
     let event_number = 0;
-    let dia = 1; // dia do jogo atual e seu momento.
 
     let caracteristicaBtn = ""; // característica do botão para comparar os clicados
 
@@ -103,13 +103,12 @@ if (window.location.pathname.split("/").pop() == "main.html") {
                     ativarMic(current_event);
                     return;
                 }
-
+                console.log(dia);
                 // se não for tela inicial, ele executa os problemas do evento anterior e altera html a partir disso
                 if (dia % 1 != 0.75) { // se não for noite, executa evento normal
                     executeRandomEvent(current_event, escolhaIndex);
-                } else if (dia == 8) {
-                    alert("função que chama os finais alternativos. indo para créditos");
-                    window.location.href = "../html/creditos.html";
+                } else if (dia == 7.75) { // aqui executa-se os finais de história
+                    window.location.href = "final.html";
                 }
                 else { // se for noite, executa evento de história
                     executeHistoryEvent(current_event, escolhaIndex);
@@ -210,9 +209,8 @@ if (window.location.pathname.split("/").pop() == "main.html") {
                     // se não for tela inicial, ele executa os problemas do evento anterior e altera html a partir disso
                     if (dia % 1 != 0.75) { // se não for noite, executa evento normal
                         executeRandomEvent(current_event, escolhaIndex);
-                    } else if (dia == 8) {
-                        alert("função que chama os finais alternativos. indo para créditos");
-                        window.location.href = "../html/creditos.html";
+                    } else if (dia == 7.75) { // aqui executa-se os finais de história
+                        window.location.href = "final.html";
                     }
                     else { // se for noite, executa evento de história
                         executeHistoryEvent(current_event, escolhaIndex);
@@ -356,5 +354,9 @@ if (window.location.pathname.split("/").pop() == "main.html") {
         document.getElementById("clickarea3").style.display = "none"; // pc
     }
 } else {
-    finalAtributo(localStorage.getItem("atributo"), localStorage.getItem("valor")); // game over
+    if (gameOver) {
+        finalAtributo(localStorage.getItem("atributo"), localStorage.getItem("valor")); // game over
+    } else {
+        executeEndGame();
+    }
 }

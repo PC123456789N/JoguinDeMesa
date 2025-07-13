@@ -8,6 +8,7 @@ export let military = 50;
 export let finance = 50;
 export let population = 50;
 export let popularity = 50;
+export let gameOver = false;
 let atributo;
 let valor;
 
@@ -87,6 +88,31 @@ export function executeHistoryEvent(event, choice) {
     nextEvent = event["choices"][choice]["leads_to"];
 }
 
+export function executeEndGame() {
+    switch (nextEvent) {
+        case "F1":
+            document.getElementById("imagem1").src = `../img/finais/principais/mp.png`;
+            document.getElementById("finalTitle").innertext = "Final Militar Pacifista";
+            document.getElementById("finalText").innerHTML = "Texto de Kaio para mp";
+            break;
+        case "F2":
+            document.getElementById("imagem1").src = `../img/finais/principais/mg.png`;
+            document.getElementById("finalTitle").innertext = "Final Militar Genocida";
+            document.getElementById("finalText").innerHTML = "Texto de Kaio para mg";
+            break;
+        case "F3":
+            document.getElementById("imagem1").src = `../img/finais/principais/rp.png`;
+            document.getElementById("finalTitle").innertext = "Final Rebelde Pacifista";
+            document.getElementById("finalText").innerHTML = "Texto de Kaio para rp";
+            break;
+        case "F4":
+            document.getElementById("imagem1").src = `../img/finais/principais/rg.png`;
+            document.getElementById("finalTitle").innertext = "Final Rebelde Genocida";
+            document.getElementById("finalText").innerHTML = "Texto de Kaio para rg";
+            break;
+    }
+}
+
 export function checkGameOver() {
     // função que analisa se os atributos chegaram no pé de 0 ou menor ou 100 ou maior
     // se tiver chegado nisso: GAME OVER
@@ -127,6 +153,7 @@ export function checkGameOver() {
             atributo = "fama";
             valor = 100;
         }
+        gameOver = true;
         localStorage.setItem("atributo", atributo);
         localStorage.setItem("valor", valor);
         window.location.href = "../html/final.html"; // redireciona para a página de final
