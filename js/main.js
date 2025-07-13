@@ -138,15 +138,15 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
                         // desativa os btn que nao usaveis
                         document.getElementById("clickarea1").style.display = "none";
                         document.getElementById("clickarea3").style.display = "none";
-                        document.getElementById("clickBtn1").style.display = "none";
-                        document.getElementById("clickBtn3").style.display = "none";
+                        document.getElementById("BtnPhone1").style.display = "none";
+                        document.getElementById("BtnPhone3").style.display = "none";
 
                         index = 0; // pegar o item 0 da lista choices
                     } else if (current_event["choices"].length == 2) {
                         highlight_choice(caracteristicaBtn, 2); // coloca mesa de 2 btn
                         // desativa o btn nao usavel
                         document.getElementById("clickarea2").style.display = "none";
-                        document.getElementById("clickBtn2").style.display = "none";
+                        document.getElementById("BtnPhone2").style.display = "none";
 
                         if (index == 2) {
                             index = 1; // se for o item 0, permanece, se for o item 2, pega o item 1 da lista choices
