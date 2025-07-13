@@ -3,12 +3,15 @@ import { checkGameOver, executeHistoryEvent, executeRandomEvent, getEvent, getHi
 import { updateHtmlEvent } from "./core/io_handler.js";
 
 let escolhaIndex; // índice de escolha do usuário -> pode ser mutável
-let event_number = 0;
 let current_event; // atual evento
+
+let event_number = 0;
+let dia = 1; // dia do jogo atual e seu momento.
+
 let caracteristicaBtn = ""; // característica do botão para comparar os clicados
+
 let first_press = true; // primeiro clique do jogo (botão de iniciar)
 let firstPressButton = true; // boolean para saber se é o primeiro btn clicado no celular
-let dia = 1;
 
 // todos btn clicáveis do jogo
 const btnGame = document.querySelectorAll("#clickarea1, #clickarea2, #clickarea3,  #clickBtn1, #clickBtn2, #clickBtn3, #mic");
@@ -48,11 +51,14 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
         });
     } else if (btn.id == "clickarea1" || btn.id == "clickarea2" || btn.id == "clickarea3") { // se os btn de PC forem clicados
         btn.addEventListener("mouseover", () => { // se mouse ficar em cima do btn, img de pressionado aparece
-            
             caracteristicaBtn = btn.title; // define carac do botão para análise futura
-            if (caracteristicaBtn == "Escolha 1") escolhaIndex = 0;
-            else if (caracteristicaBtn == "Escolha 2") escolhaIndex = 1;
-            else if (caracteristicaBtn == "Escolha 3") escolhaIndex = 2;
+            if (caracteristicaBtn == "Escolha 1") {
+                escolhaIndex = 0;
+            } else if (caracteristicaBtn == "Escolha 2") {
+                escolhaIndex = 1;
+            } else if (caracteristicaBtn == "Escolha 3") {
+                escolhaIndex = 2;
+            }
 
             if (first_press) { // analisa se é a tela inicial do jogo
                 highlight_choice(caracteristicaBtn, 1);
@@ -127,7 +133,7 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
                 voltarHTMLAoNormal(3);
             }
         });
-    } else { // For mobile
+    } else { // para cliques feitos no celular
         btn.addEventListener("click", () => {
             if (caracteristicaBtn == btn.title) { // verifica se a variavel de carac porta o mesmo title de btn; se sim, é um dblclik
                 firstPressButton = false; // se agora é segundo, o próximo será o primeiro
@@ -144,9 +150,13 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
 
             if (firstPressButton) { // se for o primeiro click do btn (equivalente ao hover do pc)
                 caracteristicaBtn = btn.title; // define carac do botão para análise futura
-                if (caracteristicaBtn == "Escolha 1") escolhaIndex = 0;
-                else if (caracteristicaBtn == "Escolha 2") escolhaIndex = 1;
-                else if (caracteristicaBtn == "Escolha 3") escolhaIndex = 2;
+                if (caracteristicaBtn == "Escolha 1") {
+                    escolhaIndex = 0;
+                } else if (caracteristicaBtn == "Escolha 2") {
+                    escolhaIndex = 1;
+                } else if (caracteristicaBtn == "Escolha 3") {
+                    escolhaIndex = 2;
+                }
 
                 if (first_press) { // se for a tela inicial do jogo
                     highlight_choice(caracteristicaBtn, 1);
@@ -206,6 +216,7 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
                 } else {
                     current_event = getHistoryEvent(); // se estiver indo para noite, define-se evento de história
                 }
+                // abaixo um "limpa tela" para deixar o jogo da maneira visualmente correta
                 if (current_event["choices"].length == 1) {
                     voltarHTMLAoNormal(1);
                     document.getElementById("clickarea1").style.display = "none";
@@ -244,15 +255,16 @@ document.addEventListener("click", (element) => { // clique em todo documento
     }
 });
 
-function avancarHorario() {
-    event_number = (event_number + 1) % 4
+function avancarHorario() { // função que muda o turno do dia e o próprio dia
+    event_number = (event_number + 1) % 4 // número que vai variar sempre de 0 a 3 (iniciando em 1)
     document.getElementById("imagem1").src = `../img/fundos/sala/fundo${event_number}.jpg`;
-    dia += 0.25
+    dia += 0.25 // variável que inicia em 1; quando há num inteiro, significa que é o dia desse número pela manhã
     if (event_number == 0) {
         document.getElementById("titleGame").innerText = `Presidential Order - Dia ${dia}`;
     }
 }
 
+// função que marca a escolha do usuário e muda a imagem da mesa de acordo com o número de botões
 function highlight_choice(caracteristicaBtn, qtdBotoes) {
     switch (caracteristicaBtn) {
         case "Escolha 1":
@@ -273,6 +285,7 @@ function highlight_choice(caracteristicaBtn, qtdBotoes) {
     }
 }
 
+// função que demonstra as mudanças da escolha analisada pelo usuário
 function show_resource_changes(index) {
     for (let affected in current_event["choices"][index]["effects"]) {
         const mudanca = Number(current_event["choices"][index]["effects"][affected]);
@@ -291,7 +304,7 @@ function show_resource_changes(index) {
                 ide[0] = "varFamaMud";
                 break;
         }
-        // Add balls to each resource representing how much they will change
+        // com o id do elemento capturado; ele fala se muda quase nada, pouco, médio ou muito do elemento com a variável mudança
         if (mudanca == -5 || mudanca == 0 || mudanca == 5) {
             document.getElementById(ide[0]).src = "../img/atributos/mudancas/ball0.png";
         } else if (mudanca == -10 || mudanca == 10) {
@@ -304,22 +317,31 @@ function show_resource_changes(index) {
     }
 }
 
+// função que ativa a tela de microfone (para permitir entrada de personagem na sala)
 function ativarMic(event) {
-    document.getElementById("imagem2").src = "";
+    document.getElementById("imagem2").src = ""; // tira o antigo personagem de fundo
+
+    // faz aparecer na tela o microfone clicável e seta que aponte para o microfone
     document.getElementById("mic").style.display = "";
+    document.getElementById("seta").style.display = "";
+
+    // muda o nome do personagem do texto
     document.getElementById("characterName").innerHTML = event["character"];
     document.querySelectorAll("#ocasiaoText").forEach(text => {
         text.innerHTML = `${event["character"]} quer entrar para falar com você, parece ser importante.`;
     });
     document.getElementById("escolhaText").innerHTML = `Clique no microfone para permitir que ${event["character"]} entre.`;
+    
+    // limpa as antigas escolhas assim como os botões
     document.getElementById("escolha1").innerHTML = "";
     document.getElementById("escolha2").innerHTML = "";
     document.getElementById("escolha3").innerHTML = "";
-    document.getElementById("btnPhone1").style.display = "none";
-    document.getElementById("btnPhone2").style.display = "none";
-    document.getElementById("btnPhone3").style.display = "none";
-    document.getElementById("clickarea1").style.display = "none";
-    document.getElementById("clickarea2").style.display = "none";
-    document.getElementById("clickarea3").style.display = "none";
-    document.getElementById("seta").style.display = "";
+
+    document.getElementById("btnPhone1").style.display = "none"; // phone
+    document.getElementById("btnPhone2").style.display = "none"; // phone
+    document.getElementById("btnPhone3").style.display = "none"; // phone
+
+    document.getElementById("clickarea1").style.display = "none"; //
+    document.getElementById("clickarea2").style.display = "none"; // pc
+    document.getElementById("clickarea3").style.display = "none"; // pc
 }

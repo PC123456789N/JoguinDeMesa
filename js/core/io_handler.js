@@ -1,13 +1,15 @@
 import { military, finance, population, popularity } from "./core.js";
 
 export function updateStats(finance, military, population, popularity) {
+    // função atualiza o html com o atual atributo do usuário
     document.getElementById("varMil").innerHTML = military;
     document.getElementById("varDin").innerHTML = finance;
     document.getElementById("varPopu").innerHTML = population;
     document.getElementById("varFama").innerHTML = popularity;
 }
 
-export function updateHtmlEvent(event) {
+export function updateHtmlEvent(event) { // função responsável por alterar partes do html com base evento atual
+    // se atributos estiverem próximo de game over, deixa eles na cor vermelha. Se não, volta ao normal
     if (military >= 75 || military <= 25) {
         document.getElementById("varMil").style.color = "red";
     } else {
@@ -29,10 +31,12 @@ export function updateHtmlEvent(event) {
         document.getElementById("varFama").style.color = "black";
     }
 
-    document.getElementById("characterName").innerHTML = event["character"];
+    // do evento pega-se o texto da ocasião e coloca no html
     document.querySelectorAll("#ocasiaoText").forEach(text => {
         text.innerHTML = event["event_text"];
     });
+
+    // do eveto analisa a quantidade de escolhas e coloca elas de forma coerente à situação
     document.getElementById("escolhaText").innerHTML = "";
     if (event["choices"].length == 1) {
         document.getElementById("escolha2").innerHTML = "1. " + event["choices"][0]["text"];
@@ -47,6 +51,8 @@ export function updateHtmlEvent(event) {
         document.getElementById("escolha3").innerHTML = "3. " + event["choices"][2]["text"];
     }
     
+    // do evento pega-se personagem e muda seu nome e põe sua foto no html
+    document.getElementById("characterName").innerHTML = event["character"];
     switch (event["character"]) {
         case "Marechal Silva":
             document.getElementById("imagem2").src = "../img/personagens/marechal.png";
@@ -82,6 +88,7 @@ export function updateHtmlEvent(event) {
 }
 
 export function showResourceChangesBalls(mudanca, ide) {
+    // função que vê a mudança a ser feita em uma string que representa um id; se ela for positiva, bota +; negativa, bota -
     if (mudanca < 0) {
         document.getElementById(ide[0]).src = "../img/atributos/mudancas/ball-.png";
     } else if (mudanca > 0) {
