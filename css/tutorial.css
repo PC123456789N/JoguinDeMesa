@@ -15,3 +15,11 @@ html, body {
     border-style:ridge;
     border-color: rgb(255, 255, 255);
 }
+
+#lower{
+    background-color: black;
+    color: azure;
+    border-bottom-style: solid ;
+    border-top-style: solid ;
+    border-color: rgb(107, 107, 107);
+}
