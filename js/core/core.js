@@ -1,7 +1,7 @@
 import { event_random } from "./random_events.js";
 import { history_event} from "./history_events.js";
 import { getRandomInt } from "./common.js";
-import { updateStats, showResourceChangesBalls, finalAtributo } from "./io_handler.js";
+import { updateStats, showResourceChangesBalls } from "./io_handler.js";
 
 // atributos gerais do jogo
 export let military = 50;
@@ -125,8 +125,10 @@ export function checkGameOver() {
         } else if (popularity >= 100) {
             alert("As pessoas gostam muito de você; mas nem todos são tão amados assim. Você foi alvo de um assasino e morreu. Voltando para o menu.");
             atributo = "fama";
-            valor = 0;
+            valor = 100;
         }
-        finalAtributo(atributo, valor); // função de game over;
+        localStorage.setItem("atributo", atributo);
+        localStorage.setItem("valor", valor);
+        window.location.href = "../html/final.html"; // redireciona para a página de final
     }
 }

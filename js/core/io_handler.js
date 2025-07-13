@@ -1,8 +1,5 @@
 import { military, finance, population, popularity } from "./core.js";
 
-let endTitle;
-let endText;
-
 export function updateStats(finance, military, population, popularity) {
     // função atualiza o html com o atual atributo do usuário
     document.getElementById("varMil").innerHTML = military;
@@ -103,7 +100,7 @@ export function showResourceChangesBalls(mudanca, ide) {
 
 // funcao usada quando o jogador perder por chegar em atributo 0 ou 100
 export function finalAtributo(atributo, valor) {
-    window.location.href = "final.html"; // leva o usuário para a tela da página final.html
+    let endTitle, endText;
     switch (atributo) {
         case "militar":
             if (valor == 0) {
@@ -142,7 +139,7 @@ export function finalAtributo(atributo, valor) {
             }
             break;
     }
-    document.getElementById("imagem1").src = `../img/finais/alternativos/${atributo}${valor}`;
+    document.getElementById("imagem1").src = `../img/finais/alternativos/${atributo}${valor}.png`;
     document.getElementById("finalTitle").innerHTML = endTitle;
     document.getElementById("finalText").innerHTML = endText;
 }
