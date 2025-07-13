@@ -1,0 +1,17 @@
+html, body {
+    overflow-x:hidden;
+}
+.container-fluid {
+    background-color: darkgrey;
+}
+#header {
+    background-color: black;
+    color: azure;
+    border-bottom-style: solid ;
+    border-color: rgb(107, 107, 107);
+}
+
+.tutobox{
+    border-style:ridge;
+    border-color: rgb(255, 255, 255);
+}
