@@ -1,5 +1,8 @@
 import { military, finance, population, popularity } from "./core.js";
 
+let endTitle;
+let endText;
+
 export function updateStats(finance, military, population, popularity) {
     // função atualiza o html com o atual atributo do usuário
     document.getElementById("varMil").innerHTML = military;
@@ -96,4 +99,50 @@ export function showResourceChangesBalls(mudanca, ide) {
     } else {
         document.getElementById(ide[0]).src = "";
     }
+}
+
+// funcao usada quando o jogador perder por chegar em atributo 0 ou 100
+export function finalAtributo(atributo, valor) {
+    window.location.href = "final.html"; // leva o usuário para a tela da página final.html
+    switch (atributo) {
+        case "militar":
+            if (valor == 0) {
+                endTitle = "Título que Kaio vai fazer"
+                endText = "Texto que Kaio vai fazer"
+            } else {
+                endTitle = "Título que Kaio vai fazer"
+                endText = "Texto que Kaio vai fazer"
+            }
+            break;
+        case "dinheiro":
+            if (valor == 0) {
+                endTitle = "Título que Kaio vai fazer"
+                endText = "Texto que Kaio vai fazer"
+            } else {
+                endTitle = "Título que Kaio vai fazer"
+                endText = "Texto que Kaio vai fazer"
+            }
+            break;
+        case "populacao":
+            if (valor == 0) {
+                endTitle = "Título que Kaio vai fazer"
+                endText = "Texto que Kaio vai fazer"
+            } else {
+                endTitle = "Título que Kaio vai fazer"
+                endText = "Texto que Kaio vai fazer"
+            }
+            break;
+        case "fama":
+            if (valor == 0) {
+                endTitle = "Título que Kaio vai fazer"
+                endText = "Texto que Kaio vai fazer"
+            } else {
+                endTitle = "Título que Kaio vai fazer"
+                endText = "Texto que Kaio vai fazer"
+            }
+            break;
+    }
+    document.getElementById("imagem1").src = `../img/finais/alternativos/${atributo}${valor}`;
+    document.getElementById("finalTitle").innerHTML = endTitle;
+    document.getElementById("finalText").innerHTML = endText;
 }

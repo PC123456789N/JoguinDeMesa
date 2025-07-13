@@ -105,21 +105,21 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
             // se não for tela inicial, ele executa os problemas do evento anterior e altera html a partir disso
             if (dia % 1 != 0.75) { // se não for noite, executa evento normal
                 executeRandomEvent(current_event, escolhaIndex);
-            } else { // se for noite, executa evento de história
-                executeHistoryEvent(current_event, escolhaIndex);
-            }
-            updateHtmlEvent(current_event); // muda html a partir do evento definido
-            checkGameOver(); // verifica se usuário perdeu
-            
-            // gera novo evento e ativa o mic
-            if (dia % 1 != 0.75) { // se não for noite, executa evento normal
-                executeRandomEvent(current_event, escolhaIndex);
             } else if (dia == 8) {
                 alert("função que chama os finais alternativos. indo para créditos");
                 window.location.href = "../html/creditos.html";
             }
              else { // se for noite, executa evento de história
                 executeHistoryEvent(current_event, escolhaIndex);
+            }
+            updateHtmlEvent(current_event); // muda html a partir do evento definido
+            checkGameOver(); // verifica se usuário perdeu
+            
+            // gera novo evento e ativa o mic
+            if (dia % 1 != 0.5) {
+                current_event = getEvent(); // se não estiver indo para noite, define-se evento normal
+            } else {
+                current_event = getHistoryEvent(); // se estiver indo para noite, define-se evento de história
             }
             ativarMic(current_event);
 
@@ -208,7 +208,11 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
                 // se não for tela inicial, ele executa os problemas do evento anterior e altera html a partir disso
                 if (dia % 1 != 0.75) { // se não for noite, executa evento normal
                     executeRandomEvent(current_event, escolhaIndex);
-                } else { // se for noite, executa evento de história
+                } else if (dia == 8) {
+                    alert("função que chama os finais alternativos. indo para créditos");
+                    window.location.href = "../html/creditos.html";
+                }
+                else { // se for noite, executa evento de história
                     executeHistoryEvent(current_event, escolhaIndex);
                 }
                 updateHtmlEvent(current_event); // muda html a partir do evento definido
