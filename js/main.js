@@ -112,10 +112,14 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
             checkGameOver(); // verifica se usuário perdeu
             
             // gera novo evento e ativa o mic
-            if (dia % 1 != 0.5) {
-                current_event = getEvent(); // se não estiver indo para noite, define-se evento normal
-            } else {
-                current_event = getHistoryEvent(); // se estiver indo para noite, define-se evento de história
+            if (dia % 1 != 0.75) { // se não for noite, executa evento normal
+                executeRandomEvent(current_event, escolhaIndex);
+            } else if (dia == 8) {
+                alert("função que chama os finais alternativos. indo para créditos");
+                window.location.href = "../html/creditos.html";
+            }
+             else { // se for noite, executa evento de história
+                executeHistoryEvent(current_event, escolhaIndex);
             }
             ativarMic(current_event);
 
