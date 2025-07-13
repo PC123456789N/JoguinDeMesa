@@ -18,14 +18,24 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
         btn.addEventListener("click", () => { // se microfone foi clicado
             updateHtmlEvent(current_event); // edita o html atual para ficar comoo deveria
 
-            // deixa todos botões clicáveis
-            document.getElementById("clickarea1").style.display = "";
-            document.getElementById("clickarea2").style.display = "";
-            document.getElementById("clickarea3").style.display = "";
-            document.getElementById("btnPhone1").style.display = "";
-            document.getElementById("btnPhone2").style.display = "";
-            document.getElementById("btnPhone3").style.display = "";
-
+            // deixa todos botões que serão usados clicáveis
+            if (current_event["choices"].length == 1) {
+                document.getElementById("clickarea2").style.display = "";
+                document.getElementById("btnPhone2").style.display = "";
+            } else if (current_event["choices"].length == 2) {
+                document.getElementById("clickarea1").style.display = "";
+                document.getElementById("clickarea3").style.display = "";
+                document.getElementById("btnPhone1").style.display = "";
+                document.getElementById("btnPhone3").style.display = "";
+            } else {
+                document.getElementById("clickarea1").style.display = "";
+                document.getElementById("clickarea2").style.display = "";
+                document.getElementById("clickarea3").style.display = "";
+                document.getElementById("btnPhone1").style.display = "";
+                document.getElementById("btnPhone2").style.display = "";
+                document.getElementById("btnPhone3").style.display = "";
+            }
+            
             // deixa o microfone não clicável
             document.getElementById("mic").style.display = "none";
 
@@ -86,8 +96,7 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
                 return;
             }
 
-            // se não for primeiro clique, ele executa os problemas do evento anterior e altera html a partir disso
-
+            // se não for tela inicial, ele executa os problemas do evento anterior e altera html a partir disso
             if (dia % 1 != 0.75) { // se não for noite, executa evento normal
                 executeRandomEvent(current_event, escolhaIndex);
             } else { // se for noite, executa evento de história
@@ -109,85 +118,110 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
         });
 
         // se mouse sair de hover, volta a tela normal
-        btn.addEventListener("mouseout", () => {
-            if (first_press) {
+        btn.addEventListener("mouseout", () => { // analisa a qtd de escolhas para saber quantos botões tem a mesa
+            if (first_press || current_event["choices"].length == 1) {
                 voltarHTMLAoNormal(1);
-            } else { // analisa a qtd de escolhas do choices para saber quantos btn tem a mesa
-                if (current_event["choices"].length == 1) {
-                    voltarHTMLAoNormal(1);
-                } else if (current_event["choices"].length == 2) {
-                    voltarHTMLAoNormal(2);
-                } else {
-                    voltarHTMLAoNormal(3);
-                }
+            } else if (current_event["choices"].length == 2) {
+                voltarHTMLAoNormal(2);
+            } else if (current_event["choices"].length == 3) {
+                voltarHTMLAoNormal(3);
             }
         });
     } else { // For mobile
         btn.addEventListener("click", () => {
-            if (index > 2) {
-                index = index - 3; // reduz o índicce
+            if (caracteristicaBtn == btn.title) { // verifica se a variavel de carac porta o mesmo title de btn; se sim, é um dblclik
+                firstPressButton = false; // se agora é segundo, o próximo será o primeiro
+            } else { // se não for btn repetido
+                // analisa a qtd de escolhas para saber quantos botões tem a mesa
+                if (first_press || current_event["choices"].length == 1) {
+                    voltarHTMLAoNormal(1);
+                } else if (current_event["choices"].length == 2) {
+                    voltarHTMLAoNormal(2);
+                } else if (current_event["choices"].length == 3) {
+                    voltarHTMLAoNormal(3);
+                }
             }
 
-            if (caracteristicaBtn == btn.title) {
-                console.log("previous button, current button", caracteristicaBtn, btn.title);
-                
-                // If pressed the same button, then set first press to false
-                firstPressButton = false;
-                
-                console.log("Second button press");
-            } else {
-                voltarHTMLAoNormal(3);
-            }
-            if (firstPressButton) { // If is first press on the button
-                console.log("First button press");
-                // Change the button that was pressed to the current
-                caracteristicaBtn = btn.title;
-                if (first_press) { // If not the greetings screen show the resource changes
+            if (firstPressButton) { // se for o primeiro click do btn (equivalente ao hover do pc)
+                caracteristicaBtn = btn.title; // define carac do botão para análise futura
+                if (caracteristicaBtn == "Escolha 1") escolhaIndex = 0;
+                else if (caracteristicaBtn == "Escolha 2") escolhaIndex = 1;
+                else if (caracteristicaBtn == "Escolha 3") escolhaIndex = 2;
+
+                if (first_press) { // se for a tela inicial do jogo
                     highlight_choice(caracteristicaBtn, 1);
-                } else {
+                } else { // se não for tela inicial; ele vê a qtd de escolhas atual e coloca imagem a partir do analisado
                     if (current_event["choices"].length == 1) {
-                        highlight_choice(caracteristicaBtn, 1);
-                        index = 0;
+                        highlight_choice(caracteristicaBtn, 1); // coloca mesa de 1 btn
+                        // desativa os btn que nao usaveis
                         document.getElementById("clickarea1").style.display = "none";
                         document.getElementById("clickarea3").style.display = "none";
                         document.getElementById("btnPhone1").style.display = "none";
                         document.getElementById("btnPhone3").style.display = "none";
+
+                        escolhaIndex = 0; // pegar o item 0 da lista choices
                     } else if (current_event["choices"].length == 2) {
-                        highlight_choice(caracteristicaBtn, 2);
+                        highlight_choice(caracteristicaBtn, 2); // coloca mesa de 2 btn
+                        // desativa o btn nao usavel
                         document.getElementById("clickarea2").style.display = "none";
-                        document.getElementById("btnPhone2").style.display = "none";
-                        if (index == 2) {
-                            index = 1;
+                        document.getElementById("clickBtn2").style.display = "none";
+
+                        if (escolhaIndex == 2) {
+                            escolhaIndex = 1; // se for o item 0, permanece, se for o item 2, pega o item 1 da lista choices
                         }
                     } else {
-                        highlight_choice(caracteristicaBtn, 3);
+                        highlight_choice(caracteristicaBtn, 3); // tela normal e padrão
                     }
-                    show_resource_changes(index);
+                    show_resource_changes(escolhaIndex); // faz as mudanças com o índice mutável
                 }
-            } else { // If is the second press of the button
-                firstPressButton = true;
+            } else { // se for o segundo clique do botão (equivalente ao click normal de pc)
+                firstPressButton = true; // define que o próximo clique será o primeiro
                 caracteristicaBtn = "";
-                if (first_press) {
-                    console.log("Exiting greetings screen");
-                    current_event = getEvent();
+                
+                if (first_press) { // se for a tela inicial do jogo
+                    // pega a primeira ocasião e ativa o clique do mic para personagem entrar na sala
                     first_press = false;
+
                     document.getElementById("titleGame").innerText = `Presidential Order - Dia ${dia}`;
                     document.getElementById("btnPhone2").style.display = "none";
+
+                    current_event = getEvent();
                     voltarHTMLAoNormal(3);
                     ativarMic(current_event);
                     return;
                 }
-                console.log("Executing event");
 
-                console.log("index for", current_event);
-                console.log(index);
-                voltarHTMLAoNormal(3);
-                executeRandomEvent(current_event, index);
-                updateHtmlEvent(current_event);
-                checkGameOver();
-                current_event = getEvent();
+                // se não for tela inicial, ele executa os problemas do evento anterior e altera html a partir disso
+                if (dia % 1 != 0.75) { // se não for noite, executa evento normal
+                    executeRandomEvent(current_event, escolhaIndex);
+                } else { // se for noite, executa evento de história
+                    executeHistoryEvent(current_event, escolhaIndex);
+                }
+                updateHtmlEvent(current_event); // muda html a partir do evento definido
+                checkGameOver(); // verifica se usuário perdeu
+                
+                // gera novo evento e ativa o mic
+                if (dia % 1 != 0.5) {
+                    current_event = getEvent(); // se não estiver indo para noite, define-se evento normal
+                } else {
+                    current_event = getHistoryEvent(); // se estiver indo para noite, define-se evento de história
+                }
+                if (current_event["choices"].length == 1) {
+                    voltarHTMLAoNormal(1);
+                    document.getElementById("clickarea1").style.display = "none";
+                    document.getElementById("clickarea3").style.display = "none";
+                    document.getElementById("btnPhone1").style.display = "none";
+                    document.getElementById("btnPhone3").style.display = "none";
+                } else if (current_event["choices"].length == 2) {
+                    voltarHTMLAoNormal(2);
+                    document.getElementById("clickarea2").style.display = "none";
+                    document.getElementById("btnPhone2").style.display = "none";
+                } else if (current_event["choices"].length == 3) {
+                    voltarHTMLAoNormal(3);
+                }
                 ativarMic(current_event);
 
+                // mudar o fundo para o próximo horário
                 avancarHorario();
             }
         });
@@ -257,7 +291,6 @@ function show_resource_changes(index) {
                 ide[0] = "varFamaMud";
                 break;
         }
-        console.log(ide[0] + " " + mudanca + " " + index);
         // Add balls to each resource representing how much they will change
         if (mudanca == -5 || mudanca == 0 || mudanca == 5) {
             document.getElementById(ide[0]).src = "../img/atributos/mudancas/ball0.png";
