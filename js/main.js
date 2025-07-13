@@ -46,15 +46,15 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
                     // desativa os btn que nao usaveis
                     document.getElementById("clickarea1").style.display = "none";
                     document.getElementById("clickarea3").style.display = "none";
-                    document.getElementById("btnPhone1").style.display = "none";
-                    document.getElementById("btnPhone3").style.display = "none";
+                    document.getElementById("clickBtn1").style.display = "none";
+                    document.getElementById("clickBtn3").style.display = "none";
 
                     index = 0; // pegar o item 0 da lista choices
                 } else if (current_event["choices"].length == 2) {
                     highlight_choice(caracteristicaBtn, 2); // coloca mesa de 2 btn
                     // desativa o btn nao usavel
                     document.getElementById("clickarea2").style.display = "none";
-                    document.getElementById("btnPhone2").style.display = "none";
+                    document.getElementById("clickBtn2").style.display = "none";
 
                     if (index == 2) {
                         index = 1; // se for o item 0, permanece, se for o item 2, pega o item 1 da lista choices
@@ -88,7 +88,6 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
                 executeHistoryEvent(current_event, index);
             }
             updateHtmlEvent(current_event); // muda html a partir do evento definido
-            
             checkGameOver(); // verifica se usuário perdeu
             
             // gera novo evento e ativa o mic
@@ -117,72 +116,84 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
                 }
             }
         });
-    } else { // For mobile
+    } else { // se os btn do celular forem clicados
         btn.addEventListener("click", () => {
             if (index > 2) {
                 index = index - 3; // reduz o índicce
             }
-            //////////////////// AHHHHHHHHHHHHHHHHHHHHHHHHHHH LOUCURAS LOUCURAS LOUCURAS FALTA O CELULARRRRRRRRRRRRRRRRRRRRR
-            if (caracteristicaBtn == btn.title) {
-                console.log("previous button, current button", caracteristicaBtn, btn.title);
-                
-                // If pressed the same button, then set first press to false
+
+            if (caracteristicaBtn == btn.title) { // verificação para saber se o primeiro btn clicado é igual ao atual btn clicado
                 firstPressButton = false;
-                
-                console.log("Second button press");
             } else {
                 voltarHTMLAoNormal(3);
             }
-            if (firstPressButton) { // If is first press on the button
-                console.log("First button press");
-                // Change the button that was pressed to the current
-                caracteristicaBtn = btn.title;
-                if (first_press) { // If not the greetings screen show the resource changes
+
+            if (firstPressButton) { // equivalente ao mouseover do pc
+                caracteristicaBtn = btn.title; // define a característica do primeiro btn clicado
+                if (first_press) { // se for a tela inicial do jogo
                     highlight_choice(caracteristicaBtn, 1);
                 } else {
                     if (current_event["choices"].length == 1) {
-                        highlight_choice(caracteristicaBtn, 1);
-                        index = 0;
+                        highlight_choice(caracteristicaBtn, 1); // coloca mesa de 1 btn
+                        // desativa os btn que nao usaveis
                         document.getElementById("clickarea1").style.display = "none";
                         document.getElementById("clickarea3").style.display = "none";
-                        document.getElementById("btnPhone1").style.display = "none";
-                        document.getElementById("btnPhone3").style.display = "none";
+                        document.getElementById("clickBtn1").style.display = "none";
+                        document.getElementById("clickBtn3").style.display = "none";
+
+                        index = 0; // pegar o item 0 da lista choices
                     } else if (current_event["choices"].length == 2) {
-                        highlight_choice(caracteristicaBtn, 2);
+                        highlight_choice(caracteristicaBtn, 2); // coloca mesa de 2 btn
+                        // desativa o btn nao usavel
                         document.getElementById("clickarea2").style.display = "none";
-                        document.getElementById("btnPhone2").style.display = "none";
+                        document.getElementById("clickBtn2").style.display = "none";
+
                         if (index == 2) {
-                            index = 1;
+                            index = 1; // se for o item 0, permanece, se for o item 2, pega o item 1 da lista choices
                         }
                     } else {
-                        highlight_choice(caracteristicaBtn, 3);
+                        highlight_choice(caracteristicaBtn, 3); // tela normal e padrão
                     }
-                    show_resource_changes(index);
+                    show_resource_changes(index); // faz as mudanças com o índice configurado
                 }
-            } else { // If is the second press of the button
+            } else {
+                // proximo clique obrigatoriamente será o primeiro click
                 firstPressButton = true;
                 caracteristicaBtn = "";
-                if (first_press) {
-                    console.log("Exiting greetings screen");
-                    current_event = getEvent();
+
+                if (first_press) { // se for a tela inicial do jogo
+                    // pega a primeira ocasião e ativa o clique do mic para personagem entrar na sala
                     first_press = false;
+
                     document.getElementById("titleGame").innerText = `Presidential Order - Dia ${dia}`;
                     document.getElementById("btnPhone2").style.display = "none";
-                    voltarHTMLAoNormal(3);
+
+                    // define evento e ativa o click do mic a partir desse evento
+                    current_event = getEvent();
                     ativarMic(current_event);
+                    document.querySelector("body").click();
                     return;
                 }
-                console.log("Executing event");
+                document.querySelector("body").click();
 
-                console.log("index for", current_event);
-                console.log(index);
-                voltarHTMLAoNormal(3);
-                executeRandomEvent(current_event, index);
-                updateHtmlEvent(current_event);
-                checkGameOver();
-                current_event = getEvent();
+                // se não for primeiro clique, ele executa os problemas do evento anterior e altera html a partir disso
+                if (dia % 1 != 0.75) { // se não for noite, executa evento normal
+                    executeRandomEvent(current_event, index);
+                } else { // se for noite, executa evento de história
+                    executeHistoryEvent(current_event, index);
+                }
+                updateHtmlEvent(current_event); // muda html a partir do evento definido
+                checkGameOver(); // verifica se usuário perdeu
+
+                // gera novo evento e ativa o mic
+                if (dia % 1 != 0.5) {
+                    current_event = getEvent(); // se não estiver indo para noite, define-se evento normal
+                } else {
+                    current_event = getHistoryEvent(); // se estiver indo para noite, define-se evento de história
+                }
                 ativarMic(current_event);
 
+                // mudar o fundo para o próximo horário
                 avancarHorario();
             }
         });
@@ -193,8 +204,14 @@ document.addEventListener("click", (element) => { // clique em todo documento
     if (!clicaveis.includes(element.target.id)) { // só ocorre se o id do item clicado não for algum dos botões
         if (first_press) {
             voltarHTMLAoNormal(1);
-        } else {
-            voltarHTMLAoNormal(3);
+        } else { // analisa a qtd de escolhas do choices para saber quantos btn tem a mesa
+            if (current_event["choices"].length == 1) {
+                voltarHTMLAoNormal(1);
+            } else if (current_event["choices"].length == 2) {
+                voltarHTMLAoNormal(2);
+            } else {
+                voltarHTMLAoNormal(3);
+            }
         }
         firstPressButton = true;
         caracteristicaBtn = "";
@@ -231,7 +248,6 @@ function highlight_choice(caracteristicaBtn, qtdBotoes) {
 }
 
 function show_resource_changes(index) {
-    console.log(index);
     for (let affected in current_event["choices"][index]["effects"]) {
         const mudanca = Number(current_event["choices"][index]["effects"][affected]);
         const ide = [];
