@@ -2,6 +2,7 @@ import { voltarHTMLAoNormal } from "./core/common.js";
 import { checkGameOver, executeHistoryEvent, executeRandomEvent, getEvent, getHistoryEvent } from "./core/core.js";
 import { updateHtmlEvent } from "./core/io_handler.js";
 
+let escolhaIndex; // índice de escolha do usuário -> pode ser mutável
 let event_number = 0;
 let current_event; // atual evento
 let caracteristicaBtn = ""; // característica do botão para comparar os clicados
@@ -37,7 +38,12 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
         });
     } else if (btn.id == "clickarea1" || btn.id == "clickarea2" || btn.id == "clickarea3") { // se os btn de PC forem clicados
         btn.addEventListener("mouseover", () => { // se mouse ficar em cima do btn, img de pressionado aparece
-            caracteristicaBtn = btn.title;
+            
+            caracteristicaBtn = btn.title; // define carac do botão para análise futura
+            if (caracteristicaBtn == "Escolha 1") escolhaIndex = 0;
+            else if (caracteristicaBtn == "Escolha 2") escolhaIndex = 1;
+            else if (caracteristicaBtn == "Escolha 3") escolhaIndex = 2;
+
             if (first_press) { // analisa se é a tela inicial do jogo
                 highlight_choice(caracteristicaBtn, 1);
             } else { // se não for tela inicial; ele vê a qtd de escolhas atual e coloca imagem a partir do analisado
@@ -46,23 +52,23 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
                     // desativa os btn que nao usaveis
                     document.getElementById("clickarea1").style.display = "none";
                     document.getElementById("clickarea3").style.display = "none";
-                    document.getElementById("btnPhone1").style.display = "none";
-                    document.getElementById("btnPhone3").style.display = "none";
+                    document.getElementById("clickBtn1").style.display = "none";
+                    document.getElementById("clickBtn3").style.display = "none";
 
-                    index = 0; // pegar o item 0 da lista choices
+                    escolhaIndex = 0; // pegar o item 0 da lista choices
                 } else if (current_event["choices"].length == 2) {
                     highlight_choice(caracteristicaBtn, 2); // coloca mesa de 2 btn
                     // desativa o btn nao usavel
                     document.getElementById("clickarea2").style.display = "none";
-                    document.getElementById("btnPhone2").style.display = "none";
+                    document.getElementById("clickBtn2").style.display = "none";
 
-                    if (index == 2) {
-                        index = 1; // se for o item 0, permanece, se for o item 2, pega o item 1 da lista choices
+                    if (escolhaIndex == 2) {
+                        escolhaIndex = 1; // se for o item 0, permanece, se for o item 2, pega o item 1 da lista choices
                     }
                 } else {
                     highlight_choice(caracteristicaBtn, 3); // tela normal e padrão
                 }
-                show_resource_changes(index); // faz as mudanças com o índice configurado
+                show_resource_changes(escolhaIndex); // faz as mudanças com o índice mutável
             }
         });
 
@@ -83,12 +89,11 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
             // se não for primeiro clique, ele executa os problemas do evento anterior e altera html a partir disso
 
             if (dia % 1 != 0.75) { // se não for noite, executa evento normal
-                executeRandomEvent(current_event, index);
+                executeRandomEvent(current_event, escolhaIndex);
             } else { // se for noite, executa evento de história
-                executeHistoryEvent(current_event, index);
+                executeHistoryEvent(current_event, escolhaIndex);
             }
             updateHtmlEvent(current_event); // muda html a partir do evento definido
-            
             checkGameOver(); // verifica se usuário perdeu
             
             // gera novo evento e ativa o mic
@@ -122,7 +127,7 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
             if (index > 2) {
                 index = index - 3; // reduz o índicce
             }
-            //////////////////// AHHHHHHHHHHHHHHHHHHHHHHHHHHH LOUCURAS LOUCURAS LOUCURAS FALTA O CELULARRRRRRRRRRRRRRRRRRRRR
+
             if (caracteristicaBtn == btn.title) {
                 console.log("previous button, current button", caracteristicaBtn, btn.title);
                 
@@ -191,11 +196,15 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
 document.addEventListener("click", (element) => { // clique em todo documento
     const clicaveis = ["clickBtn1", "clickBtn2", "clickBtn3", "imgBtn", "mic"]
     if (!clicaveis.includes(element.target.id)) { // só ocorre se o id do item clicado não for algum dos botões
-        if (first_press) {
+        // analisa a qtd de escolhas do choices para saber quantos btn tem a mesa
+        if (first_press || current_event["choices"].length == 1) {
             voltarHTMLAoNormal(1);
-        } else {
+        } else if (current_event["choices"].length == 2) {
+            voltarHTMLAoNormal(2);
+        } else if (current_event["choices"].length == 3) {
             voltarHTMLAoNormal(3);
         }
+        // após clique na tela, define-se que não há primeiro clique
         firstPressButton = true;
         caracteristicaBtn = "";
     }
@@ -231,7 +240,6 @@ function highlight_choice(caracteristicaBtn, qtdBotoes) {
 }
 
 function show_resource_changes(index) {
-    console.log(index);
     for (let affected in current_event["choices"][index]["effects"]) {
         const mudanca = Number(current_event["choices"][index]["effects"][affected]);
         const ide = [];
@@ -249,7 +257,7 @@ function show_resource_changes(index) {
                 ide[0] = "varFamaMud";
                 break;
         }
-
+        console.log(ide[0] + " " + mudanca + " " + index);
         // Add balls to each resource representing how much they will change
         if (mudanca == -5 || mudanca == 0 || mudanca == 5) {
             document.getElementById(ide[0]).src = "../img/atributos/mudancas/ball0.png";

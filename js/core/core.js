@@ -33,9 +33,6 @@ export function getEvent() {
     }
     usedIndex.push(index);
 
-    console.log("Event list has .length: " + event_random.length);
-    console.log("Getting event from index: " + index);
-
     return event;
 }
 
@@ -45,7 +42,6 @@ export function getHistoryEvent() {
 
 export function executeRandomEvent(event, choice) {
     for (let affected in event["choices"][choice]["effects"]) {
-        console.log("Affected: " + affected);
         const mudanca = event["choices"][choice]["effects"][affected];
         const ide = [];
         switch (affected) {

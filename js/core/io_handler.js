@@ -46,7 +46,7 @@ export function updateHtmlEvent(event) {
         document.getElementById("escolha2").innerHTML = "2. " + event["choices"][1]["text"];
         document.getElementById("escolha3").innerHTML = "3. " + event["choices"][2]["text"];
     }
-    console.log(event["character"]);
+    
     switch (event["character"]) {
         case "Marechal Silva":
             document.getElementById("imagem2").src = "../img/personagens/marechal.png";
