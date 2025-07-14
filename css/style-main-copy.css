@@ -65,6 +65,13 @@ em {
     height: auto;
 }
 
+#textoFinal{
+    background-color: rgb(48, 48, 48);
+    color:white;
+    border-style: groove;
+    border-color: black;
+}
+
 #seta {
     left: 55%;
     top: 35%;
