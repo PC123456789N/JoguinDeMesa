@@ -89,40 +89,43 @@ export function executeHistoryEvent(event, choice) {
 
 export function executeEndGame() {
     switch (nextEvent) {
-        case "F1":
-            document.getElementById("imagem1").src = `../img/finais/principais/mp.png`;
-            document.getElementById("finalTitle").innertext = "Final Militar Pacifista";
-            document.getElementById("finalText").innerHTML = `Seu governo foi exemplar aos olhos dos militares.
+        case "MP7":
+            document.getElementById("imagemFinal").src = `../img/finais/principais/mp.png`;
+            document.getElementById("titleGame").innerHTML = "Final Militar Pacifista";
+            document.getElementById("textoFinal").innerHTML = `Seu governo foi exemplar aos olhos dos militares.
             No entanto, boa parte da população ainda te vê de uma maneira negativa, como se você fosse um ditador,
             mas os militares estão satisfeitos no geral. No entanto, você foi assasinado pela população de qualquer jeito.`;
             break;
-        case "F2":
-            document.getElementById("imagem1").src = `../img/finais/principais/mg.png`;
-            document.getElementById("finalTitle").innertext = "Final Militar Genocida";
-            document.getElementById("finalText").innerHTML = `Ao Descobrir o esquema de corrupção do marechal,
+        case "MG7":
+            document.getElementById("imagemFinal").src = `../img/finais/principais/mg.png`;
+            document.getElementById("titleGame").innerHTML = "Final Militar Genocida";
+            document.getElementById("textoFinal").innerHTML = `Ao Descobrir o esquema de corrupção do marechal,
             a população e o exército ficaram fortemente contra ele. o povo e as forças armadas no geral desejaram a
             execução do marechal por traição do alto escalão, você representando a vontade do povo. ordena a pena do homem,
             com a posição do lider das forças armadas vaga, você une o cargo de marechal e presidente. O povo lhe adora,
             e você cria uma nova ditadura no Brasil!`;
             break;
-        case "F3":
-            document.getElementById("imagem1").src = `../img/finais/principais/rp.png`;
-            document.getElementById("finalTitle").innertext = "Final Rebelde Pacifista";
-            document.getElementById("finalText").innerHTML = `Você atendeu as exigências dos rebeldes. Com isso, 
+        case "RP7":
+            document.getElementById("imagemFinal").src = `../img/finais/principais/rp.png`;
+            document.getElementById("titleGame").innerHTML = "Final Rebelde Pacifista";
+            document.getElementById("textoFinal").innerHTML = `Você atendeu as exigências dos rebeldes. Com isso, 
             novas eleições livres foram feitas, infelizmente, você não foi eleito pelo voto popular. E portanto, 
             foi removido do cargo, você tambem foi reconhecido na história como um heroi. Mesmo que tenha perdido
             a eleição, a população ainda te ama, suas decisões foram fundamentais para a restauração da democracia no país.`;
             break;
-        case "F4":
-            document.getElementById("imagem1").src = `../img/finais/principais/rg.png`;
-            document.getElementById("finalTitle").innertext = "Final Rebelde Genocida";
-            document.getElementById("finalText").innerHTML = `Os grupos rebeldes que diversas vezes tentaram utilizar da diplomacia
+        case "RG7":
+            document.getElementById("imagemFinal").src = `../img/finais/principais/rg.png`;
+            document.getElementById("titleGame").innerHTML = "Final Rebelde Genocida";
+            document.getElementById("textoFinal").innerHTML = `Os grupos rebeldes que diversas vezes tentaram utilizar da diplomacia
             com você finalmente se cansaram. Com isso, um levante armado aconteceu no interior do país. o levante foi
             recrutando as populações locais para se unir a luta contra você. o seu exército não foi capaz de parar os rebeldes
             e eles invadiram o Palacio do Planalto. Eles o renderam, e o eliminaram, assumindo o poder para eles. Mergulhando o Brasil
             numa sangrenta guerra civil pelo poder...`;
             break;
     }
+    document.getElementById("telaFinal").style.display = "";
+    document.getElementById("telaGeral").style.display = "none";
+    document.getElementById("buttons").style.display = "none";
 }
 
 export function checkGameOver() {

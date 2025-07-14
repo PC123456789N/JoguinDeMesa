@@ -1,4 +1,5 @@
 import { military, finance, population, popularity } from "./core.js";
+import { voltarHTMLAoNormal } from "./common.js";
 
 export function updateStats(finance, military, population, popularity) {
     // função atualiza o html com o atual atributo do usuário
@@ -169,4 +170,5 @@ export function finalAtributo(atributo, valor) {
     document.getElementById("telaFinal").style.display = "";
     document.getElementById("telaGeral").style.display = "none";
     document.getElementById("buttons").style.display = "none";
+    voltarHTMLAoNormal();
 }
