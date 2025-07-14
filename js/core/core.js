@@ -94,7 +94,9 @@ export function executeEndGame() {
             document.getElementById("titleGame").innerHTML = "Final Militar Pacifista";
             document.getElementById("textoFinal").innerHTML = `Seu governo foi exemplar aos olhos dos militares.
             No entanto, boa parte da população ainda te vê de uma maneira negativa, como se você fosse um ditador,
-            mas os militares estão satisfeitos no geral. No entanto, você foi assasinado pela população de qualquer jeito.`;
+            protestos e mais protestos eclodiam pedindo o fim do regime militar, protestos esses que eram reprimidos com força
+            . No entanto, até que em uma tarde, enquanto você discursava para o congresso. Um homem se levantou da mesa dos deputados,
+            arma em mãos, e ceifou sua vida.`;
             break;
         case "MG7":
             document.getElementById("imagemFinal").src = `../img/finais/principais/mg.png`;
@@ -111,7 +113,7 @@ export function executeEndGame() {
             document.getElementById("textoFinal").innerHTML = `Você atendeu as exigências dos rebeldes. Com isso, 
             novas eleições livres foram feitas, infelizmente, você não foi eleito pelo voto popular. E portanto, 
             foi removido do cargo, você tambem foi reconhecido na história como um heroi. Mesmo que tenha perdido
-            a eleição, a população ainda te ama, suas decisões foram fundamentais para a restauração da democracia no país.`;
+            a eleição, a população ainda te ama, suas decisões foram fundamentais para a restauração da democracia no país e o fim da ditadura militar.`;
             break;
         case "RG7":
             document.getElementById("imagemFinal").src = `../img/finais/principais/rg.png`;

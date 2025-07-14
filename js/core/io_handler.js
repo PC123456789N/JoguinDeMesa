@@ -125,11 +125,11 @@ export function finalAtributo(atributo, valor) {
                  e a impressão de mais dinheiro, o Brasil contraiu milhões de dolares em dívida externa. A população prefere
                  queimar dinheiro em protesto do que usa-lo.`;
             } else {
-                endTitle = "Com tanto dinheiro, você foi assasinado por corruptos.";
+                endTitle = "Com tanto dinheiro, você abandonou seu cargo.";
                 endText = `Você trouxe uma quantidade exorbitante de fundos para os cofres nacionais e internacionais, você foi
-                considerado como um heroí para uma população cada vez mais pobre. No entanto, como recompensa do seus esforços e governo,
-                você atraiu a atenção de diversos senadores e políticos corruptos, os quais com sede pelo seu dinheiro, o assinaram numa
-                tarde de domingo.`;
+                considerado como um heroí para uma população cada vez mais pobre. No entanto, como ninguem é de ferro,
+                você começou a levar parte desse dinheiro com você, quando você percebeu, ja tinha bilhões de reais no seu banco.
+                Com isso, você decidiu que ja era o suficiente e abandonou o país com sua família e seu dinheiro, você saiu com a fama de um canalha corrupto.`;
             }
             break;
         case "populacao":
