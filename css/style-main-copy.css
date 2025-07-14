@@ -59,6 +59,12 @@ em {
     display: block;
     top: 0%;
 }
+
+#imagemFinal {
+    width: 100%;
+    height: auto;
+}
+
 #seta {
     left: 55%;
     top: 35%;
