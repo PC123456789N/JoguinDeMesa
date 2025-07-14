@@ -69,15 +69,15 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
                     // desativa os btn que nao usaveis
                     document.getElementById("clickarea1").style.display = "none";
                     document.getElementById("clickarea3").style.display = "none";
-                    document.getElementById("clickBtn1").style.display = "none";
-                    document.getElementById("clickBtn3").style.display = "none";
+                    document.getElementById("btnPhone1").style.display = "none";
+                    document.getElementById("btnPhone3").style.display = "none";
 
                     escolhaIndex = 0; // pegar o item 0 da lista choices
                 } else if (current_event["choices"].length == 2) {
                     highlight_choice(caracteristicaBtn, 2); // coloca mesa de 2 btn
                     // desativa o btn nao usavel
                     document.getElementById("clickarea2").style.display = "none";
-                    document.getElementById("clickBtn2").style.display = "none";
+                    document.getElementById("btnPhone2").style.display = "none";
 
                     if (escolhaIndex == 2) {
                         escolhaIndex = 1; // se for o item 0, permanece, se for o item 2, pega o item 1 da lista choices
@@ -179,7 +179,7 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
                         highlight_choice(caracteristicaBtn, 2); // coloca mesa de 2 btn
                         // desativa o btn nao usavel
                         document.getElementById("clickarea2").style.display = "none";
-                        document.getElementById("clickBtn2").style.display = "none";
+                        document.getElementById("btnPhone2").style.display = "none";
 
                         if (escolhaIndex == 2) {
                             escolhaIndex = 1; // se for o item 0, permanece, se for o item 2, pega o item 1 da lista choices
