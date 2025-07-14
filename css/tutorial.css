@@ -23,3 +23,10 @@ html, body {
     border-top-style: solid ;
     border-color: rgb(107, 107, 107);
 }
+
+#slide{
+    background-color: rgb(43, 43, 43);
+    border-style: groove;
+    border-color: aliceblue;
+
+}
