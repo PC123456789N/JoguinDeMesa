@@ -107,7 +107,7 @@ btnGame.forEach((btn, index) => { // percorrer todos clicáveis e analisar se al
             if (dia % 1 != 0.75) { // se não for noite, executa evento normal
                 executeRandomEvent(current_event, escolhaIndex);
             } else if (dia == 7.75) { // aqui executa-se os finais de história
-                window.location.href = "final.html";
+                // alterar html para demonstrar final
             }
             else { // se for noite, executa evento de história
                 executeHistoryEvent(current_event, escolhaIndex);

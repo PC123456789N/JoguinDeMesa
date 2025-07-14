@@ -1,14 +1,13 @@
 import { event_random } from "./random_events.js";
 import { history_event} from "./history_events.js";
 import { getRandomInt } from "./common.js";
-import { updateStats, showResourceChangesBalls } from "./io_handler.js";
+import { updateStats, showResourceChangesBalls, finalAtributo } from "./io_handler.js";
 
 // atributos gerais do jogo
 export let military = 50;
 export let finance = 50;
 export let population = 50;
 export let popularity = 50;
-export let gameOver = false;
 let atributo;
 let valor;
 
@@ -131,44 +130,33 @@ export function checkGameOver() {
     // se tiver chegado nisso: GAME OVER
     if (military <= 0 || military >= 100 || finance <= 0 || finance >= 100 || population <= 0 || population >= 100 || popularity <= 0 || popularity >= 100) {
         if (military <= 0) {
-            alert("Seu país foi envadido por falta de militar. Voltando para o menu.");
             atributo = "militar";
             valor = 0;
         } else if (military >= 100) {
-            alert("Seu país sofreu um golpe militar. Voltando para o menu.");
             atributo = "militar";
             valor = 100;
         }
         if (finance <= 0) {
-            alert("Seu país faliu. Voltando para o menu.");
             atributo = "dinheiro";
             valor = 0;
         } else if (finance >= 100) {
-            alert("Ao ver tanto dinheiro, você e sua família enlouqueceram e pegaram o dinheiro para si. Voltando para o menu.");
             atributo = "dinheiro";
             valor = 100;
         }
         if (population <= 0) {
-            alert("Seu não tem população. Voltando para o menu.");
             atributo = "populacao";
             valor = 0;
         } else if (population >= 100) {
-            alert("Seu país está com superlotação e você não consegue mais administrar o povo. Voltando para o menu.");
             atributo = "populacao";
             valor = 100;
         }
         if (popularity <= 0) {
-            alert("O povo não gosta de você, fizeram um golpe civil. Voltando para o menu.");
             atributo = "fama";
             valor = 0;
         } else if (popularity >= 100) {
-            alert("As pessoas gostam muito de você; mas nem todos são tão amados assim. Você foi alvo de um assasino e morreu. Voltando para o menu.");
             atributo = "fama";
             valor = 100;
         }
-        gameOver = true;
-        localStorage.setItem("atributo", atributo);
-        localStorage.setItem("valor", valor);
-        window.location.href = "../html/final.html"; // redireciona para a página de final
+        finalAtributo(atributo, valor);
     }
 }
