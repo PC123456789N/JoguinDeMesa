@@ -93,7 +93,9 @@ export function executeEndGame() {
         case "F1":
             document.getElementById("imagem1").src = `../img/finais/principais/mp.png`;
             document.getElementById("finalTitle").innertext = "Final Militar Pacifista";
-            document.getElementById("finalText").innerHTML = "Texto de Kaio para mp";
+            document.getElementById("finalText").innerHTML = `Seu governo foi exemplar aos olhos dos militares.
+            No entanto, boa parte da população ainda te vê de uma maneira negativa, como se você fosse um ditador,
+            mas os militares estão satisfeitos no geral. No entanto, você foi assasinado pela população de qualquer jeito.`;
             break;
         case "F2":
             document.getElementById("imagem1").src = `../img/finais/principais/mg.png`;
