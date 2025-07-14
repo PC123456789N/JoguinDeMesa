@@ -19,23 +19,6 @@
         </div>
 
         <div class="row">
-            <div class="col-12" style="background-color: black; border-bottom-style: solid  ; border-color: rgb(107, 107, 107);">
-                <ul class="nav nav-pills nav-fill nav-justified justify-content-center">
-                    <li class="nav-item">
-                        <button class="btn btn-light btn-block" style="width: 90%;" id="cell">
-                            Celular
-                        </button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="btn btn-light btn-block" style="width: 90%;" id="pc">
-                            PC
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row">
             <div class="col-12">
                 <div class="text-center">
                     <h2>Obrigado por jogar!</h2>
@@ -155,11 +138,37 @@
         var linha = document.getElementById("linhaPC")
 
         var counter = 0;
-        pc.addEventListener("click", () => {
-            counter = counter+1;
-            console.log(counter)
-            if(counter % 2 == 1){
-                linha.style.display = "flex";
+
+        if (screen.width < 768) {
+            console.log("mobile")
+            linha.style.display = "flex";
+                img1.src = "../img/tutorial/tutorialcell1.jpeg";
+                img2.src = "../img/tutorial/tutorialcell2.jpeg";
+                img3.src = "../img/tutorial/tutorialcell3.jpeg";
+                img4.src = "../img/tutorial/tutorialcell4.jpeg";
+                img5.src = "../img/tutorial/tutorialcell5.png";
+                img6.src = "../img/tutorial/tutorialcell6.png";
+
+                txt1.innerHTML = `Bem-vindo. Para começar, clique na tela central para ver a custscene 
+                        introdutória, ou clique no texto cinza no segundo menu inferior para pular
+                        a cutscene e ir direto ao jogo.`;
+                txt2.innerHTML = `Para começar seu dia, clique no único botão central. Com isso, mais 2 botões apareçerão na aba de botões.`;
+                txt3.innerHTML = `Para receber seu proximo convidado, clique na tela central quando a seta indicadora for exibida.`;
+                txt4.innerHTML = `No primeiro menu inferior, aparecerá o diálogo do seu convidado.
+                        <br><br>
+                        No segundo menu inferior, aparecerá as escolhas que você pode fazer, 
+                        cada escolha corresponde aos botões na aba de botões respectivamente.`;
+                txt5.innerHTML = `No penultimo menu inferior, estão seus atributos, não deixe nenhum chegar a 100 ou 0.
+                        <br><br>
+                        Sempre que tocar em um botão na aba botões, um icone circular aparecerá, 
+                        ele representa o impacto que sua escolha terá naquele atributo.`;
+                txt6.innerHTML = `Ao fazer uma escolha, um novo icone circular aparecerá sob o atributo,
+                        caso sua escolha afetar o atributo negativamente, aparecera um (-).
+                        <br><br>
+                        Caso positivamente, aparecerá um (+).`;
+        } else {
+            console.log("PC")
+            linha.style.display = "flex";
                 img1.src = "../img/tutorial/tutorialpc1.png";
                 img2.src = "../img/tutorial/tutorialpc2.png";
                 img3.src = "../img/tutorial/tutorialpc3.png";
@@ -184,48 +193,7 @@
                         caso sua escolha afetar o atributo negativamente, aparecera um (-).
                         <br><br>
                         Caso positivamente, aparecerá um (+).`;
-
-
-            } else{
-                linha.style.display = "none";
-            }
-        });
-
-        cell.addEventListener("click", () => {
-            counter = counter+1;
-            console.log(counter)
-            if(counter % 2 == 1){
-                linha.style.display = "flex";
-                img1.src = "../img/tutorial/tutorialcell1.jpeg";
-                img2.src = "../img/tutorial/tutorialcell2.jpeg";
-                img3.src = "../img/tutorial/tutorialcell3.jpeg";
-                img4.src = "../img/tutorial/tutorialcell4.jpeg";
-                img5.src = "../img/tutorial/tutorialcell5.jpeg";
-                img6.src = "../img/tutorial/tutorialcell6.png";
-
-                txt1.innerHTML = `Bem-vindo. Para começar, clique na tela central para ver a custscene 
-                        introdutória, ou clique no texto cinza no segundo menu inferior para pular
-                        a cutscene e ir direto ao jogo.`;
-                txt2.innerHTML = `Para começar seu dia, clique no único botão central. Com isso, mais 2 botões apareçerão na aba de botões.`;
-                txt3.innerHTML = `Para receber seu proximo convidado, clique na tela central quando a seta indicadora for exibida.`;
-                txt4.innerHTML = `No primeiro menu inferior, aparecerá o diálogo do seu convidado.
-                        <br><br>
-                        No segundo menu inferior, aparecerá as escolhas que você pode fazer, 
-                        cada escolha corresponde aos botões na aba de botões respectivamente.`;
-                txt5.innerHTML = `No penultimo menu inferior, estão seus atributos, não deixe nenhum chegar a 100 ou 0.
-                        <br><br>
-                        Sempre que tocar em um botão na aba botões, um icone circular aparecerá, 
-                        ele representa o impacto que sua escolha terá naquele atributo.`;
-                txt6.innerHTML = `Ao fazer uma escolha, um novo icone circular aparecerá sob o atributo,
-                        caso sua escolha afetar o atributo negativamente, aparecera um (-).
-                        <br><br>
-                        Caso positivamente, aparecerá um (+).`;
-
-
-            } else{
-                linha.style.display = "none";
-            }
-        });
+        }
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
