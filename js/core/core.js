@@ -43,8 +43,16 @@ export function getEvent() { // função escolhe um evento aleatório da lista d
         }
     }
     usedIndex.push(index); // se for possível utilizar o evento analisado, ele adiciona o número usado como último elemento desse array
-
+    event["choices"] = embaralharArray(event["choices"])
     return event;
+}
+
+function embaralharArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Troca os elementos
+    }
+    return array;
 }
 
 export function getHistoryEvent() {
